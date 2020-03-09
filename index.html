@@ -31,7 +31,10 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-12">
-                            <h1 class="m-0 text-dark" style="text-align: center;">Corona Virus Statistic Map in Indonesia</h1>
+                            <h1 class="m-0 text-dark" style="text-align: center;">Corona Virus Statistic Map in
+                                Indonesia</h1>
+                            </br>
+                            <p style="text-align: center;">Update per 9 Maret 2020</p>
                         </div>
                     </div>
                 </div>
@@ -43,9 +46,9 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>19</h3>
+                                    <h1 style="text-align: center;">19</h1>
 
-                                    <p>Terinfeksi</p>
+                                    <p style="text-align: center;">Terinfeksi</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -59,9 +62,9 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>0</h3>
+                                    <h1 style="text-align: center;">0</h1>
 
-                                    <p>Meninggal</p>
+                                    <p style="text-align: center;">Meninggal</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -75,9 +78,9 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>0</h3>
+                                    <h1 style="text-align: center;">0</h1>
 
-                                    <p>Sembuh</p>
+                                    <p style="text-align: center;">Sembuh</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
@@ -89,9 +92,9 @@
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>50</h3>
+                                    <h1 style="text-align: center;">50</h1>
 
-                                    <p>Dalam Pengawasan</p>
+                                    <p style="text-align: center;">Dalam Pengawasan</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
@@ -103,9 +106,9 @@
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>487</h3>
+                                    <h1 style="text-align: center;">487</h1>
 
-                                    <p>Negatif</p>
+                                    <p style="text-align: center;">Negatif</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
@@ -117,9 +120,9 @@
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>543</h3>
+                                    <h1 style="text-align: center;">543</h1>
 
-                                    <p>Total Test</p>
+                                    <p style="text-align: center;">Total Test</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
@@ -130,7 +133,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <section class="col-lg-7 connectedSortable">
+                        <section class="col-lg-6 connectedSortable">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -140,15 +143,46 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <div class="chart tab-pane active" id="containerMap" style="position: relative; height: 100%;">
-                                                <p>Source: <a href="https://infeksiemerging.kemkes.go.id/">Infeksi Emerging</a></p>
-                                                <div id="containerMap"></div>
+                                        <div class="chart tab-pane active" id="containerMap"
+                                            style="position: relative; height: 100%;">
+                                            <p>Source: <a href="https://infeksiemerging.kemkes.go.id/">Infeksi
+                                                    Emerging</a></p>
+                                            <div id="containerMap"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="col-lg-5 connectedSortable">
+                        <section class="col-lg-3 connectedSortable">
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <div class="d-flex justify-content-between">
+                                        <h3 class="card-title">Jumlah Kasus Harian</h3>
+                                        <a href="javascript:void(0);">View Report</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <p class="d-flex flex-column">
+                                            <span class="text-bold text-lg">0</span>
+                                            <span>Kasus Harian</span>
+                                        </p>
+                                        <p class="ml-auto d-flex flex-column text-right">
+                                            <span class="text-success">
+                                                <i class="fas fa-arrow-up"></i> 0%
+                                            </span>
+                                            <span class="text-muted">sejak hari sebelumnya</span>
+                                        </p>
+                                    </div>
+                                    <!-- /.d-flex -->
+
+                                    <div class="position-relative mb-4">
+                                        <canvas id="visitors-chart" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="col-lg-3 connectedSortable">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -156,13 +190,133 @@
                                         Jumlah Korban Terinfeksi
                                     </h3>
                                 </div>
-                                <div class="card-body">
-                                    <div class="tab-content p-0">
-                                        <div class="chart tab-pane active" id="containerMap" style="position: relative; height: 100%;">
-                                                <p>Source: <a href="https://infeksiemerging.kemkes.go.id/">Infeksi Emerging</a></p>
-                                                <div id="containerMap"></div>
-                                        </div>
-                                    </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped table-valign-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Jenis Kelamin</th>
+                                                <th>Umur</th>
+                                                <th>Tanggal Konfirmasi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>P</td>
+                                                <td>31</td>
+                                                <td>2 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>P</td>
+                                                <td>64</td>
+                                                <td>2 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>U</td>
+                                                <td>33</td>
+                                                <td>6 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>U</td>
+                                                <td>34</td>
+                                                <td>6 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>L</td>
+                                                <td>55</td>
+                                                <td>8 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>L</td>
+                                                <td>36</td>
+                                                <td>8 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>P</td>
+                                                <td>59</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>L</td>
+                                                <td>56</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>P</td>
+                                                <td>55</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>L</td>
+                                                <td>29</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>P</td>
+                                                <td>54</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>L</td>
+                                                <td>31</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>P</td>
+                                                <td>16</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>L</td>
+                                                <td>50</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>P</td>
+                                                <td>43</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>P</td>
+                                                <td>17</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>L</td>
+                                                <td>56</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>L</td>
+                                                <td>50</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td>L</td>
+                                                <td>40</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </section>
@@ -175,10 +329,10 @@
             </br>
             <strong><a href="https://www.linkedin.com/in/jakayuhenda">jaka.yuhenda</a></strong>
             <div class="float-right d-none d-sm-inline-block">
-              <b>Version</b> 1.0
-              Template by AdminLTE
+                <b>Version</b> 1.0
+                Template by AdminLTE
             </div>
-          </footer>
+        </footer>
     </div>
     <script src="https://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
