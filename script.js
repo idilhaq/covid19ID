@@ -40,13 +40,13 @@ var data = [
 ];
 
 // Create the chart
-Highcharts.mapChart('container', {
+Highcharts.mapChart('containerMap', {
     chart: {
         map: 'countries/id/id-all'
     },
 
     title: {
-        text: 'Highmaps basic demo'
+        text: 'Peta Persebaran Korban Terinfeksi Covid-19'
     },
 
     subtitle: {
