@@ -13,11 +13,9 @@
 
 <body class="hold-transition layout-top-nav">
     <div class="wrapper">
-        <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+        <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
             <div class="container">
                 <a href="../../index3.html" class="navbar-brand">
-                    <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                        class="brand-image img-circle elevation-3" style="opacity: .8">
                     <span class="brand-text font-weight-light">Covid19ID</span>
                 </a>
 
@@ -47,16 +45,11 @@
             <div class="content-header">
                 <div class="container">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0 text-dark"> Corona Virus Statistic Map in Indonesia <small>(Update per 10 Maret 2020) Source <a href="https://infeksiemerging.kemkes.go.id/">Kemenkes RI</a></small></h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                                <li class="breadcrumb-item active">Top Navigation</li>
-                            </ol>
-                        </div><!-- /.col -->
+                        <div class="col-sm-12">
+                            <h1 class="m-0 text-dark"> Corona Virus Statistic Map in Indonesia</h1>
+                            <h4><small>(Update per 10 Maret 2020) Source <a
+                                        href="https://infeksiemerging.kemkes.go.id/">Kemenkes RI</a></small></h4>
+                        </div>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -156,204 +149,213 @@
                         </div>
                     </div>
                     <!-- /.row -->
-                        <div class="row">
-                            <section class="col-lg-6 connectedSortable">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">
-                                            <i class="fas fa-chart-pie mr-1"></i>
-                                            Peta Persebaran Virus
-                                        </h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="tab-content p-0">
-                                            <div class="chart tab-pane active" id="containerMap"
-                                                style="position: relative; height: 100%;">
-                                                <p>Source: <a href="https://infeksiemerging.kemkes.go.id/">Infeksi
-                                                        Emerging</a></p>
-                                                <div id="containerMap"></div>
-                                            </div>
+                    <div class="row">
+                        <section class="col-lg-12 connectedSortable">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-chart-pie mr-1"></i>
+                                        Peta Persebaran Virus
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content p-0">
+                                        <div class="chart tab-pane active" id="containerMap"
+                                            style="position: relative; height: 100%;">
+                                            <p>Source: <a href="https://infeksiemerging.kemkes.go.id/">Infeksi
+                                                    Emerging</a></p>
+                                            <div id="containerMap"></div>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
-                            <section class="col-lg-6 connectedSortable">
-                                <div class="card">
-                                    <div class="card-header border-0">
-                                        <div class="d-flex justify-content-between">
-                                            <h3 class="card-title">Jumlah Kasus Harian</h3>
-                                            <a href="javascript:void(0);">View Report</a>
-                                        </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col-lg-12 connectedSortable">
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <div class="d-flex justify-content-between">
+                                        <h3 class="card-title">Jumlah Kasus Harian</h3>
+                                        <p>Selasa, 10 Maret 2020</p>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="d-flex">
-                                            <p class="d-flex flex-column">
-                                                <span class="text-bold text-lg">0</span>
-                                                <span>Kasus Harian</span>
-                                            </p>
-                                            <p class="ml-auto d-flex flex-column text-right">
-                                                <span class="text-success">
-                                                    <i class="fas fa-arrow-up"></i> 0%
-                                                </span>
-                                                <span class="text-muted">sejak hari sebelumnya</span>
-                                            </p>
-                                        </div>
-                                        <!-- /.d-flex -->
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <p class="d-flex flex-column">
+                                            <span class="text-bold text-lg">+0</span>
+                                            <span>Jumlah Kasus Baru</span>
+                                        </p>
+                                        <p class="ml-auto d-flex flex-column text-right">
+                                            <span class="text-success">
+                                                <i class="fas fa-arrow-up"></i> 0%
+                                            </span>
+                                            <span class="text-muted">Sejak kemarin</span>
+                                        </p>
+                                    </div>
+                                    <!-- /.d-flex -->
 
-                                        <div class="position-relative mb-4">
-                                            <canvas id="visitors-chart" height="200"></canvas>
-                                        </div>
+                                    <div class="position-relative mb-4">
+                                        <canvas id="visitors-chart" height="200"></canvas>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-end">
+                                        <span class="mr-2">
+                                            <i class="fas fa-square text-primary"></i> This Week
+                                        </span>
+
+                                        <span>
+                                            <i class="fas fa-square text-gray"></i> Last Week
+                                        </span>
                                     </div>
                                 </div>
-                            </section>
-                        </div>
-                        <div class="row">                            
-                            <section class="col-lg-12 connectedSortable">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">
-                                            <i class="fas fa-chart-pie mr-1"></i>
-                                            Jumlah Korban Terinfeksi
-                                        </h3>
-                                    </div>
-                                    <div class="card-body table-responsive p-0">
-                                        <table class="table table-striped table-valign-middle">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Jenis Kelamin</th>
-                                                    <th>Umur</th>
-                                                    <th>Tanggal Konfirmasi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>P</td>
-                                                    <td>31</td>
-                                                    <td>2 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>P</td>
-                                                    <td>64</td>
-                                                    <td>2 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>U</td>
-                                                    <td>33</td>
-                                                    <td>6 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>U</td>
-                                                    <td>34</td>
-                                                    <td>6 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>L</td>
-                                                    <td>55</td>
-                                                    <td>8 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td>L</td>
-                                                    <td>36</td>
-                                                    <td>8 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>7</td>
-                                                    <td>P</td>
-                                                    <td>59</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>8</td>
-                                                    <td>L</td>
-                                                    <td>56</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>9</td>
-                                                    <td>P</td>
-                                                    <td>55</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>L</td>
-                                                    <td>29</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>11</td>
-                                                    <td>P</td>
-                                                    <td>54</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>12</td>
-                                                    <td>L</td>
-                                                    <td>31</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>13</td>
-                                                    <td>P</td>
-                                                    <td>16</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>14</td>
-                                                    <td>L</td>
-                                                    <td>50</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>15</td>
-                                                    <td>P</td>
-                                                    <td>43</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>16</td>
-                                                    <td>P</td>
-                                                    <td>17</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>17</td>
-                                                    <td>L</td>
-                                                    <td>56</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>18</td>
-                                                    <td>L</td>
-                                                    <td>50</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>19</td>
-                                                    <td>L</td>
-                                                    <td>40</td>
-                                                    <td>9 Maret 2020</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-chart-pie mr-1"></i>
+                                        Jumlah Korban Terinfeksi
+                                    </h3>
                                 </div>
-                            </section>
-                        </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped table-valign-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Jenis Kelamin</th>
+                                                <th>Umur</th>
+                                                <th>Tanggal Konfirmasi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>P</td>
+                                                <td>31</td>
+                                                <td>2 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>P</td>
+                                                <td>64</td>
+                                                <td>2 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>U</td>
+                                                <td>33</td>
+                                                <td>6 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>U</td>
+                                                <td>34</td>
+                                                <td>6 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>L</td>
+                                                <td>55</td>
+                                                <td>8 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>L</td>
+                                                <td>36</td>
+                                                <td>8 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>P</td>
+                                                <td>59</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>L</td>
+                                                <td>56</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>P</td>
+                                                <td>55</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>L</td>
+                                                <td>29</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>P</td>
+                                                <td>54</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>L</td>
+                                                <td>31</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>P</td>
+                                                <td>16</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>L</td>
+                                                <td>50</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>P</td>
+                                                <td>43</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>P</td>
+                                                <td>17</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>L</td>
+                                                <td>56</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>L</td>
+                                                <td>50</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td>L</td>
+                                                <td>40</td>
+                                                <td>9 Maret 2020</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div><!-- /.container-fluid -->
             </div>
             <!-- Main Footer -->
             <footer class="main-footer">
                 <!-- To the right -->
                 <div class="float-right d-none d-sm-inline">
-                    <p>Dev by <a href="https://www.linkedin.com/in/idilhaq">idilhaq</a> | <a href="https://www.linkedin.com/in/jakayuhenda">jaka.yuhenda</a></p>
+                    <p>Dev by <a href="https://www.linkedin.com/in/idilhaq">idilhaq</a> | <a
+                            href="https://www.linkedin.com/in/jakayuhenda">jaka.yuhenda</a></p>
                 </div>
                 <!-- Default to the left -->
                 <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
@@ -361,10 +363,19 @@
             </footer>
         </div>
     </div>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="dist/js/adminlte.js"></script>
     <script src="https://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/mapdata/countries/id/id-all.js"></script>
     <script src="script.js"></script>
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <script src="dist/js/demo.js"></script>
+    <script src="dist/js/pages/dashboard3.js"></script>
 </body>
 
 </html>
