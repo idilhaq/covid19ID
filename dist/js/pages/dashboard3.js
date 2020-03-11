@@ -79,7 +79,7 @@ $(function () {
       labels  : ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th'],
       datasets: [{
         type                : 'line',
-        data                : [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 26],
+        data                : [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 24],
         backgroundColor     : 'transparent',
         borderColor         : '#ffcc00',
         pointBorderColor    : '#ffcc00',
@@ -106,6 +106,17 @@ $(function () {
           borderColor         : '#ff0000',
           pointBorderColor    : '#ff0000',
           pointBackgroundColor: '#ff0000',
+          fill                : false
+          // pointHoverBackgroundColor: '#ced4da',
+          // pointHoverBorderColor    : '#ced4da'
+        },
+        {
+          type                : 'line',
+          data                : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+          backgroundColor     : 'tansparent',
+          borderColor         : '#02c248',
+          pointBorderColor    : '#02c248',
+          pointBackgroundColor: '#02c248',
           fill                : false
           // pointHoverBackgroundColor: '#ced4da',
           // pointHoverBorderColor    : '#ced4da'
