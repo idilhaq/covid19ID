@@ -77,9 +77,9 @@ $(function () {
   var visitorsChart  = new Chart($visitorsChart, {
     data   : {
       labels  : ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th'],
-      datasets: [{
+      datasets: [{//akumulatif
         type                : 'line',
-        data                : [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 24],
+        data                : [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34],
         backgroundColor     : 'transparent',
         borderColor         : '#ffcc00',
         pointBorderColor    : '#ffcc00',
@@ -88,9 +88,9 @@ $(function () {
         // pointHoverBackgroundColor: '#007bff',
         // pointHoverBorderColor    : '#007bff'
       },
-        {
+        { //kasus harian
           type                : 'line',
-          data                : [0, 2, 0, 0, 0, 2, 0, 2, 13, 8, 0],
+          data                : [0, 2, 0, 0, 0, 2, 0, 2, 13, 8, 7],
           backgroundColor     : 'tansparent',
           borderColor         : '#007bff',
           pointBorderColor    : '#007bff',
@@ -99,7 +99,7 @@ $(function () {
           // pointHoverBackgroundColor: '#ced4da',
           // pointHoverBorderColor    : '#ced4da'
         },
-        {
+        {//meninggal
           type                : 'line',
           data                : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
           backgroundColor     : 'tansparent',
@@ -110,7 +110,7 @@ $(function () {
           // pointHoverBackgroundColor: '#ced4da',
           // pointHoverBorderColor    : '#ced4da'
         },
-        {
+        { //sembuh
           type                : 'line',
           data                : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
           backgroundColor     : 'tansparent',
