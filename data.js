@@ -1,6 +1,6 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Kamis, 12 Maret 2020 08:00 WIB";
+var date = "Update per Kamis, 12 Maret 2020 15:20 WIB";
 a[0].innerHTML = date;
 a[1].innerHTML = date;
 
@@ -12,8 +12,8 @@ document.getElementById("positif_note").innerHTML = "0";
 document.getElementById("meninggal").innerHTML = "1";
 document.getElementById("meninggal_note").innerHTML = "0";
 //Sembuh
-document.getElementById("sembuh").innerHTML = "2";
-document.getElementById("sembuh_note").innerHTML = "0";
+document.getElementById("sembuh").innerHTML = "4";
+document.getElementById("sembuh_note").innerHTML = "2";
 //Proses Pemeriksaan
 document.getElementById("pemeriksaan").innerHTML = "15";
 //Negatif
@@ -43,7 +43,7 @@ $(function () {
     var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34];
     var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0];
     var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  2];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4];
 
     var mode      = 'index'
     var intersect = true
@@ -170,7 +170,7 @@ var data = [
     ['id-jr', 0],
     ['id-ki', 0],
     ['id-1024', 0],
-    ['id-jk', 31],
+    ['id-jk', 29],
     ['id-go', 0],
     ['id-yo', 0],
     ['id-sl', 0],
@@ -186,7 +186,7 @@ Highcharts.mapChart('containerMap', {
     },
 
     title: {
-        text: 'Peta Persebaran Korban Terinfeksi Covid-19'
+        text: 'Peta Persebaran Kasus Covid-19'
     },
 
     subtitle: {
