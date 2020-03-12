@@ -1,6 +1,6 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Kamis, 12 Maret 2020 15:20 WIB";
+var date = "Update per Kamis, 12 Maret 2020 16:00 WIB";
 a[0].innerHTML = date;
 
 function arrayToTable(tableData) {
