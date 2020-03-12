@@ -186,7 +186,7 @@ Highcharts.mapChart('containerMap', {
     },
 
     title: {
-        text: 'Peta Persebaran Korban Terinfeksi Covid-19'
+        text: 'Peta Persebaran Kasus Covid-19'
     },
 
     subtitle: {
