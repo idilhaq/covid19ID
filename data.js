@@ -6,7 +6,7 @@ a[1].innerHTML = date;
 
 //Dashboard
 //Positif
-document.getElementById("positif").innerHTML = "31";
+document.getElementById("positif").innerHTML = "29";
 document.getElementById("positif_note").innerHTML = "0";
 //Meninggal
 document.getElementById("meninggal").innerHTML = "1";
