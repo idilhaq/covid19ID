@@ -1,34 +1,34 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Rabu, 11 Maret 2020 22:30 WIB";
+var date = "Update per Kamis, 12 Maret 2020 08:00 WIB";
 a[0].innerHTML = date;
 a[1].innerHTML = date;
 
 //Dashboard
 //Positif
 document.getElementById("positif").innerHTML = "31";
-document.getElementById("positif_note").innerHTML = "7";
+document.getElementById("positif_note").innerHTML = "0";
 //Meninggal
 document.getElementById("meninggal").innerHTML = "1";
-document.getElementById("meninggal_note").innerHTML = "1";
+document.getElementById("meninggal_note").innerHTML = "0";
 //Sembuh
 document.getElementById("sembuh").innerHTML = "2";
-document.getElementById("sembuh_note").innerHTML = "2";
+document.getElementById("sembuh_note").innerHTML = "0";
 //Proses Pemeriksaan
 document.getElementById("pemeriksaan").innerHTML = "15";
 //Negatif
 document.getElementById("negatif").innerHTML = "744";
-document.getElementById("negatif_note").innerHTML = "96";
+document.getElementById("negatif_note").innerHTML = "0";
 //Total Test
 document.getElementById("totaltes").innerHTML = "793";
 
 //Jumlah Kasus Harian
 //new_case
 var b = document.getElementsByClassName("new_case");
-b[0].innerHTML = "7";
+b[0].innerHTML = "0";
 //percentage_increase
 var c = document.getElementsByClassName("percentage_increase");
-c[0].innerHTML = "26";
+c[0].innerHTML = "0";
 
 //Chart
 $(function () {
@@ -39,11 +39,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2];
+    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th'];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34];
+    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  2];
 
     var mode      = 'index'
     var intersect = true
