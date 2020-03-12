@@ -10,3 +10,4 @@ Dev Sources:
 * [The map of Indonesia](https://jsfiddle.net/gh/get/library/pure/highslide-software/highcharts.com/tree/master/samples/mapdata/countries/id/id-all)
 * [Data](https://infeksiemerging.kemkes.go.id/)
 * [Collected Data](https://docs.google.com/spreadsheets/d/18uJJ8aKw0uKk2WZ18xQgeLhks8WJHGj8tWgw4oTXMN0/edit?usp=sharing)
+* [kawalcovid19 Dataset](https://docs.google.com/spreadsheets/d/1ma1T9hWbec1pXlwZ89WakRk-OfVUQZsOCFl4FwZxzVw/edit#gid=0)
