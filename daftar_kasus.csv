@@ -1,35 +1,35 @@
-﻿Nomor Kasus;Jenis Kasus;Jenis Kelamin;Status;Usia;Tanggal Terkonfirmasi Positif</br>(Berdasarkan Rilis Pemerintah);Wilayah;Kewarganegaraan
-1;Kasus Lokal;Perempuan;Terinfeksi;31;02-Mar-20;Depok, West Java;Indonesia
-2;Kasus Lokal;Perempuan;Terinfeksi;64;02-Mar-20;Depok, West Java;Indonesia
-3;Kasus Lokal;Unknown;Terinfeksi;33;06-Mar-20;Unknown;Indonesia
-4;Kasus Lokal;Unknown;Terinfeksi;34;06-Mar-20;Unknown;Indonesia
-5;Kasus Lokal;Laki-laki;Terinfeksi;55;08-Mar-20;Unknown;Indonesia
-6;Kasus Impor;Laki-laki;Sembuh;36;08-Mar-20;Awak Kapal;Indonesia
-7;Kasus Impor;Perempuan;Terinfeksi;59;09-Mar-20;Unknown;Indonesia
-8;Kasus Lokal;Laki-laki;Terinfeksi;56;09-Mar-20;Unknown;Indonesia
-9;Kasus Impor;Perempuan;Terinfeksi;55;09-Mar-20;Unknown;Indonesia
-10;Kasus Lokal;Laki-laki;Terinfeksi;29;09-Mar-20;Unknown;WNA
-11;Kasus Lokal;Perempuan;Terinfeksi;54;09-Mar-20;Unknown;WNA
-12;Kasus Lokal;Laki-laki;Terinfeksi;31;09-Mar-20;Unknown;Indonesia
-13;Kasus Lokal;Perempuan;Terinfeksi;16;09-Mar-20;Unknown;Indonesia
-14;Kasus Impor;Laki-laki;Sembuh;50;09-Mar-20;Unknown;Indonesia
-15;Kasus Impor;Perempuan;Terinfeksi;43;09-Mar-20;Unknown;Indonesia
-16;Kasus Impor;Perempuan;Terinfeksi;17;09-Mar-20;Unknown;Indonesia
-17;Kasus Impor;Laki-laki;Terinfeksi;56;09-Mar-20;Unknown;Indonesia
-18;Kasus Impor;Laki-laki;Terinfeksi;50;09-Mar-20;Unknown;Indonesia
-19;Kasus Impor;Laki-laki;Sembuh;40;09-Mar-20;Unknown;Indonesia
-20;Kasus Lokal;Perempuan;Terinfeksi;70;10-Mar-20;Unknown;Indonesia
-21;Kasus Lokal;Perempuan;Terinfeksi;47;10-Mar-20;Unknown;Indonesia
-22;Kasus Impor;Perempuan;Terinfeksi;36;10-Mar-20;Unknown;Indonesia
-23;Kasus Impor;Perempuan;Terinfeksi;73;10-Mar-20;Unknown;Indonesia
-24;Kasus Impor;Laki-laki;Terinfeksi;46;10-Mar-20;Unknown;Indonesia
-25;Kasus Impor;Perempuan;Meninggal Dunia;53;10-Mar-20;Unknown;WNA
-26;Kasus Lokal;Laki-laki;Terinfeksi;46;10-Mar-20;Unknown;WNA
-27;Kasus Lokal;Laki-laki;Terinfeksi;33;10-Mar-20;Unknown;Indonesia
-28;Kasus Impor;Laki-laki;Terinfeksi;37;11-Mar-20;Unknown;Indonesia
-29;Kasus Impor;Laki-laki;Terinfeksi;51;11-Mar-20;Unknown;Indonesia
-30;Kasus Impor;Laki-laki;Terinfeksi;84;11-Mar-20;Unknown;Indonesia
-31;Kasus Impor;Perempuan;Terinfeksi;48;11-Mar-20;Unknown;Indonesia
-32;Kasus Impor;Laki-laki;Terinfeksi;45;11-Mar-20;Unknown;Indonesia
-33;Kasus Impor;Laki-laki;Terinfeksi;29;11-Mar-20;Unknown;Indonesia
-34;Kasus Impor;Laki-laki;Terinfeksi;42;11-Mar-20;Unknown;Indonesia
+﻿Nomor Kasus;Jenis Kasus;Jenis Kelamin;Status;Usia;Tanggal Terkonfirmasi Positif;Wilayah;Kewarganegaraan
+1;Kasus Lokal;Perempuan;Positif;31;02-Mar-20;Depok, West Java;WNI
+2;Kasus Lokal;Perempuan;Positif;64;02-Mar-20;Depok, West Java;WNI
+3;Kasus Lokal;Perempuan;Positif;33;06-Mar-20;-;WNI
+4;Kasus Lokal;-;Positif;34;06-Mar-20;-;WNI
+5;Kasus Lokal;Laki-laki;Positif;55;08-Mar-20;-;WNI
+6;Kasus Impor;Laki-laki;Sembuh;36;08-Mar-20;Awak Kapal;WNI
+7;Kasus Impor;Perempuan;Positif;59;09-Mar-20;-;WNI
+8;Kasus Lokal;Laki-laki;Positif;56;09-Mar-20;-;WNI
+9;Kasus Impor;Perempuan;Positif;55;09-Mar-20;-;WNI
+10;Kasus Lokal;Laki-laki;Positif;29;09-Mar-20;-;WNA
+11;Kasus Lokal;Perempuan;Positif;54;09-Mar-20;-;WNA
+12;Kasus Lokal;Laki-laki;Positif;31;09-Mar-20;-;WNI
+13;Kasus Lokal;Perempuan;Positif;16;09-Mar-20;-;WNI
+14;Kasus Impor;Laki-laki;Sembuh;50;09-Mar-20;-;WNI
+15;Kasus Impor;Perempuan;Positif;43;09-Mar-20;-;WNI
+16;Kasus Impor;Perempuan;Positif;17;09-Mar-20;-;WNI
+17;Kasus Impor;Laki-laki;Positif;56;09-Mar-20;-;WNI
+18;Kasus Impor;Laki-laki;Positif;50;09-Mar-20;-;WNI
+19;Kasus Impor;Laki-laki;Sembuh;40;09-Mar-20;-;WNI
+20;Kasus Lokal;Perempuan;Positif;70;10-Mar-20;-;WNI
+21;Kasus Lokal;Perempuan;Positif;47;10-Mar-20;-;WNI
+22;Kasus Impor;Perempuan;Positif;36;10-Mar-20;-;WNI
+23;Kasus Impor;Perempuan;Positif;73;10-Mar-20;-;WNI
+24;Kasus Impor;Laki-laki;Positif;46;10-Mar-20;-;WNI
+25;Kasus Impor;Perempuan;Meninggal Dunia;53;10-Mar-20;-;WNA
+26;Kasus Lokal;Laki-laki;Positif;46;10-Mar-20;-;WNA
+27;Kasus Lokal;Laki-laki;Positif;33;10-Mar-20;-;WNI
+28;Kasus Impor;Laki-laki;Positif;37;11-Mar-20;-;WNI
+29;Kasus Impor;Laki-laki;Positif;51;11-Mar-20;-;WNI
+30;Kasus Impor;Laki-laki;Positif;84;11-Mar-20;-;WNI
+31;Kasus Impor;Perempuan;Positif;48;11-Mar-20;-;WNI
+32;Kasus Impor;Laki-laki;Positif;45;11-Mar-20;-;WNI
+33;Kasus Impor;Laki-laki;Positif;29;11-Mar-20;-;WNI
+34;Kasus Impor;Laki-laki;Positif;42;11-Mar-20;-;WNI

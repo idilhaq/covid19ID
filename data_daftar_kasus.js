@@ -19,15 +19,29 @@ function arrayToTable(tableData) {
             table.append(thead);
         }else{
             if(sembuh.indexOf(i) != -1){
-                var row = $('<tr style="text-align:center; background-color: #9bfa9b;"></tr>');
+                var row = $('<tr style="text-align:center; background-color: #cdeccd;"></tr>');
+                $(rowData).each(function (j, cellData) {
+                    if(j == 3){
+                        row.append($('<td><span class="badge badge-success">'+cellData+'</span></td>'));
+                    }else{
+                        row.append($('<td>'+cellData+'</td>'));
+                    }                    
+                });
             }else if(meninggal.indexOf(i) != -1){
-                var row = $('<tr style="text-align:center; background-color: #ffa3a3;"></tr>');
+                var row = $('<tr style="text-align:center; background-color: #f5d6d6;"></tr>');
+                $(rowData).each(function (j, cellData) {
+                    if(j == 3){
+                        row.append($('<td><span class="badge badge-danger">'+cellData+'</span></td>'));
+                    }else{
+                        row.append($('<td>'+cellData+'</td>'));
+                    }   
+                });
             }else{
                 var row = $('<tr style="text-align:center"></tr>');
+                $(rowData).each(function (j, cellData) {
+                    row.append($('<td>'+cellData+'</td>'));
+                });
             }
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td>'+cellData+'</td>'));
-            });
             tbody.append(row);
         }
         
