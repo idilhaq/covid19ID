@@ -1,16 +1,16 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Jum'at, 13 Maret 2020 11:30 WIB";
+var date = "Update per Jum'at, 13 Maret 2020 18:30 WIB";
 a[0].innerHTML = date;
 a[1].innerHTML = date;
 
 //Dashboard
 //Positif
-document.getElementById("positif").innerHTML = "30";
-document.getElementById("positif_note").innerHTML = "0";
+document.getElementById("positif").innerHTML = "69";
+document.getElementById("positif_note").innerHTML = "35";
 //Meninggal
-document.getElementById("meninggal").innerHTML = "1";
-document.getElementById("meninggal_note").innerHTML = "0";
+document.getElementById("meninggal").innerHTML = "4";
+document.getElementById("meninggal_note").innerHTML = "3";
 //Sembuh
 document.getElementById("sembuh").innerHTML = "3";
 document.getElementById("sembuh_note").innerHTML = "0";
@@ -25,10 +25,10 @@ document.getElementById("totaltes").innerHTML = "862";
 //Jumlah Kasus Harian
 //new_case
 var b = document.getElementsByClassName("new_case");
-b[0].innerHTML = "0";
+b[0].innerHTML = "35";
 //percentage_increase
 var c = document.getElementsByClassName("percentage_increase");
-c[0].innerHTML = "0";
+c[0].innerHTML = "103";
 
 //Chart
 $(function () {
@@ -40,9 +40,9 @@ $(function () {
     }
 
     var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 34];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0,  0];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1,  1];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69];
+    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0,  35];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1,  3];
     var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  3];
 
     var mode      = 'index'
