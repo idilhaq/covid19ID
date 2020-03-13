@@ -1,35 +1,70 @@
-﻿Nomor Kasus;Jenis Kasus;Jenis Kelamin;Status;Usia;Tanggal Terkonfirmasi Positif;Wilayah;Kewarganegaraan
-1;Kasus Lokal;Perempuan;Positif;31;02-Mar-20;Depok, West Java;WNI
-2;Kasus Lokal;Perempuan;Positif;64;02-Mar-20;Depok, West Java;WNI
-3;Kasus Lokal;Perempuan;Positif;33;06-Mar-20;-;WNI
-4;Kasus Lokal;-;Positif;34;06-Mar-20;-;WNI
-5;Kasus Lokal;Laki-laki;Positif;55;08-Mar-20;-;WNI
-6;Kasus Impor;Laki-laki;Sembuh;36;08-Mar-20;Awak Kapal;WNI
-7;Kasus Impor;Perempuan;Positif;59;09-Mar-20;-;WNI
-8;Kasus Lokal;Laki-laki;Positif;56;09-Mar-20;-;WNI
-9;Kasus Impor;Perempuan;Positif;55;09-Mar-20;-;WNI
-10;Kasus Lokal;Laki-laki;Positif;29;09-Mar-20;-;WNA
-11;Kasus Lokal;Perempuan;Positif;54;09-Mar-20;-;WNA
-12;Kasus Lokal;Laki-laki;Positif;31;09-Mar-20;-;WNI
-13;Kasus Lokal;Perempuan;Positif;16;09-Mar-20;-;WNI
-14;Kasus Impor;Laki-laki;Sembuh;50;09-Mar-20;-;WNI
-15;Kasus Impor;Perempuan;Positif;43;09-Mar-20;-;WNI
-16;Kasus Impor;Perempuan;Positif;17;09-Mar-20;-;WNI
-17;Kasus Impor;Laki-laki;Positif;56;09-Mar-20;-;WNI
-18;Kasus Impor;Laki-laki;Positif;50;09-Mar-20;-;WNI
-19;Kasus Impor;Laki-laki;Sembuh;40;09-Mar-20;-;WNI
-20;Kasus Lokal;Perempuan;Positif;70;10-Mar-20;-;WNI
-21;Kasus Lokal;Perempuan;Positif;47;10-Mar-20;-;WNI
-22;Kasus Impor;Perempuan;Positif;36;10-Mar-20;-;WNI
-23;Kasus Impor;Perempuan;Positif;73;10-Mar-20;-;WNI
-24;Kasus Impor;Laki-laki;Positif;46;10-Mar-20;-;WNI
-25;Kasus Impor;Perempuan;Meninggal Dunia;53;10-Mar-20;-;WNA
-26;Kasus Lokal;Laki-laki;Positif;46;10-Mar-20;-;WNA
-27;Kasus Lokal;Laki-laki;Positif;33;10-Mar-20;-;WNI
-28;Kasus Impor;Laki-laki;Positif;37;11-Mar-20;-;WNI
-29;Kasus Impor;Laki-laki;Positif;51;11-Mar-20;-;WNI
-30;Kasus Impor;Laki-laki;Positif;84;11-Mar-20;-;WNI
-31;Kasus Impor;Perempuan;Positif;48;11-Mar-20;-;WNI
-32;Kasus Impor;Laki-laki;Positif;45;11-Mar-20;-;WNI
-33;Kasus Impor;Laki-laki;Positif;29;11-Mar-20;-;WNI
-34;Kasus Impor;Laki-laki;Positif;42;11-Mar-20;-;WNI
+﻿No Kasus	Jenis Kasus	Jenis Kelamin	Status	Usia	Konfirmasi Positif	Wilayah	Kewarganegaraan
+1	Kasus Lokal	Perempuan	Sembuh	31	2 March 2020	Depok, West Java	WNI
+2	Kasus Lokal	Perempuan	Positif	64	2 March 2020	Depok, West Java	WNI
+3	Kasus Lokal	Perempuan	Sembuh	33	6 March 2020	-	WNI
+4	Kasus Lokal	Unknown	Positif	34	6 March 2020	-	WNI
+5	Kasus Lokal	Laki-laki	Positif	55	8 March 2020	DKI Jakarta	WNI
+6	Kasus Impor	Laki-laki	Sembuh	36	8 March 2020	Awak Kapal	WNI
+7	Kasus Impor	Perempuan	Positif	59	9 March 2020	-	WNI
+8	Kasus Lokal	Laki-laki	Positif	56	9 March 2020	-	WNI
+9	Kasus Impor	Perempuan	Positif	55	9 March 2020	-	WNI
+10	Kasus Lokal	Laki-laki	Positif	29	9 March 2020	-	WNA
+11	Kasus Lokal	Perempuan	Positif	54	9 March 2020	-	WNA
+12	Kasus Lokal	Laki-laki	Positif	31	9 March 2020	-	WNI
+13	Kasus Lokal	Perempuan	Positif	16	9 March 2020	-	WNI
+14	Kasus Impor	Laki-laki	Sembuh	50	9 March 2020	-	WNI
+15	Kasus Impor	Perempuan	Positif	43	9 March 2020	-	WNI
+16	Kasus Impor	Perempuan	Positif	17	9 March 2020	-	WNI
+17	Kasus Impor	Laki-laki	Positif	56	9 March 2020	-	WNI
+18	Kasus Impor	Laki-laki	Positif	50	9 March 2020	-	WNI
+19	Kasus Impor	Laki-laki	Sembuh	40	9 March 2020	-	WNI
+20	Kasus Lokal	Perempuan	Positif	70	10 March 2020	-	WNI
+21	Kasus Lokal	Perempuan	Positif	47	10 March 2020	-	WNI
+22	Kasus Impor	Perempuan	Positif	36	10 March 2020	-	WNI
+23	Kasus Impor	Perempuan	Positif	73	10 March 2020	-	WNI
+24	Kasus Impor	Laki-laki	Positif	46	10 March 2020	-	WNI
+25	Kasus Impor	Perempuan	Meninggal Dunia	53	10 March 2020	-	WNA UK
+26	Kasus Lokal	Laki-laki	Positif	46	10 March 2020	-	WNA
+27	Kasus Lokal	Laki-laki	Positif	33	10 March 2020	-	WNI
+28	Kasus Impor	Laki-laki	Positif	37	11 March 2020	-	WNI
+29	Kasus Impor	Laki-laki	Positif	51	11 March 2020	-	WNI
+30	Kasus Impor	Laki-laki	Positif	84	11 March 2020	-	WNI
+31	Kasus Impor	Perempuan	Positif	48	11 March 2020	-	WNI
+32	Kasus Impor	Laki-laki	Positif	45	11 March 2020	-	WNI
+33	Kasus Impor	Laki-laki	Positif	29	11 March 2020	-	WNI
+34	Kasus Impor	Laki-laki	Positif	42	11 March 2020	-	WNI
+35	-	Perempuan	Meninggal Dunia	57	13 March 2020	-	-
+36	-	Perempuan	Meninggal Dunia	37	13 March 2020	DKI Jakarta	-
+37	-	Laki-laki	Positif	43	13 March 2020	-	-
+38	-	Perempuan	Positif	80	13 March 2020	-	-
+39	-	Laki-laki	Positif	54	13 March 2020	-	-
+40	-	Perempuan	Positif	46	13 March 2020	-	-
+41	-	Laki-laki	Positif	40	13 March 2020	-	-
+42	-	Laki-laki	Positif	66	13 March 2020	-	-
+43	-	Laki-laki	Positif	34	13 March 2020	-	-
+44	-	Laki-laki	Positif	57	13 March 2020	-	-
+45	-	Perempuan	Positif	29	13 March 2020	-	-
+46	-	Laki-laki	Positif	30	13 March 2020	-	-
+47	-	Laki-laki	Positif	61	13 March 2020	-	-
+48	-	Laki-laki	Positif	35	13 March 2020	-	-
+49	-	Laki-laki	Positif	3	13 March 2020	-	-
+50	Kasus Lokal	Perempuan	Meninggal Dunia	57	13 March 2020	Surakarta, Solo	WNI
+51	-	Laki-laki	Positif	60	13 March 2020	-	-
+52	-	Perempuan	Positif	59	13 March 2020	-	-
+53	-	Perempuan	Positif	24	13 March 2020	-	-
+54	-	Laki-laki	Positif	2	13 March 2020	-	-
+55	-	Perempuan	Positif	26	13 March 2020	-	-
+56	-	Laki-laki	Positif	58	13 March 2020	-	-
+57	-	Perempuan	Positif	27	13 March 2020	-	-
+58	-	Laki-laki	Positif	51	13 March 2020	-	-
+59	-	Laki-laki	Positif	63	13 March 2020	-	-
+60	-	Perempuan	Positif	25	13 March 2020	-	-
+61	-	Perempuan	Positif	58	13 March 2020	-	-
+62	-	Laki-laki	Positif	51	13 March 2020	-	-
+63	-	Laki-laki	Positif	34	13 March 2020	-	-
+64	-	Perempuan	Positif	49	13 March 2020	-	-
+65	-	Laki-laki	Positif	48	13 March 2020	-	-
+66	-	Laki-laki	Positif	73	13 March 2020	-	-
+67	-	Perempuan	Positif	25	13 March 2020	-	-
+68	-	Perempuan	Positif	38	13 March 2020	-	-
+69	-	Perempuan	Positif	80	13 March 2020	-	-

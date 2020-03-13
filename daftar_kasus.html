@@ -76,7 +76,7 @@
                                         Daftar Kasus
                                     </h3>
                                 </div>
-                                <div id="tabel_kasus" class="card-body table-responsive p-0">
+                                <div id="tabel_kasus" class="card-body">
                                 </div>
                             </div>
                         </section>
@@ -102,9 +102,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>    
     <!-- Bootstrap -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="plugins/datatables/jquery.dataTables.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
     <!-- AdminLTE -->
     <script src="dist/js/adminlte.js"></script>
     <script src="data_daftar_kasus.js"></script>
+    <script>
+        $(function () {
+          $('#tabel_k').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "pageLength": 20,
+          });
+        });
+      </script>
 </body>
 
 </html>

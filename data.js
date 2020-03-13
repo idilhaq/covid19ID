@@ -1,6 +1,6 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Jum'at, 13 Maret 2020 18:30 WIB";
+var date = "Update per Jum'at, 13 Maret 2020 23:00 WIB";
 a[0].innerHTML = date;
 a[1].innerHTML = date;
 
@@ -42,8 +42,8 @@ $(function () {
     var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th'];
     var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69];
     var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0,  35];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1,  3];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  3];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1,  4];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5];
 
     var mode      = 'index'
     var intersect = true
@@ -143,14 +143,14 @@ $(function () {
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
     ['id-3700', 0],
-    ['id-ac', 0],
-    ['id-jt', 0],
-    ['id-be', 0],
-    ['id-bt', 0],
+    ['id-ac', 0], //Aceh
+    ['id-jt', 1], //Jawa Tengah
+    ['id-be', 0], //Bengkulu
+    ['id-bt', 0], //Banten
     ['id-kb', 0],
     ['id-bb', 0],
-    ['id-ba', 1],
-    ['id-ji', 0],
+    ['id-ba', 1], //bali
+    ['id-ji', 0], //Jawa Timur
     ['id-ks', 0],
     ['id-nt', 0],
     ['id-se', 0],
@@ -163,20 +163,20 @@ var data = [
     ['id-la', 0],
     ['id-sb', 0],
     ['id-ma', 0],
-    ['id-nb', 0],
-    ['id-sg', 0],
-    ['id-st', 0],
-    ['id-pa', 0],
-    ['id-jr', 0],
-    ['id-ki', 0],
+    ['id-nb', 0], //NTB
+    ['id-sg', 0], //Kendari
+    ['id-st', 0], //Sulawesi Tengah
+    ['id-pa', 0], //Papua
+    ['id-jr', 2], //Jawa Barat
+    ['id-ki', 0], //Kalimantan Timur
     ['id-1024', 0],
-    ['id-jk', 33],
-    ['id-go', 0],
-    ['id-yo', 0],
-    ['id-sl', 0],
-    ['id-sr', 0],
-    ['id-ja', 0],
-    ['id-kt', 0]
+    ['id-jk', 65], //DKI Jakarta
+    ['id-go', 0], //Gorontalo
+    ['id-yo', 0], //Yogyakarta
+    ['id-sl', 0], //Sumatera Selatan
+    ['id-sr', 0], //Sulawesi Barat
+    ['id-ja', 0], //Jambi
+    ['id-kt', 0] //Kalimantan Tengah
 ];
 
 // Create the chart

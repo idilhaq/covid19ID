@@ -1,13 +1,13 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Jum'at, 13 Maret 2020 11:30 WIB";
+var date = "Update per Jum'at, 13 Maret 2020 23:00 WIB";
 a[0].innerHTML = date;
 
 function arrayToTable(tableData) {
-    var table = $('<table class="table table-striped table-valign-middle"></table>');
+    var table = $('<table id="tabel_k" class="table table-striped table-valign-middle"></table>');
     var tbody = $('<tbody></tbody>')
-    var sembuh = [6,14,19];
-    var meninggal = [25];
+    var sembuh = [1,3,6,14,19];
+    var meninggal = [25,35,36,50];
     $(tableData).each(function (i, rowData) {
         if(i == 0){
             var thead = $('<thead></thead>');
