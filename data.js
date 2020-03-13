@@ -1,24 +1,24 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Kamis, 12 Maret 2020 22:15 WIB";
+var date = "Update per Jum'at, 13 Maret 2020 11:30 WIB";
 a[0].innerHTML = date;
 a[1].innerHTML = date;
 
 //Dashboard
 //Positif
-document.getElementById("positif").innerHTML = "29";
+document.getElementById("positif").innerHTML = "30";
 document.getElementById("positif_note").innerHTML = "0";
 //Meninggal
 document.getElementById("meninggal").innerHTML = "1";
 document.getElementById("meninggal_note").innerHTML = "0";
 //Sembuh
 document.getElementById("sembuh").innerHTML = "3";
-document.getElementById("sembuh_note").innerHTML = "1";
+document.getElementById("sembuh_note").innerHTML = "0";
 //Proses Pemeriksaan
-document.getElementById("pemeriksaan").innerHTML = "17";
+document.getElementById("pemeriksaan").innerHTML = "0";
 //Negatif
 document.getElementById("negatif").innerHTML = "811";
-document.getElementById("negatif_note").innerHTML = "67";
+document.getElementById("negatif_note").innerHTML = "0";
 //Total Test
 document.getElementById("totaltes").innerHTML = "862";
 
@@ -39,11 +39,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3];
+    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th'];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 34];
+    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0,  0];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  1,  1,  1];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  3];
 
     var mode      = 'index'
     var intersect = true
