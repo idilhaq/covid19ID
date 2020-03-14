@@ -18,4 +18,4 @@ document.getElementById("pemeriksaan").innerHTML = "20";
 document.getElementById("negatif").innerHTML = "1109";
 document.getElementById("negatif_note").innerHTML = "192";
 //Total Test
-document.getElementById("totaltes").innerHTML = "1198";
+document.getElementById("totaltes").innerHTML = "1205";
