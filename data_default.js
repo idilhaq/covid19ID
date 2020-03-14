@@ -13,7 +13,7 @@ document.getElementById("meninggal_note").innerHTML = "0";
 document.getElementById("sembuh").innerHTML = "8";
 document.getElementById("sembuh_note").innerHTML = "3";
 //Proses Pemeriksaan
-document.getElementById("pemeriksaan").innerHTML = "20";
+document.getElementById("pemeriksaan").innerHTML = "0";
 //Negatif
 document.getElementById("negatif").innerHTML = "1109";
 document.getElementById("negatif_note").innerHTML = "192";
