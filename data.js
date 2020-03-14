@@ -1,3 +1,5 @@
+a[0].innerHTML = date;
+a[1].innerHTML = date;
 //Jumlah Kasus Harian
 //new_case
 var b = document.getElementsByClassName("new_case");

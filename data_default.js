@@ -1,8 +1,6 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var date = "Update per Sabtu, 14 Maret 2020 10:50 WIB";
-a[0].innerHTML = date;
-a[1].innerHTML = date;
 
 //Dashboard
 //Positif
