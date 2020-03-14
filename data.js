@@ -3,10 +3,10 @@ a[1].innerHTML = date;
 //Jumlah Kasus Harian
 //new_case
 var b = document.getElementsByClassName("new_case");
-b[0].innerHTML = "0";
+b[0].innerHTML = "27";
 //percentage_increase
 var c = document.getElementsByClassName("percentage_increase");
-c[0].innerHTML = "0";
+c[0].innerHTML = "39";
 
 //Chart
 $(function () {
@@ -18,10 +18,10 @@ $(function () {
     }
 
     var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 69];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4, 4, 4];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3, 5, 5];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96];
+    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35, 27];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4, 4];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5, 8];
 
     var mode      = 'index'
     var intersect = true
