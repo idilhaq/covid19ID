@@ -1,34 +1,10 @@
-//Tanggal Update
-var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Jum'at, 13 Maret 2020 23:00 WIB";
-a[0].innerHTML = date;
-a[1].innerHTML = date;
-
-//Dashboard
-//Positif
-document.getElementById("positif").innerHTML = "69";
-document.getElementById("positif_note").innerHTML = "35";
-//Meninggal
-document.getElementById("meninggal").innerHTML = "4";
-document.getElementById("meninggal_note").innerHTML = "0";
-//Sembuh
-document.getElementById("sembuh").innerHTML = "5";
-document.getElementById("sembuh_note").innerHTML = "2";
-//Proses Pemeriksaan
-document.getElementById("pemeriksaan").innerHTML = "0";
-//Negatif
-document.getElementById("negatif").innerHTML = "917";
-document.getElementById("negatif_note").innerHTML = "106";
-//Total Test
-document.getElementById("totaltes").innerHTML = "986";
-
 //Jumlah Kasus Harian
 //new_case
 var b = document.getElementsByClassName("new_case");
-b[0].innerHTML = "35";
+b[0].innerHTML = "0";
 //percentage_increase
 var c = document.getElementsByClassName("percentage_increase");
-c[0].innerHTML = "103";
+c[0].innerHTML = "0";
 
 //Chart
 $(function () {
@@ -39,11 +15,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0,  35];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5];
+    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th'];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 69];
+    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4, 4, 4];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3, 5, 5];
 
     var mode      = 'index'
     var intersect = true

@@ -1,8 +1,3 @@
-//Tanggal Update
-var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Jum'at, 13 Maret 2020 23:00 WIB";
-a[0].innerHTML = date;
-
 function arrayToTable(tableData) {
     var table = $('<table id="tabel_k" class="table table-striped table-valign-middle"></table>');
     var tbody = $('<tbody></tbody>')

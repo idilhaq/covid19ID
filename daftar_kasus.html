@@ -68,6 +68,97 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        <div class="col-lg-2 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h1 id="positif" style="text-align: center">0</h1>
+
+                                    <p style="text-align: center;">(+<span id="positif_note">0</span>) Positif</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="/covid19ID/daftar_kasus.html" target="_blank"
+                                    class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-black">
+                                <div class="inner">
+                                    <h1 id="meninggal" style="text-align: center;">0</h1>
+
+                                    <p style="text-align: center;">(+<span id="meninggal_note">0</span>) Meninggal</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add" style="color:rgba(121, 145, 145, 0.274)"></i>
+                                </div>
+                                <a href="/covid19ID/daftar_kasus.html" target="_blank"
+                                    class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h1 id="sembuh" style="text-align: center;">0</h1>
+
+                                    <p style="text-align: center;">(+<span id="sembuh_note">0</span>) Sembuh</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="/covid19ID/daftar_kasus.html" target="_blank"
+                                    class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-6">
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h1 id="pemeriksaan" style="text-align: center;">0</h1>
+
+                                    <p style="text-align: center;">Proses Pemeriksaan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="/covid19ID/daftar_kasus.html" target="_blank"
+                                    class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-6">
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h1 id="negatif" style="text-align: center;">0</h1>
+
+                                    <p style="text-align: center;">(+<span id="negatif_note">0</span>) Negatif</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="/covid19ID/daftar_kasus.html" target="_blank"
+                                    class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-6">
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h1 id="totaltes" style="text-align: center;">0</h1>
+
+                                    <p style="text-align: center;">Total Test</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="/covid19ID/daftar_kasus.html" target="_blank"
+                                    class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <section class="col-lg-12 connectedSortable">
                             <div class="card">
                                 <div class="card-header">
@@ -76,7 +167,7 @@
                                         Daftar Kasus
                                     </h3>
                                 </div>
-                                <div id="tabel_kasus" class="card-body">
+                                <div id="tabel_kasus" class="card-body table-responsive">
                                 </div>
                             </div>
                         </section>
@@ -107,6 +198,7 @@
     <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
     <!-- AdminLTE -->
     <script src="dist/js/adminlte.js"></script>
+    <script src="data_default.js"></script>
     <script src="data_daftar_kasus.js"></script>
     <script>
         $(function () {
