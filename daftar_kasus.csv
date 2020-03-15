@@ -1,8 +1,8 @@
 ﻿No Kasus	Jenis Kasus	Jenis Kelamin	Status	Usia	Tanggal Terkonfirmasi Positif	Wilayah	Kewarganegaraan
 1	Kasus Lokal	Perempuan	Sembuh	31	2 March 2020	Depok, West Java	WNI
-2	Kasus Lokal	Perempuan	Positif	64	2 March 2020	Depok, West Java	WNI
+2	Kasus Lokal	Perempuan	Sembuh	64	2 March 2020	Depok, West Java	WNI
 3	Kasus Lokal	Perempuan	Sembuh	33	6 March 2020	-	WNI
-4	Kasus Lokal	Unknown	Positif	34	6 March 2020	-	WNI
+4	Kasus Lokal	-	Positif	34	6 March 2020	-	WNI
 5	Kasus Lokal	Laki-laki	Positif	55	8 March 2020	DKI Jakarta	WNI
 6	Kasus Impor	Laki-laki	Sembuh	36	8 March 2020	Awak Kapal	WNI
 7	Kasus Impor	Perempuan	Positif	59	9 March 2020	-	WNI
