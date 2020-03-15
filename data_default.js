@@ -1,21 +1,33 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Sabtu, 14 Maret 2020 19:00 WIB";
+var date = "Update per Minggu, 15 Maret 2020 07:00 WIB";
+var x_data = [96,0,5,0,8,0,0,1109,0,1205,0]
+// positif         = x_data[0]
+// new_positif     = x_data[1]
+// meninggal       = x_data[2]
+// new_meninggal   = x_data[3]
+// sembuh          = x_data[4]
+// new_sembuh      = x_data[5]
+// pemeriksaan     = x_data[6]
+// negatif         = x_data[7]
+// new_negatif     = x_data[8]
+// totaltes        = x_data[9]
+// percentage_inc  = x_data[10]
 
 //Dashboard
 //Positif
-document.getElementById("positif").innerHTML = "96";
-document.getElementById("positif_note").innerHTML = "27";
+document.getElementById("positif").innerHTML = x_data[0];
+document.getElementById("positif_note").innerHTML = x_data[1];
 //Meninggal
-document.getElementById("meninggal").innerHTML = "4";
-document.getElementById("meninggal_note").innerHTML = "0";
+document.getElementById("meninggal").innerHTML = x_data[2];
+document.getElementById("meninggal_note").innerHTML = x_data[3];
 //Sembuh
-document.getElementById("sembuh").innerHTML = "8";
-document.getElementById("sembuh_note").innerHTML = "3";
+document.getElementById("sembuh").innerHTML = x_data[4];
+document.getElementById("sembuh_note").innerHTML = x_data[5];
 //Proses Pemeriksaan
-document.getElementById("pemeriksaan").innerHTML = "0";
+document.getElementById("pemeriksaan").innerHTML = x_data[6];
 //Negatif
-document.getElementById("negatif").innerHTML = "1109";
-document.getElementById("negatif_note").innerHTML = "192";
+document.getElementById("negatif").innerHTML = x_data[7];
+document.getElementById("negatif_note").innerHTML = x_data[8];
 //Total Test
-document.getElementById("totaltes").innerHTML = "1205";
+document.getElementById("totaltes").innerHTML = x_data[9];

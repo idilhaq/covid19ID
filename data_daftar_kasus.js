@@ -2,7 +2,7 @@ a[0].innerHTML = date;
 function arrayToTable(tableData) {
     var table = $('<table id="tabel_k" class="table table-striped table-valign-middle"></table>');
     var tbody = $('<tbody></tbody>')
-    var sembuh = [1,3,6,14,19];
+    var sembuh = [1,2,3,6,14,19];
     var meninggal = [25,35,36,50];
     $(tableData).each(function (i, rowData) {
         if(i == 0){
