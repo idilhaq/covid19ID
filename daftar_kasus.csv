@@ -2,7 +2,7 @@
 1	Kasus Lokal	Perempuan	Sembuh	31	2 March 2020	Depok, West Java	WNI
 2	Kasus Lokal	Perempuan	Sembuh	64	2 March 2020	Depok, West Java	WNI
 3	Kasus Lokal	Perempuan	Sembuh	33	6 March 2020	-	WNI
-4	Kasus Lokal	-	Positif	34	6 March 2020	-	WNI
+4	Kasus Lokal	Unknown	Positif	34	6 March 2020	-	WNI
 5	Kasus Lokal	Laki-laki	Positif	55	8 March 2020	DKI Jakarta	WNI
 6	Kasus Impor	Laki-laki	Sembuh	36	8 March 2020	Awak Kapal	WNI
 7	Kasus Impor	Perempuan	Positif	59	9 March 2020	-	WNI
@@ -95,3 +95,24 @@
 94	-	-	Positif	-	14 March 2020	-	-
 95	-	-	Positif	-	14 March 2020	-	-
 96	-	-	Positif	-	14 March 2020	-	-
+97	-	-	Positif	-	15 March 2020	-	-
+98	-	-	Positif	-	15 March 2020	-	-
+99	-	-	Positif	-	15 March 2020	-	-
+100	-	-	Positif	-	15 March 2020	-	-
+101	-	-	Positif	-	15 March 2020	-	-
+102	-	-	Positif	-	15 March 2020	-	-
+103	-	-	Positif	-	15 March 2020	-	-
+104	-	-	Positif	-	15 March 2020	-	-
+105	-	-	Positif	-	15 March 2020	-	-
+106	-	-	Positif	-	15 March 2020	-	-
+107	-	-	Positif	-	15 March 2020	-	-
+108	-	-	Positif	-	15 March 2020	-	-
+109	-	-	Positif	-	15 March 2020	-	-
+110	-	-	Positif	-	15 March 2020	-	-
+111	-	-	Positif	-	15 March 2020	-	-
+112	-	-	Positif	-	15 March 2020	-	-
+113	-	-	Positif	-	15 March 2020	-	-
+114	-	-	Positif	-	15 March 2020	-	-
+115	-	-	Positif	-	15 March 2020	-	-
+116	-	-	Positif	-	15 March 2020	-	-
+117	-	-	Positif	-	15 March 2020	-	-
