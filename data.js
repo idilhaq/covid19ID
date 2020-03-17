@@ -21,7 +21,7 @@ $(function () {
     var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172];
     var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35, 27,  21,  17,  38];
     var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4,  5,   5,   5,   5];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5,  8,   8,   8,   8];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5,  8,   8,   8,   9];
 
     var mode      = 'index'
     var intersect = true
