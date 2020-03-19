@@ -17,11 +17,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227, 309];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35, 27,  21,  17,  38,  55,  82];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4,  5,   5,   5,   5,  19,  19];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5,  8,   8,   8,   8,  11,  11];
+    var data_labels         = ['3/1','3/2','3/3','3/4','3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19'];
+    var data_akumulatif     = [0,2,2,2,2,4,4,6,19,27,34,34,69,96,117,134,172,227,309];
+    var data_kasus_harian   = [0,2,0,0,0,2,0,2,13,8,7,0,35,27,21,17,38,55,82];
+    var data_meninggal      = [0,0,0,0,0,0,0,0,0,0,2,4,4,5,5,5,5,19,25];
+    var data_sembuh         = [0,0,0,0,0,0,0,0,0,0,2,3,5,8,8,8,9,11,15];
 
     var mode      = 'index'
     var intersect = true
@@ -121,36 +121,36 @@ $(function () {
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
     ['id-3700', 0],
+    ['id-jk', 210], //DKI Jakarta
+    ['id-bt', 27], //Banten
+    ['id-jr', 26], //Jawa Barat
+    ['id-ji', 9], //Jawa Timur
+    ['id-yo', 5], //Yogyakarta
+    ['id-ki', 3], //Kalimantan Timur
+    ['id-ri', 3], //Riau
+    ['id-st', 3], //Sulawesi Tengah
+    ['id-kr', 2], //Kepulauan Riau
+    ['id-se', 2], //Sulawesi Selatan
+    ['id-sb', 2], //Sumatera Barat
+    ['id-ba', 1], //Bali
+    ['id-kb', 1], //Kalimantan Barat
+    ['id-1024', 1], //Lampung
+    ['id-sw', 1], //Sulawesi Utara
     ['id-ac', 0], //Aceh
     ['id-jt', 9], //Jawa Tengah
     ['id-be', 0], //Bengkulu
-    ['id-bt', 27], //Banten
-    ['id-kb', 0], //Kalimantan Barat
     ['id-bb', 0], //Kepulauan Bangka Belitung
-    ['id-ba', 1], //Bali
-    ['id-ji', 8], //Jawa Timur
     ['id-ks', 0], //Kalimantan Selatan
     ['id-nt', 0], //Nusa Tenggara Timur
-    ['id-se', 0], //Sulawesi Selatan
-    ['id-kr', 0], //Kepulauan Riau
     ['id-ib', 0], //Irian Jaya Barat
     ['id-su', 0], //Sumatera Utara
-    ['id-ri', 0], //Riau
-    ['id-sw', 0], //Sulawesi Utara
     ['id-ku', 0], //Kalimantan Utara
     ['id-la', 0], //Maluku Utara
-    ['id-sb', 0], //Sumatera Barat
     ['id-ma', 0], //Maluku
     ['id-nb', 0], //NTB
     ['id-sg', 0], //Kendari
-    ['id-st', 0], //Sulawesi Tengah
     ['id-pa', 0], //Papua
-    ['id-jr', 12], //Jawa Barat
-    ['id-ki', 1], //Kalimantan Timur
-    ['id-1024', 0], //Lampung
-    ['id-jk', 210], //DKI Jakarta
     ['id-go', 0], //Gorontalo
-    ['id-yo', 2], //Yogyakarta
     ['id-sl', 0], //Sumatera Selatan
     ['id-sr', 0], //Sulawesi Barat
     ['id-ja', 0], //Jambi
@@ -179,17 +179,36 @@ Highcharts.mapChart('containerMap', {
     },
 
     colorAxis: {
-        min: 0
-    },
+      dataClasses: [{
+          name: 'No Case',
+          to: 1,
+          color: "#FFFFFF"
+      }, {
+          name: '1 - 50',
+          from: 1,
+          to: 50,
+          color: "#FCDA6C"
+      }, {
+          name: '50 - 100',
+          from: 50,
+          to: 100,
+          color: "#EEA33F"
+      }, {
+          name: '100 - 250',  
+          from: 100,
+          to: 250,
+          color: "#E9663F"
+      }, {
+          name: '250 - 500',
+          from: 250,
+          to: 500,
+          color: "#FF0000"
+      }]
+  },
 
     series: [{
         data: data,
         name: 'Total Terinfeksi',
-        states: {
-            hover: {
-                color: '#BADA55'
-            }
-        },
         dataLabels: {
             enabled: true,
             format: '{point.name}'
