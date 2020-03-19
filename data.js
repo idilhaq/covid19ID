@@ -18,8 +18,8 @@ $(function () {
     }
 
     var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227, 227];
-    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35, 27,  21,  17,  38,  55];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227, 309];
+    var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35, 27,  21,  17,  38,  55,  82];
     var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4,  5,   5,   5,   5,  19,  19];
     var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5,  8,   8,   8,   8,  11,  11];
 
@@ -124,31 +124,31 @@ var data = [
     ['id-ac', 0], //Aceh
     ['id-jt', 9], //Jawa Tengah
     ['id-be', 0], //Bengkulu
-    ['id-bt', 10], //Banten
-    ['id-kb', 0],
-    ['id-bb', 0],
+    ['id-bt', 27], //Banten
+    ['id-kb', 0], //Kalimantan Barat
+    ['id-bb', 0], //Kepulauan Bangka Belitung
     ['id-ba', 1], //Bali
     ['id-ji', 8], //Jawa Timur
-    ['id-ks', 0],
-    ['id-nt', 0],
-    ['id-se', 0],
-    ['id-kr', 0],
-    ['id-ib', 0],
-    ['id-su', 0],
-    ['id-ri', 0],
-    ['id-sw', 0],
-    ['id-ku', 0],
-    ['id-la', 0],
-    ['id-sb', 0],
-    ['id-ma', 0],
+    ['id-ks', 0], //Kalimantan Selatan
+    ['id-nt', 0], //Nusa Tenggara Timur
+    ['id-se', 0], //Sulawesi Selatan
+    ['id-kr', 0], //Kepulauan Riau
+    ['id-ib', 0], //Irian Jaya Barat
+    ['id-su', 0], //Sumatera Utara
+    ['id-ri', 0], //Riau
+    ['id-sw', 0], //Sulawesi Utara
+    ['id-ku', 0], //Kalimantan Utara
+    ['id-la', 0], //Maluku Utara
+    ['id-sb', 0], //Sumatera Barat
+    ['id-ma', 0], //Maluku
     ['id-nb', 0], //NTB
     ['id-sg', 0], //Kendari
     ['id-st', 0], //Sulawesi Tengah
     ['id-pa', 0], //Papua
     ['id-jr', 12], //Jawa Barat
     ['id-ki', 1], //Kalimantan Timur
-    ['id-1024', 0],
-    ['id-jk', 160], //DKI Jakarta
+    ['id-1024', 0], //Lampung
+    ['id-jk', 210], //DKI Jakarta
     ['id-go', 0], //Gorontalo
     ['id-yo', 2], //Yogyakarta
     ['id-sl', 0], //Sumatera Selatan
