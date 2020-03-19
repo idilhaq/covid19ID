@@ -17,11 +17,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th'];
-    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227];
+    var data_labels         = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th'];
+    var data_akumulatif     = [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227, 277];
     var data_kasus_harian   = [0, 2, 0, 0, 0, 2, 0, 2, 13,  8,  7,  0, 35, 27,  21,  17,  38,  55];
-    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4,  5,   5,   5,   5,  19];
-    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5,  8,   8,   8,   8,  11];
+    var data_meninggal      = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  4,  4,  5,   5,   5,   5,  19,  19];
+    var data_sembuh         = [0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  2,  3,  5,  8,   8,   8,   8,  11,  11];
 
     var mode      = 'index'
     var intersect = true
@@ -122,13 +122,13 @@ $(function () {
 var data = [
     ['id-3700', 0],
     ['id-ac', 0], //Aceh
-    ['id-jt', 1], //Jawa Tengah
+    ['id-jt', 9], //Jawa Tengah
     ['id-be', 0], //Bengkulu
-    ['id-bt', 0], //Banten
+    ['id-bt', 10], //Banten
     ['id-kb', 0],
     ['id-bb', 0],
-    ['id-ba', 1], //bali
-    ['id-ji', 0], //Jawa Timur
+    ['id-ba', 1], //Bali
+    ['id-ji', 8], //Jawa Timur
     ['id-ks', 0],
     ['id-nt', 0],
     ['id-se', 0],
@@ -145,12 +145,12 @@ var data = [
     ['id-sg', 0], //Kendari
     ['id-st', 0], //Sulawesi Tengah
     ['id-pa', 0], //Papua
-    ['id-jr', 2], //Jawa Barat
-    ['id-ki', 0], //Kalimantan Timur
+    ['id-jr', 12], //Jawa Barat
+    ['id-ki', 1], //Kalimantan Timur
     ['id-1024', 0],
-    ['id-jk', 65], //DKI Jakarta
+    ['id-jk', 160], //DKI Jakarta
     ['id-go', 0], //Gorontalo
-    ['id-yo', 0], //Yogyakarta
+    ['id-yo', 2], //Yogyakarta
     ['id-sl', 0], //Sumatera Selatan
     ['id-sr', 0], //Sulawesi Barat
     ['id-ja', 0], //Jambi
@@ -195,4 +195,45 @@ Highcharts.mapChart('containerMap', {
             format: '{point.name}'
         }
     }]
+});
+
+function arrayToTable(tableData) {
+  var table = $('<table id="tabel_k" class="table table-sm"></table>');
+  var tbody = $('<tbody></tbody>')
+  $(tableData).each(function (i, rowData) {
+      if(i == 0){
+        var thead = $('<thead></thead>');
+        var row = $('<tr></tr>');
+        $(rowData).each(function (j, cellData) {
+            if(j == 0){
+                row.append($('<th style="width: 200px">'+cellData+'</th>'));
+            }else{
+                row.append($('<th style="text-align:center;width: 150px">'+cellData+'</th>'));
+            }
+        });
+        thead.append(row);
+        table.append(thead);
+      }else{
+        var row = $('<tr></tr>');
+        $(rowData).each(function (j, cellData) {
+          if(j == 0){
+              row.append($('<td>'+cellData+'</td>'));
+          }else{
+              row.append($('<td style="text-align:center;">'+cellData+'</td>'));
+          }
+        });
+      }
+      tbody.append(row);
+      
+  });
+  table.append(tbody);
+  return table;
+}
+
+$.ajax({
+  type: "GET",
+  url: "daftar_kasus_provinsi.csv",
+  success: function (data) {
+      $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
+  }
 });

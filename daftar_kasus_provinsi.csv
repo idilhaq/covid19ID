@@ -1,0 +1,37 @@
+Provinsi	Jumlah Kasus	Jumlah Kematian	Jumlah Sembuh	Persentase	
+Jakarta	160	0	0	70.5%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 70.4845814977974%"></div></div>
+Jawa Barat	12	0	0	5.3%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 5.2863436123348%"></div></div>
+Banten	10	0	0	4.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 4.40528634361234%"></div></div>
+Jawa Tengah	9	0	0	4.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 3.9647577092511%"></div></div>
+Jawa Timur	8	0	0	3.5%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 3.52422907488987%"></div></div>
+Yogyakarta	2	0	0	0.9%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.881057268722467%"></div></div>
+Bali	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Kalimantan Barat	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Kalimantan Timur	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Kepulauan Riau	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Lampung	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Riau	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Sulawesi Utara	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Sumatra Utara	1	0	0	0.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.440528634361234%"></div></div>
+Aceh	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Bengkulu	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Gorontalo	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Jambi	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Kalimantan Selatan	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Kalimantan Tengah	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Kalimantan Utara	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Kepulauan Bangka Belitung	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Maluku	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Maluku Utara	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Nusa Tenggara Barat	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Nusa Tenggara Timur	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Papua	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Papua Barat	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Sulawesi Barat	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Sulawesi Selatan	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Sulawesi Tengah	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Sulawesi Tenggara	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Sumatra Barat	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Sumatra Selatan	0	0	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
+Tidak Diketahui	18	0	0	7.9%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 7.9295154185022%"></div></div>
+	227	0	0	100.0%	
