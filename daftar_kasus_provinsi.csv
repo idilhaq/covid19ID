@@ -1,6 +1,6 @@
 Provinsi	Jumlah Kasus	Persentase	
-DKI Jakarta	210	68.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 67.9611650485437%"></div></div>
-Banten	27	0	8.7%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 8.7378640776699%"></div></div>
+Jakarta	210	68.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 67.9611650485437%"></div></div>
+Banten	27	8.7%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 8.7378640776699%"></div></div>
 Jawa Barat	26	8.4%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 8.41423948220065%"></div></div>
 Jawa Tengah	12	3.9%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 3.88349514563107%"></div></div>
 Jawa Timur	9	2.9%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 2.9126213592233%"></div></div>
@@ -34,4 +34,4 @@ Sulawesi Tenggara	0	0.0%	<div class="progress progress-xs"><div class="progress-
 Sumatra Barat	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
 Sumatra Selatan	0	0.0%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0%"></div></div>
 Tidak Diketahui	1	0.3%	<div class="progress progress-xs"><div class="progress-bar progress-bar bg-info" style="width: 0.323624595469256%"></div></div>
-TOTAL	309	0	0	100.0%	
+TOTAL	309	100.0%	
