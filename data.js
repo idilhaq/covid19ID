@@ -17,11 +17,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels         = ['3/1','3/2','3/3','3/4','3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20'];
-    var data_akumulatif     = [0,2,2,2,2,4,4,6,19,27,34,34,69,96,117,134,172,227,309,369];
+    var data_labels         = ['3/1','3/2','3/3','3/4','3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21'];
+    var data_akumulatif     = [0,2,2,2,2,4,4,6,19,27,34,34,69,96,117,134,172,227,309,369,369];
     var data_kasus_harian   = [0,2,0,0,0,2,0,2,13,8,7,0,35,27,21,17,38,55,82,60];
-    var data_meninggal      = [0,0,0,0,0,0,0,0,0,0,2,4,4,5,5,5,5,19,25,32];
-    var data_sembuh         = [0,0,0,0,0,0,0,0,0,0,2,3,5,8,8,8,9,11,15,17];
+    var data_meninggal      = [0,0,0,0,0,0,0,0,0,0,2,4,4,5,5,5,5,19,25,32,32];
+    var data_sembuh         = [0,0,0,0,0,0,0,0,0,0,2,3,5,8,8,8,9,11,15,17,17];
     
     var mode      = 'index'
     var intersect = true
@@ -121,46 +121,52 @@ $(function () {
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
     ['id-3700', 0],
-    ['id-jk', 210], //DKI Jakarta
-    ['id-bt', 27], //Banten
-    ['id-jr', 26], //Jawa Barat
-    ['id-ji', 9], //Jawa Timur
-    ['id-yo', 5], //Yogyakarta
-    ['id-ki', 3], //Kalimantan Timur
-    ['id-ri', 3], //Riau
-    ['id-st', 3], //Sulawesi Tengah
-    ['id-kr', 2], //Kepulauan Riau
+    ['id-jk', 215], //DKI Jakarta
+    ['id-jr', 41], //Jawa Barat
+    ['id-bt', 37], //Banten
+    ['id-ji', 15], //Jawa Timur
+    ['id-jt', 12], //Jawa Tengah
+    ['id-ki', 10], //Kalimantan Timur
+    ['id-ba', 4], //Bali
+    ['id-yo', 4], //Yogyakarta
+    ['id-kr', 4], //Kepulauan Riau
+    ['id-sg', 3], //Sulawesi Tenggara
+    ['id-kb', 2], //Kalimantan Barat
+    ['id-kt', 2], //Kalimantan Tengah
     ['id-se', 2], //Sulawesi Selatan
-    ['id-sb', 2], //Sumatera Barat
-    ['id-ba', 1], //Bali
-    ['id-kb', 1], //Kalimantan Barat
+    ['id-su', 2], //Sumatera Utara
     ['id-1024', 1], //Lampung
+    ['id-ri', 1], //Riau
     ['id-sw', 1], //Sulawesi Utara
+    ['id-st', 0], //Sulawesi Tengah
+    ['id-sb', 0], //Sumatera Barat
     ['id-ac', 0], //Aceh
-    ['id-jt', 9], //Jawa Tengah
     ['id-be', 0], //Bengkulu
     ['id-bb', 0], //Kepulauan Bangka Belitung
     ['id-ks', 0], //Kalimantan Selatan
     ['id-nt', 0], //Nusa Tenggara Timur
     ['id-ib', 0], //Irian Jaya Barat
-    ['id-su', 0], //Sumatera Utara
     ['id-ku', 0], //Kalimantan Utara
     ['id-la', 0], //Maluku Utara
     ['id-ma', 0], //Maluku
     ['id-nb', 0], //NTB
-    ['id-sg', 0], //Kendari
     ['id-pa', 0], //Papua
     ['id-go', 0], //Gorontalo
     ['id-sl', 0], //Sumatera Selatan
     ['id-sr', 0], //Sulawesi Barat
-    ['id-ja', 0], //Jambi
-    ['id-kt', 0] //Kalimantan Tengah
+    ['id-ja', 0] //Jambi
 ];
 
 // Create the chart
 Highcharts.mapChart('containerMap', {
     chart: {
-        map: 'countries/id/id-all'
+        map: 'countries/id/id-all',
+        events: {
+          load: function () {
+            console.log(this.xAxis[0].getExtremes())
+            this.mapZoom(0.4,2000, 100);
+          }
+      }
     },
 
     title: {
@@ -177,7 +183,7 @@ Highcharts.mapChart('containerMap', {
             verticalAlign: 'bottom'
         }
     },
-
+    
     colorAxis: {
       dataClasses: [{
           name: 'No Case',

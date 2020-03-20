@@ -1,7 +1,7 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = "Update per Jumat, 20 March 2020 16:20 WIB";
-var x_data = [369,60,32,7,17,2,0,1570,152,1898,19,8.67];
+var date = "Update per Sabtu, 21 March 2020 00:30 WIB";
+var x_data = [369,0,32,0,17,0,16,1643,0,2028,0,8.67];
 // positif         = x_data[0]
 // new_positif     = x_data[1]
 // meninggal       = x_data[2]
