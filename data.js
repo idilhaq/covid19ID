@@ -120,41 +120,7 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
-    ['id-3700', 0],
-    ['id-jk', 215], //DKI Jakarta
-    ['id-jr', 41], //Jawa Barat
-    ['id-bt', 37], //Banten
-    ['id-ji', 15], //Jawa Timur
-    ['id-jt', 12], //Jawa Tengah
-    ['id-ki', 10], //Kalimantan Timur
-    ['id-ba', 4], //Bali
-    ['id-yo', 4], //Yogyakarta
-    ['id-kr', 4], //Kepulauan Riau
-    ['id-sg', 3], //Sulawesi Tenggara
-    ['id-kb', 2], //Kalimantan Barat
-    ['id-kt', 2], //Kalimantan Tengah
-    ['id-se', 2], //Sulawesi Selatan
-    ['id-su', 2], //Sumatera Utara
-    ['id-1024', 1], //Lampung
-    ['id-ri', 1], //Riau
-    ['id-sw', 1], //Sulawesi Utara
-    ['id-st', 0], //Sulawesi Tengah
-    ['id-sb', 0], //Sumatera Barat
-    ['id-ac', 0], //Aceh
-    ['id-be', 0], //Bengkulu
-    ['id-bb', 0], //Kepulauan Bangka Belitung
-    ['id-ks', 0], //Kalimantan Selatan
-    ['id-nt', 0], //Nusa Tenggara Timur
-    ['id-ib', 0], //Irian Jaya Barat
-    ['id-ku', 0], //Kalimantan Utara
-    ['id-la', 0], //Maluku Utara
-    ['id-ma', 0], //Maluku
-    ['id-nb', 0], //NTB
-    ['id-pa', 0], //Papua
-    ['id-go', 0], //Gorontalo
-    ['id-sl', 0], //Sumatera Selatan
-    ['id-sr', 0], //Sulawesi Barat
-    ['id-ja', 0] //Jambi
+  ['id-3700',0],['id-jk',215],['id-jr',41],['id-bt',37],['id-ji',15],['id-jt',12],['id-ki',10],['id-ba',4],['id-yo',4],['id-kr',4],['id-sg',3],['id-kb',2],['id-kt',2],['id-se',2],['id-su',2],['id-1024',1],['id-ri',1],['id-sw',1],['id-st',0],['id-sb',0],['id-ac',0],['id-be',0],['id-bb',0],['id-ks',0],['id-nt',0],['id-ib',0],['id-ku',0],['id-la',0],['id-ma',0],['id-nb',0],['id-pa',0],['id-go',0],['id-sl',0],['id-sr',0],['id-ja',0]
 ];
 
 // Create the chart
@@ -163,7 +129,6 @@ Highcharts.mapChart('containerMap', {
         map: 'countries/id/id-all',
         events: {
           load: function () {
-            console.log(this.xAxis[0].getExtremes())
             this.mapZoom(0.4,2000, 100);
           }
       }
@@ -257,7 +222,7 @@ function arrayToTable(tableData) {
 
 $.ajax({
   type: "GET",
-  url: "daftar_kasus_provinsi.csv",
+  url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=84311913&single=true&output=csv",
   success: function (data) {
       $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
   }
