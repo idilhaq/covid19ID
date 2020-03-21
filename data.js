@@ -120,7 +120,7 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
-  ['id-3700',0],['id-jk',215],['id-jr',41],['id-bt',37],['id-ji',15],['id-jt',12],['id-ki',10],['id-ba',4],['id-yo',4],['id-kr',4],['id-sg',3],['id-kb',2],['id-kt',2],['id-se',2],['id-su',2],['id-1024',1],['id-ri',1],['id-sw',1],['id-st',0],['id-sb',0],['id-ac',0],['id-be',0],['id-bb',0],['id-ks',0],['id-nt',0],['id-ib',0],['id-ku',0],['id-la',0],['id-ma',0],['id-nb',0],['id-pa',0],['id-go',0],['id-sl',0],['id-sr',0],['id-ja',0]
+  ['id-jk',267],['id-jr',55],['id-bt',43],['id-ji',26],['id-jt',14],['id-ki',9],['id-yo',5],['id-kr',4],['id-ba',3],['id-sg',3],['id-kb',2],['id-kt',2],['id-se',2],['id-su',2],['id-1024',1],['id-ri',1],['id-sw',1],['id-ac',0],['id-be',0],['id-go',0],['id-ja',0],['id-ks',0],['id-ku',0],['id-bb',0],['id-ma',0],['id-la',0],['id-nb',0],['id-nt',0],['id-pa',0],['id-ib',0],['id-sr',0],['id-st',0],['id-sb',0],['id-sl',0],['id-3700',10]
 ];
 
 // Create the chart
