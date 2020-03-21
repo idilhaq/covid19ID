@@ -1,7 +1,7 @@
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = 'Update per Sabtu, 21 March 2020 16:00 WIB';
-var x_data = [450,81,38,6,20,4,0,1643,0,2028,21,8.44];
+var date = 'Update per Minggu, 22 March 2020 01:04 WIB';
+var x_data = [450,81,38,6,20,4,20,1895,0,2365,21,8.44];
 // positif         = x_data[0]
 // new_positif     = x_data[1]
 // meninggal       = x_data[2]
@@ -13,6 +13,7 @@ var x_data = [450,81,38,6,20,4,0,1643,0,2028,21,8.44];
 // new_negatif     = x_data[8]
 // totaltes        = x_data[9]
 // percentage_inc  = x_data[10]
+// ratio_meninggal      = x_data[11]
 
 //Dashboard
 //Positif
@@ -25,9 +26,11 @@ document.getElementById("meninggal_note").innerHTML = x_data[3];
 document.getElementById("sembuh").innerHTML = x_data[4];
 document.getElementById("sembuh_note").innerHTML = x_data[5];
 //Proses Pemeriksaan
-document.getElementById("pemeriksaan").innerHTML = x_data[6];
+//document.getElementById("pemeriksaan").innerHTML = x_data[6];
 //Negatif
 document.getElementById("negatif").innerHTML = x_data[7];
 document.getElementById("negatif_note").innerHTML = x_data[8];
 //Total Test
 document.getElementById("totaltes").innerHTML = x_data[9];
+//Mortality Rate
+document.getElementById("ratio_meninggal").innerHTML = x_data[11];
