@@ -17,11 +17,11 @@ $(function () {
       fontStyle: 'bold'
     }
 
-    var data_labels = ['3/1','3/2','3/3','3/4','3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24'];
-    var data_akumulatif = [0,2,2,2,2,4,4,6,19,27,34,34,69,96,117,134,172,227,309,369,450,514,579,579];
-    var data_kasus_harian = [0,2,0,0,0,2,0,2,13,8,7,0,35,27,21,17,38,55,82,60,81,64,65,0];
-    var data_meninggal = [0,0,0,0,0,0,0,0,0,0,2,4,4,5,5,5,5,19,25,32,38,48,49,49];
-    var data_sembuh = [0,0,0,0,0,0,0,0,0,0,2,3,5,8,8,8,9,11,15,16,20,29,30,0];
+    var data_labels = ['3/1','3/2','3/3','3/4','3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24','3/25'];
+    var data_akumulatif = [0,2,2,2,2,4,4,6,19,27,34,34,69,96,117,134,172,227,309,369,450,514,579,686,686];
+    var data_kasus_harian = [0,2,0,0,0,2,0,2,13,8,7,0,35,27,21,17,38,55,82,60,81,64,65,107,0];
+    var data_meninggal = [0,0,0,0,0,0,0,0,0,0,2,4,4,5,5,5,5,19,25,32,38,48,49,55,55];
+    var data_sembuh = [0,0,0,0,0,0,0,0,0,0,2,3,5,8,8,8,9,11,15,16,20,29,30,30,30];
     
     var mode      = 'index'
     var intersect = true
@@ -120,18 +120,13 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
-  ['id-jk',353],['id-jr',59],['id-bt',56],['id-ji',41],['id-jt',15],['id-ki',11],['id-ba',6],['id-yo',5],['id-kr',5],['id-sg',3],['id-se',2],['id-su',2],['id-kb',2],['id-kt',2],['id-pa',2],['id-ja',1],['id-ks',1],['id-1024',1],['id-ma',1],['id-la',1],['id-ri',1],['id-sw',1],['id-ku',0],['id-ac',0],['id-be',0],['id-go',0],['id-bb',0],['id-nb',0],['id-nt',0],['id-ib',0],['id-sr',0],['id-st',0],['id-sb',0],['id-sl',0],['id-3700',8]
+  ['id-jk',424],['id-bt',65],['id-jr',60],['id-ji',51],['id-jt',19],['id-ki',11],['id-su',7],['id-yo',6],['id-ba',6],['id-kr',5],['id-se',4],['id-kb',3],['id-kt',3],['id-pa',3],['id-sg',3],['id-ri',2],['id-sw',2],['id-ja',1],['id-ks',1],['id-1024',1],['id-ma',1],['id-la',1],['id-nb',1],['id-sl',1],['id-ac',0],['id-be',0],['id-go',0],['id-ku',0],['id-bb',0],['id-nt',0],['id-ib',0],['id-sr',0],['id-st',0],['id-sb',0],['id-3700',5]
 ];
 
 // Create the chart
 Highcharts.mapChart('containerMap', {
     chart: {
-        map: 'countries/id/id-all',
-        events: {
-          load: function () {
-            this.mapZoom(0.4,2000, 100);
-          }
-      }
+        map: 'countries/id/id-all'
     },
 
     title: {
@@ -150,32 +145,17 @@ Highcharts.mapChart('containerMap', {
     },
     
     colorAxis: {
-      dataClasses: [{
-          name: 'No Case',
-          to: 1,
-          color: "#FFFFFF"
-      }, {
-          name: '1 - 50',
-          from: 1,
-          to: 50,
-          color: "#FCDA6C"
-      }, {
-          name: '50 - 100',
-          from: 50,
-          to: 100,
-          color: "#EEA33F"
-      }, {
-          name: '100 - 250',  
-          from: 100,
-          to: 250,
-          color: "#E9663F"
-      }, {
-          name: '250 - 500',
-          from: 250,
-          to: 500,
-          color: "#FF0000"
-      }]
-  },
+      dataClasses: [
+        {name:'No Case',to: 1,color: '#FFFFFF'}, 
+        {name:'1-10',from:1,to:10,color:'#ffff00'},
+        {name:'10-50',from:10,to:50,color:'#ffd900'},
+        {name:'50-100',from:50,to:100,color:'#ffb200'},
+        {name:'100-300',from:100,to:300,color:'#ff8c00'},
+        {name:'300-500',from:300,to:500,color:'#ff6600'},
+        {name:'500-1000',from:500,to:1000,color:'#ff4000'},
+        {name:'1000-2000',from:1000,to:2000,color:'#ff0000'}
+      ]
+    },
 
     series: [{
         data: data,
