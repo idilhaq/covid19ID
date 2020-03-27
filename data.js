@@ -120,7 +120,7 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data = [
-  ['id-jk',463],['id-jr',73],['id-bt',67],['id-ji',51],['id-jt',38],['id-yo',17],['id-se',13],['id-ki',11],['id-ba',9],['id-su',7],['id-kr',5],['id-kb',3],['id-kt',3],['id-pa',3],['id-sg',3],['id-ks',2],['id-nb',2],['id-sw',2],['id-ja',1],['id-1024',1],['id-ma',1],['id-la',1],['id-ri',1],['id-sl',1],['id-ac',0],['id-be',0],['id-go',0],['id-ku',0],['id-bb',0],['id-nt',0],['id-ib',0],['id-sr',0],['id-st',0],['id-sb',0],['id-3700',115]
+  ['id-jk',598],['id-jr',98],['id-bt',84],['id-ji',66],['id-jt',43],['id-se',29],['id-yo',22],['id-ki',11],['id-ba',9],['id-su',8],['id-pa',7],['id-kt',6],['id-kr',5],['id-sb',5],['id-ac',4],['id-1024',4],['id-kb',3],['id-sg',3],['id-nb',2],['id-ib',2],['id-sw',2],['id-sl',1],['id-ja',1],['id-ks',1],['id-ma',1],['id-la',1],['id-ri',1],['id-st',1],['id-be',0],['id-go',0],['id-ku',0],['id-bb',0],['id-nt',0],['id-sr',0],['id-3700',28]
 ];
 
 // Create the chart
@@ -148,12 +148,12 @@ Highcharts.mapChart('containerMap', {
       dataClasses: [
         {name:'No Case',to: 1,color: '#FFFFFF'}, 
         {name:'1-10',from:1,to:10,color:'#ffff00'},
-        {name:'10-50',from:10,to:50,color:'#ffd900'},
-        {name:'50-100',from:50,to:100,color:'#ffb200'},
-        {name:'100-300',from:100,to:300,color:'#ff8c00'},
-        {name:'300-500',from:300,to:500,color:'#ff6600'},
-        {name:'500-1000',from:500,to:1000,color:'#ff4000'},
-        {name:'1000-2000',from:1000,to:2000,color:'#ff0000'}
+        {name:'10-50',from:10,to:50,color:'#ffb200'},
+        {name:'50-100',from:50,to:100,color:'#ff6600'},
+        {name:'100-300',from:100,to:300,color:'#ff0000'},
+        {name:'300-500',from:300,to:500,color:'#d90800'},
+        {name:'500-1000',from:500,to:1000,color:'#8c1700'},
+        {name:'1000-2000',from:1000,to:2000,color:'#661f00'}
       ]
     },
 
