@@ -1,3 +1,7 @@
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var date = 'Update per Senin, 30 March 2020 15:46 WIB';
@@ -17,7 +21,8 @@ var x_data = [1414,129,122,8,75,11,0,5249,0,6534,10,8.62];
 
 //Dashboard
 //Positif
-document.getElementById("positif").innerHTML = x_data[0];
+
+document.getElementById("positif").innerHTML = numberWithCommas(x_data[0]);
 document.getElementById("positif_note").innerHTML = x_data[1];
 //Meninggal
 document.getElementById("meninggal").innerHTML = x_data[2];
@@ -28,9 +33,9 @@ document.getElementById("sembuh_note").innerHTML = x_data[5];
 //Proses Pemeriksaan
 //document.getElementById("pemeriksaan").innerHTML = x_data[6];
 //Negatif
-document.getElementById("negatif").innerHTML = x_data[7];
-document.getElementById("negatif_note").innerHTML = x_data[8];
+document.getElementById("negatif").innerHTML = numberWithCommas(x_data[7]);
+document.getElementById("negatif_note").innerHTML = numberWithCommas(x_data[8]);
 //Total Test
-document.getElementById("totaltes").innerHTML = x_data[9];
+document.getElementById("totaltes").innerHTML = numberWithCommas(x_data[9]);
 //Mortality Rate
 document.getElementById("ratio_meninggal").innerHTML = x_data[11];

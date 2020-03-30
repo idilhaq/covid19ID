@@ -207,3 +207,107 @@ $.ajax({
       $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
   }
 });
+
+//{"cases":740235,"deaths":35035,"recovered":156588,"updated":1585576778367,"active":548612}
+$.getJSON('https://corona.lmao.ninja/all', function(dataz) {
+    var world_cases_all = numberWithCommas(dataz.cases);
+    $("#world_cases_all").html(world_cases_all);
+
+    var world_cases_death = numberWithCommas(dataz.deaths);
+    $("#world_cases_death").html(world_cases_death);
+
+    var world_cases_recovered = numberWithCommas(dataz.recovered);
+    $("#world_cases_recovered").html(world_cases_recovered);
+
+    var world_cases_active = numberWithCommas(dataz.active);
+    $("#world_cases_active").html(world_cases_active);
+});
+
+//ASEAN
+
+var ctx = document.getElementById("asean-charts-canvas").getContext('2d');
+
+// Define the data 
+var data = [2626, 1546, 1524, 1414, 879, 203, 127, 107, 14, 8]; // Add data values to array
+
+var labels = ["Malaysia",	"Philippines",	"Thailand",	"Indonesia",	"Singapore",	"Vietnam",	"Brunei", "Cambodia",	"Myanmar", "Laos"]; // Add labels to array
+// End Defining data
+
+var myChart = new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+      labels: labels,
+      datasets: [{
+          label: 'Jumlah Kasus Terkonfirmasi', // Name the series
+          data: data, // Specify the data values array
+          backgroundColor: [ // Specify custom colors
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#ff0000",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF"
+          ]
+      }]
+  },
+  options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+  }
+});
+
+
+//WORLD
+
+
+
+
+var ctx = document.getElementById("world-charts-canvas").getContext('2d');
+
+// Define the data 
+var data = [145542,101739,85195,81470,63929,41495,40174,22141,15760,11899,11750,10827,9661,9520,6671,6408,4445,4371,4347,4245,1414]; // Add data values to array
+
+var labels = ["USA","Italy","Spain","China","Germany","Iran	","France","UK","Switzerland","Belgium","Netherlands","Turkey","S. Korea","Austria","Canada","Portugal","Norway","Brazil","Israel","Australia","Indonesia"]; // Add labels to array
+// End Defining data
+
+var myChart = new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+      labels: labels,
+      datasets: [{
+          label: 'Jumlah Kasus Terkonfirmasi', // Name the series
+          data: data, // Specify the data values array
+          backgroundColor: [ // Specify custom colors
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#0000FF",
+            "#ff0000"
+          ]
+      }]
+  },
+  options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+  }
+});

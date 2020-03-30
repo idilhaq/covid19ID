@@ -5,11 +5,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161446078-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-161446078-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161446078-1');
     </script>
 
     <meta charset="utf-8">
@@ -67,7 +70,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-12" style="text-align: center;">
                             <h1 class="m-0 text-dark">Jumlah Kasus Virus Korona (Covid 19) di Indonesia</h1>
-                            <h5><small class="tgl_update">x</small><small> - Sumber: <a href="/covid19ID/reference.html"
+                            <h5><small class="tgl_update">Loading...</small><small> - Sumber: <a href="/covid19ID/reference.html"
                                         target="_blank">List of Sources</a></small></h5>
                         </div>
                     </div><!-- /.row -->
@@ -82,7 +85,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h1 id="positif" style="text-align: center">0</h1>
+                                    <h1 id="positif" style="text-align: center">Loading...</h1>
 
                                     <p style="text-align: center;">(+<span id="positif_note">0</span>) Positif</p>
                                 </div>
@@ -98,9 +101,9 @@
                             <!-- small box -->
                             <div class="small-box bg-black">
                                 <div class="inner">
-                                    <h1 style="text-align: center;"><span id="meninggal">0</span></h1>
+                                    <h1 style="text-align: center;"><span id="meninggal">Loading...</span></h1>
 
-                                    <p style="text-align: center;">(+<span id="meninggal_note">0</span>) Meninggal</p>                                    
+                                    <p style="text-align: center;">(+<span id="meninggal_note">Loading...</span>) Meninggal</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add" style="color:rgba(121, 145, 145, 0.274)"></i>
@@ -108,11 +111,11 @@
                                 <a href="/covid19ID/daftar_kasus.html" target="_blank" class="small-box-footer">More
                                     info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h1 style="text-align: center;"><span id="ratio_meninggal">0</span>%</h1>
+                                    <h1 style="text-align: center;"><span id="ratio_meninggal">Loading...</span>%</h1>
 
                                     <p style="text-align: center;">Rasio Kematian</p>
                                 </div>
@@ -126,9 +129,9 @@
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h1 id="sembuh" style="text-align: center;">0</h1>
+                                    <h1 id="sembuh" style="text-align: center;">Loading...</h1>
 
-                                    <p style="text-align: center;">(+<span id="sembuh_note">0</span>) Sembuh</p>
+                                    <p style="text-align: center;">(+<span id="sembuh_note">Loading...</span>) Sembuh</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
@@ -140,9 +143,9 @@
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h1 id="negatif" style="text-align: center;">0</h1>
+                                    <h1 id="negatif" style="text-align: center;">Loading...</h1>
 
-                                    <p style="text-align: center;">(+<span id="negatif_note">0</span>) Negatif</p>
+                                    <p style="text-align: center;">(+<span id="negatif_note">Loading...</span>) Negatif</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
@@ -154,7 +157,7 @@
                         <div class="col-lg-2 col-6">
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h1 id="totaltes" style="text-align: center;">0</h1>
+                                    <h1 id="totaltes" style="text-align: center;">Loading...</h1>
 
                                     <p style="text-align: center;">Total Test</p>
                                 </div>
@@ -173,19 +176,19 @@
                                     <div class="d-flex justify-content-between">
                                         <h3 class="card-title"><i class="fas fa-spin fa-chart-pie mr-1"></i>Jumlah Kasus
                                             Harian</h3>
-                                        <p class="tgl_update">-</p>
+                                        <p class="tgl_update">Loading...</p>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <p class="d-flex flex-column">
-                                            <span class="text-bold text-lg">+<span class="new_case">0</span></span>
+                                            <span class="text-bold text-lg">+<span class="new_case">Loading...</span></span>
                                             <span>Jumlah Kasus Baru</span>
                                         </p>
                                         <p class="ml-auto d-flex flex-column text-right">
                                             <span class="text-success text-bold text-lg">
                                                 <i class="fas fa-arrow-up"></i> <span
-                                                    class="percentage_increase">0</span>%
+                                                    class="percentage_increase">Loading...</span>%
                                             </span>
                                             <span class="text-muted">Sejak hari sebelumnya</span>
                                         </p>
@@ -215,6 +218,108 @@
                                     </div>
                                 </div>
                             </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col-lg-12 connectedSortable">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="info-box bg-danger">
+                                        <span class="info-box-icon"><i class="ion ion-person-add"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">Kasus Terkonfirmasi Dunia</span>
+                                            <span class="info-box-number" id="world_cases_all">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="info-box bg-warning">
+                                        <span class="info-box-icon"><i class="ion ion-person-add"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">Kasus Aktif Dunia</span>
+                                            <span class="info-box-number" id="world_cases_active">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="info-box bg-black">
+                                        <span class="info-box-icon"><i class="ion ion-person-add"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">Kasus Kematian Dunia</span>
+                                            <span class="info-box-number" id="world_cases_death">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="info-box bg-success">
+                                        <span class="info-box-icon"><i class="ion ion-person-add"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">Kasus Sembuh Dunia</span>
+                                            <span class="info-box-number" id="world_cases_recovered">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col-lg-12 connectedSortable">
+                            <div class="card">
+                                <div class="card-header ui-sortable-handle" style="cursor: move;">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-spin fa-chart-pie mr-1"></i>
+                                        Pandemik Global
+                                    </h3>
+                                    <div class="card-tools">
+                                        <ul class="nav nav-pills ml-auto">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="#asean-chart"
+                                                    data-toggle="tab">ASEAN</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#world-chart" data-toggle="tab">World</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="tab-content p-0">
+                                        <!-- Morris chart - Sales -->
+                                        <div class="chart tab-pane active" id="asean-chart"
+                                            style="position: relative; height: 500px;">
+                                            <div class="chartjs-size-monitor">
+                                                <div class="chartjs-size-monitor-expand">
+                                                    <div class=""></div>
+                                                </div>
+                                                <div class="chartjs-size-monitor-shrink">
+                                                    <div class=""></div>
+                                                </div>
+                                            </div>
+                                            <canvas id="asean-charts-canvas" height="500"
+                                                style="height: 300px; display: block; width: 523px;" width="523"
+                                                class="chartjs-render-monitor"></canvas>
+                                        </div>
+                                        <div class="chart tab-pane" id="world-chart"
+                                            style="position: relative; height: 500px;">
+                                            <div class="chartjs-size-monitor">
+                                                <div class="chartjs-size-monitor-expand">
+                                                    <div class=""></div>
+                                                </div>
+                                                <div class="chartjs-size-monitor-shrink">
+                                                    <div class=""></div>
+                                                </div>
+                                            </div>
+                                            <canvas id="world-charts-canvas" height="500"
+                                                style="height: 300px; display: block; width: 900px;"
+                                                class="chartjs-render-monitor" width="900"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col-lg-12 connectedSortable">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -233,7 +338,8 @@
                             </div>
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><i class="fas fa-table mr-1"></i>Persebaran Kasus di Tiap Provinsi Indonesia</h3>
+                                    <h3 class="card-title"><i class="fas fa-table mr-1"></i>Persebaran Kasus di Tiap
+                                        Provinsi Indonesia</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div id="tabel_kasus_provinsi" class="card-body table-responsive"></div>
@@ -247,11 +353,12 @@
                                     </h3>
                                 </div>
                                 <div class="card-body" style="text-align: center;">
-                                    <a href="https://info.flagcounter.com/l71C"><img src="https://s11.flagcounter.com/count2/l71C/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_100/viewers_0/labels_1/pageviews_1/flags_1/percent_0/" alt="Free counters!" border="0"></a>
+                                    <a href="https://info.flagcounter.com/l71C"><img
+                                            src="https://s11.flagcounter.com/count2/l71C/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_100/viewers_0/labels_1/pageviews_1/flags_1/percent_0/"
+                                            alt="Free counters!" border="0"></a>
                                 </div>
                             </div>
                         </section>
-                        <pre id="data-map"></pre>
                     </div>
                 </div><!-- /.container-fluid -->
             </div>
@@ -271,7 +378,7 @@
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- PapaParse -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
     <!-- Bootstrap -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
