@@ -34,3 +34,9 @@ document.getElementById("negatif_note").innerHTML = x_data[8];
 document.getElementById("totaltes").innerHTML = x_data[9];
 //Mortality Rate
 document.getElementById("ratio_meninggal").innerHTML = x_data[11];
+
+//{"cases":740235,"deaths":35035,"recovered":156588,"updated":1585576778367,"active":548612}
+$.getJSON('https://corona.lmao.ninja/all', function(dataz) {
+    var text = dataz.cases;
+    $("#positif").html(text);
+});
