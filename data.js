@@ -119,10 +119,9 @@ $(function () {
 // Prepare demo data
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
-var data = [
-  ['id-jk',675],['id-jr',149],['id-bt',106],['id-ji',90],['id-jt',63],['id-se',47],['id-yo',22],['id-ki',17],['id-ba',10],['id-pa',9],['id-kb',8],['id-su',8],['id-kt',7],['id-ac',5],['id-kr',5],['id-sb',5],['id-1024',4],['id-sg',3],['id-sl',2],['id-ku',2],['id-nb',2],['id-ib',2],['id-ri',2],['id-st',2],['id-sw',2],['id-ja',1],['id-ks',1],['id-ma',1],['id-la',1],['id-sr',1],['id-be',0],['id-go',0],['id-bb',0],['id-nt',0],['id-3700',162]
+var data_Map_Indonesia = [
+  ['id-jk',747],['id-jr',198],['id-bt',142],['id-jt',93],['id-ji',93],['id-se',50],['id-yo',23],['id-ki',20],['id-ba',19],['id-su',19],['id-pa',10],['id-kb',9],['id-kt',9],['id-ks',8],['id-1024',8],['id-sb',8],['id-kr',7],['id-ac',5],['id-sl',5],['id-nb',4],['id-ri',3],['id-st',3],['id-sg',3],['id-ja',2],['id-ku',2],['id-bb',2],['id-ib',2],['id-sw',2],['id-be',1],['id-ma',1],['id-la',1],['id-sr',1],['id-go',0],['id-nt',0],['id-3700',28]
 ];
-
 // Create the chart
 Highcharts.mapChart('containerMap', {
     chart: {
@@ -146,7 +145,7 @@ Highcharts.mapChart('containerMap', {
     
     colorAxis: {
       dataClasses: [
-        {name:'No Case',to: 1,color: '#FFFFFF'}, 
+        {name:'No Case',to: 1,color: '#66ff66'}, 
         {name:'1-10',from:1,to:10,color:'#ffff00'},
         {name:'10-50',from:10,to:50,color:'#ffb200'},
         {name:'50-100',from:50,to:100,color:'#ff6600'},
@@ -158,7 +157,7 @@ Highcharts.mapChart('containerMap', {
     },
 
     series: [{
-        data: data,
+        data: data_Map_Indonesia,
         name: 'Total Terinfeksi',
         dataLabels: {
             enabled: true,
@@ -228,9 +227,9 @@ $.getJSON('https://corona.lmao.ninja/all', function(dataz) {
 var ctx = document.getElementById("asean-charts-canvas").getContext('2d');
 
 // Define the data 
-var data = [2626, 1546, 1524, 1414, 879, 203, 127, 107, 14, 8]; // Add data values to array
+var data = [2766,2084,1651,1528,926,207,129,109,14,9]; // Add data values to array
 
-var labels = ["Malaysia",	"Philippines",	"Thailand",	"Indonesia",	"Singapore",	"Vietnam",	"Brunei", "Cambodia",	"Myanmar", "Laos"]; // Add labels to array
+var labels = ["Malaysia","Philippines","Thailand","Indonesia","Singapore","Vietnam","Brunei","Cambodia","Myanmar","Laos"]; // Add labels to array
 // End Defining data
 
 var myChart = new Chart(ctx, {
@@ -241,16 +240,16 @@ var myChart = new Chart(ctx, {
           label: 'Jumlah Kasus Terkonfirmasi', // Name the series
           data: data, // Specify the data values array
           backgroundColor: [ // Specify custom colors
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#ff0000",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF"
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#ff4c4c",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff"
           ]
       }]
   },
@@ -269,9 +268,9 @@ var myChart = new Chart(ctx, {
 var ctx = document.getElementById("world-charts-canvas").getContext('2d');
 
 // Define the data 
-var data = [145542,101739,85195,81470,63929,41495,40174,22141,15760,11899,11750,10827,9661,9520,6671,6408,4445,4371,4347,4245,1414]; // Add data values to array
+var data = [164435,101739,94417,81518,67051,44605,44550,22141,16176,12775,12595,10827,9920,9786,7474,1528]; // Add data values to array
 
-var labels = ["USA","Italy","Spain","China","Germany","Iran	","France","UK","Switzerland","Belgium","Netherlands","Turkey","S. Korea","Austria","Canada","Portugal","Norway","Brazil","Israel","Australia","Indonesia"]; // Add labels to array
+var labels = ["USA","Italy","Spain","China","Germany","Iran","France","UK","Switzerland","Belgium","Netherlands","Turkey","Austria","S. Korea","Canada","Indonesia"]; // Add labels to array
 // End Defining data
 
 var myChart = new Chart(ctx, {
@@ -282,27 +281,22 @@ var myChart = new Chart(ctx, {
           label: 'Jumlah Kasus Terkonfirmasi', // Name the series
           data: data, // Specify the data values array
           backgroundColor: [ // Specify custom colors
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#0000FF",
-            "#ff0000"
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#4040ff",
+            "#ff4c4c"
           ]
       }]
   },
