@@ -227,9 +227,9 @@ $.getJSON('https://corona.lmao.ninja/all', function(dataz) {
 var ctx = document.getElementById("asean-charts-canvas").getContext('2d');
 
 // Define the data 
-var data = [2766,2084,1651,1528,926,207,129,109,14,9]; // Add data values to array
+var data = [3333,3018,1986,1978,1114,233,133,114,20]; // Add data values to array
 
-var labels = ["Malaysia","Philippines","Thailand","Indonesia","Singapore","Vietnam","Brunei","Cambodia","Myanmar","Laos"]; // Add labels to array
+var labels = ["Malaysia","Philippines","Indonesia","Thailand","Singapore","Vietnam","Brunei","Cambodia","Myanmar"]; // Add labels to array
 // End Defining data
 
 var myChart = new Chart(ctx, {
@@ -242,8 +242,8 @@ var myChart = new Chart(ctx, {
           backgroundColor: [ // Specify custom colors
             "#4040ff",
             "#4040ff",
-            "#4040ff",
             "#ff4c4c",
+            "#4040ff",
             "#4040ff",
             "#4040ff",
             "#4040ff",
@@ -268,9 +268,9 @@ var myChart = new Chart(ctx, {
 var ctx = document.getElementById("world-charts-canvas").getContext('2d');
 
 // Define the data 
-var data = [164435,101739,94417,81518,67051,44605,44550,22141,16176,12775,12595,10827,9920,9786,7474,1528]; // Add data values to array
+var data = [245380,117710,115242,85063,81620,59105,53183,33718,19106,18135,16770,14697,11283,11251,10062,1986]; // Add data values to array
 
-var labels = ["USA","Italy","Spain","China","Germany","Iran","France","UK","Switzerland","Belgium","Netherlands","Turkey","Austria","S. Korea","Canada","Indonesia"]; // Add labels to array
+var labels = ["USA","Spain","Italy","Germany","China","France","Iran","UK","Switzerland","Turkey","Belgium","Netherlands","Canada","Austria","S. Korea","Indonesia"]; // Add labels to array
 // End Defining data
 
 var myChart = new Chart(ctx, {
