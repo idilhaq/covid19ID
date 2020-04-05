@@ -120,7 +120,7 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data_Map_Indonesia = [
-  ['id-jk',1028],['id-jr',247],['id-bt',173],['id-ji',152],['id-jt',120],['id-se',82],['id-yo',33],['id-ba',32],['id-su',25],['id-ki',24],['id-pa',18],['id-sl',12],['id-kt',11],['id-1024',11],['id-kb',10],['id-ri',10],['id-ks',8],['id-ku',8],['id-kr',8],['id-sb',8],['id-nb',7],['id-ac',5],['id-sg',5],['id-st',4],['id-sw',3],['id-be',2],['id-ja',2],['id-bb',2],['id-ib',2],['id-ma',1],['id-la',1],['id-sr',1],['id-go',0],['id-nt',0],['id-3700',37]
+  ['id-jk',1124],['id-jr',252],['id-ji',188],['id-bt',177],['id-jt',120],['id-se',83],['id-ba',35],['id-yo',34],['id-ks',30],['id-pa',26],['id-su',25],['id-ki',16],['id-sl',16],['id-kt',11],['id-1024',11],['id-ri',11],['id-kb',10],['id-kr',9],['id-ku',8],['id-sb',8],['id-nb',7],['id-sg',6],['id-ac',5],['id-st',4],['id-sw',3],['id-bb',2],['id-be',2],['id-ja',2],['id-ib',2],['id-sr',2],['id-la',1],['id-ma',1],['id-nt',0],['id-go',0],['id-3700',42]
 ];
 // Create the chart
 Highcharts.mapChart('containerMap', {
@@ -220,88 +220,4 @@ $.getJSON('https://corona.lmao.ninja/all', function(dataz) {
 
     var world_cases_active = numberWithCommas(dataz.active);
     $("#world_cases_active").html(world_cases_active);
-});
-
-//ASEAN
-
-var ctx = document.getElementById("asean-charts-canvas").getContext('2d');
-
-// Define the data 
-var data = [3483,3094,2092,2067,1114,240,135,114,20]; // Add data values to array
-
-var labels = ["Malaysia","Philippines","Indonesia","Thailand","Singapore","Vietnam","Brunei","Cambodia","Myanmar"]; // Add labels to array
-// End Defining data
-
-var myChart = new Chart(ctx, {
-  type: 'horizontalBar',
-  data: {
-      labels: labels,
-      datasets: [{
-          label: 'Jumlah Kasus Terkonfirmasi', // Name the series
-          data: data, // Specify the data values array
-          backgroundColor: [ // Specify custom colors
-            "#4040ff",
-            "#4040ff",
-            "#ff4c4c",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff"
-          ]
-      }]
-  },
-  options: {
-    responsive: true, // Instruct chart js to respond nicely.
-    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
-  }
-});
-
-
-//WORLD
-
-
-
-
-var ctx = document.getElementById("world-charts-canvas").getContext('2d');
-
-// Define the data 
-var data = [277613,124736,119827,92050,82165,81639,55743,41903,20921,20278,18431,16627,12549,11781,10524,2092]; // Add data values to array
-
-var labels = ["USA","Spain","Italy","Germany","France","China","Iran","UK","Turkey","Switzerland","Belgium","Netherlands","Canada","Austria","Portugal","Indonesia"]; // Add labels to array
-// End Defining data
-
-var myChart = new Chart(ctx, {
-  type: 'horizontalBar',
-  data: {
-      labels: labels,
-      datasets: [{
-          label: 'Jumlah Kasus Terkonfirmasi', // Name the series
-          data: data, // Specify the data values array
-          backgroundColor: [ // Specify custom colors
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#4040ff",
-            "#ff4c4c"
-          ]
-      }]
-  },
-  options: {
-    responsive: true, // Instruct chart js to respond nicely.
-    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
-  }
 });
