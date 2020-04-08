@@ -42,37 +42,19 @@ $(function () {
           // pointHoverBorderColor    : '#007bff'
         },
           { //kasus harian
-            type                : 'line',
+            type                : 'bar',
             data                : data_kasus_harian,
-            backgroundColor     : 'tansparent',
-            borderColor         : '#007bff',
-            pointBorderColor    : '#007bff',
-            pointBackgroundColor: '#007bff',
-            fill                : false
-            // pointHoverBackgroundColor: '#ced4da',
-            // pointHoverBorderColor    : '#ced4da'
+            backgroundColor     : '#007bff'
           },
           {//meninggal
-            type                : 'line',
+            type                : 'bar',
             data                : data_meninggal,
-            backgroundColor     : 'tansparent',
-            borderColor         : '#ff0000',
-            pointBorderColor    : '#ff0000',
-            pointBackgroundColor: '#ff0000',
-            fill                : false
-            // pointHoverBackgroundColor: '#ced4da',
-            // pointHoverBorderColor    : '#ced4da'
+            backgroundColor     : '#ff0000'
           },
           { //sembuh
-            type                : 'line',
+            type                : 'bar',
             data                : data_sembuh,
-            backgroundColor     : 'tansparent',
-            borderColor         : '#02c248',
-            pointBorderColor    : '#02c248',
-            pointBackgroundColor: '#02c248',
-            fill                : false
-            // pointHoverBackgroundColor: '#ced4da',
-            // pointHoverBorderColor    : '#ced4da'
+            backgroundColor     : '#02c248'
           }]
       },
       options: {
@@ -91,6 +73,7 @@ $(function () {
         scales             : {
           yAxes: [{
             // display: false,
+            stacked: true,
             gridLines: {
               display      : true,
               lineWidth    : '4px',
@@ -103,6 +86,7 @@ $(function () {
             }, ticksStyle)
           }],
           xAxes: [{
+            stacked: true,
             display  : true,
             gridLines: {
               display: false
