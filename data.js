@@ -120,7 +120,7 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data_Map_Indonesia = [
-  ['id-jk',1232],['id-jr',263],['id-ji',189],['id-bt',177],['id-jt',132],['id-se',113],['id-ba',43],['id-yo',40],['id-ks',31],['id-su',26],['id-pa',26],['id-kt',20],['id-ki',18],['id-sb',18],['id-sl',16],['id-ku',15],['id-kb',12],['id-1024',12],['id-ri',12],['id-nb',10],['id-kr',9],['id-sg',7],['id-ac',5],['id-sw',5],['id-st',4],['id-bb',2],['id-be',2],['id-ja',2],['id-ib',2],['id-sr',2],['id-la',1],['id-ma',1],['id-nt',0],['id-go',0],['id-3700',44]
+  ['id-jk',1369],['id-jr',343],['id-bt',194],['id-ji',194],['id-jt',133],['id-se',127],['id-ba',43],['id-yo',41],['id-ks',31],['id-su',26],['id-pa',26],['id-kt',20],['id-ki',18],['id-sb',18],['id-sl',16],['id-ku',15],['id-1024',12],['id-ri',12],['id-kb',10],['id-nb',10],['id-kr',9],['id-sw',8],['id-sg',7],['id-ac',5],['id-st',5],['id-bb',2],['id-be',2],['id-ja',2],['id-ib',2],['id-sr',2],['id-la',1],['id-ma',1],['id-nt',0],['id-go',0],['id-3700',34]
 ];
 // Create the chart
 Highcharts.mapChart('containerMap', {
