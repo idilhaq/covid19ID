@@ -4,8 +4,8 @@ function numberWithCommas(x) {
 
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = 'Update per Senin, 13 April 2020 15:59 WIB';
-var x_data = [4557,316,399,26,380,21,0,22834,6712,27075,7.,8.75];
+var date = 'Update per Selasa, 14 April 2020 16:09 WIB';
+var x_data = [4839,282,459,60,426,46,2050,26789,3955,33678,6.,9.48];
 // positif         = x_data[0]
 // new_positif     = x_data[1]
 // meninggal       = x_data[2]
