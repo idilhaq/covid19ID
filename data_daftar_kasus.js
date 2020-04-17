@@ -1,4 +1,3 @@
-a[0].innerHTML = date;
 function arrayToTable(tableData) {
     var table = $('<table id="tabel_k" class="table table-striped table-valign-middle"></table>');
     var tbody = $('<tbody></tbody>')

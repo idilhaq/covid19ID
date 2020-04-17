@@ -5,37 +5,70 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var date = 'Update per Kamis, 16 April 2020 15:57 WIB';
-var x_data = [5516,380,496,27,548,102,0,29459,1594,34975,7.,8.99];
-// positif         = x_data[0]
-// new_positif     = x_data[1]
-// meninggal       = x_data[2]
-// new_meninggal   = x_data[3]
-// sembuh          = x_data[4]
-// new_sembuh      = x_data[5]
-// pemeriksaan     = x_data[6]
-// negatif         = x_data[7]
-// new_negatif     = x_data[8]
-// totaltes        = x_data[9]
-// percentage_inc  = x_data[10]
-// ratio_meninggal      = x_data[11]
+var x_data;
 
-//Dashboard
-//Positif
+$.ajax({
+    type: "GET",  
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=584612903&single=true&output=csv",
+    dataType: "text",       
+    success: function(response)  
+    {
+    x_data = $.csv.toArrays(response);
+    generateHtmlTable(x_data);
+    }   
+});
 
-document.getElementById("positif").innerHTML = numberWithCommas(x_data[0]);
-document.getElementById("positif_note").innerHTML = x_data[1];
-//Meninggal
-document.getElementById("meninggal").innerHTML = x_data[2];
-document.getElementById("meninggal_note").innerHTML = x_data[3];
-//Sembuh
-document.getElementById("sembuh").innerHTML = x_data[4];
-document.getElementById("sembuh_note").innerHTML = x_data[5];
-//Proses Pemeriksaan
-//document.getElementById("pemeriksaan").innerHTML = x_data[6];
-//Negatif
-document.getElementById("negatif").innerHTML = numberWithCommas(x_data[7]);
-document.getElementById("negatif_note").innerHTML = numberWithCommas(x_data[8]);
-//Total Test
-document.getElementById("totaltes").innerHTML = numberWithCommas(x_data[9]);
-//Mortality Rate
-document.getElementById("ratio_meninggal").innerHTML = x_data[11];
+function generateHtmlTable(x_data) {
+    if(typeof(x_data[0]) === 'undefined') {
+        return null;
+      } else {
+		$.each(x_data, function( index, row ) {
+            if(index == 0){
+                $.each(row, function( index, colData ) {
+                    if(index == 0){
+                        a[0].innerHTML = a[1].innerHTML = colData;
+                    }                    
+                });
+            }else{
+                $.each(row, function( index, colData ) {
+                    switch(index){
+                        case 0:
+                            document.getElementById("positif").innerHTML = numberWithCommas(colData);
+                        break;
+                        case 2:
+                            document.getElementById("positif_note").innerHTML = document.getElementById("new_case").innerHTML = colData;
+                        break;
+                        case 3:
+                            document.getElementById("meninggal").innerHTML = colData;
+                        break;
+                        case 4:
+                            document.getElementById("meninggal_note").innerHTML = colData;
+                        break;
+                        case 5:
+                            document.getElementById("sembuh").innerHTML = colData;
+                        break;
+                        case 6:
+                            document.getElementById("sembuh_note").innerHTML = colData;
+                        break;
+                        case 8:
+                            document.getElementById("negatif").innerHTML = numberWithCommas(colData);
+                        break;
+                        case 9:
+                            document.getElementById("negatif_note").innerHTML = numberWithCommas(colData);
+                        break;
+                        case 10:
+                            document.getElementById("totaltes").innerHTML = numberWithCommas(colData);
+                        break;
+                        case 12:
+                            document.getElementById("percentage_increase").innerHTML = colData;
+                        break;          
+                        case 13:
+                            document.getElementById("ratio_meninggal").innerHTML = colData;
+                        break;          
+                    }
+                });
+            }			
+		});
+    
+}
+}

@@ -1,13 +1,3 @@
-a[0].innerHTML = date;
-a[1].innerHTML = date;
-//Jumlah Kasus Harian
-//new_case
-var b = document.getElementsByClassName("new_case");
-b[0].innerHTML = x_data[1];
-//percentage_increase
-var c = document.getElementsByClassName("percentage_increase");
-c[0].innerHTML = x_data[10];
-
 //Chart
 $(function () {
     'use strict'
@@ -105,7 +95,7 @@ $(function () {
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
 var data_Map_Indonesia = [
-  ['id-jk',2670],['id-jr',570],['id-ji',514],['id-jt',300],['id-bt',297],['id-se',271],['id-ba',113],['id-pa',80],['id-su',79],['id-yo',62],['id-ki',59],['id-sb',55],['id-nb',45],['id-ks',44],['id-kr',38],['id-sl',37],['id-kt',34],['id-ku',28],['id-sg',26],['id-1024',25],['id-ri',24],['id-st',22],['id-kb',21],['id-sw',18],['id-ma',14],['id-ja',7],['id-sr',7],['id-bb',6],['id-ac',5],['id-ib',5],['id-be',4],['id-la',4],['id-go',4],['id-nt',1],['id-3700',27]
+  ['id-jk',2815],['id-jr',632],['id-ji',522],['id-se',332],['id-bt',311],['id-jt',304],['id-ba',124],['id-pa',89],['id-su',79],['id-ki',74],['id-yo',64],['id-sb',62],['id-kr',58],['id-sl',54],['id-nb',51],['id-ku',47],['id-ks',44],['id-kt',35],['id-sg',27],['id-1024',26],['id-ri',26],['id-st',24],['id-kb',21],['id-sw',18],['id-ma',14],['id-ja',8],['id-sr',7],['id-bb',6],['id-ac',5],['id-ib',5],['id-be',4],['id-la',4],['id-go',4],['id-nt',1],['id-3700',26]
 ];
 // Create the chart
 Highcharts.mapChart('containerMap', {
@@ -191,7 +181,7 @@ $.ajax({
 });
 
 //{"cases":740235,"deaths":35035,"recovered":156588,"updated":1585576778367,"active":548612}
-$.getJSON('https://corona.lmao.ninja/all', function(dataz) {
+$.getJSON('https://corona.lmao.ninja/v2/all', function(dataz) {
     var world_cases_all = numberWithCommas(dataz.cases);
     $("#world_cases_all").html(world_cases_all);
 
