@@ -39,13 +39,13 @@ function generateHtmlTable(x_data) {
                             document.getElementById("positif_note").innerHTML = document.getElementById("new_case").innerHTML = colData;
                         break;
                         case 3:
-                            document.getElementById("meninggal").innerHTML = colData;
+                            document.getElementById("meninggal").innerHTML = numberWithCommas(colData);
                         break;
                         case 4:
                             document.getElementById("meninggal_note").innerHTML = colData;
                         break;
                         case 5:
-                            document.getElementById("sembuh").innerHTML = colData;
+                            document.getElementById("sembuh").innerHTML = numberWithCommas(colData);
                         break;
                         case 6:
                             document.getElementById("sembuh_note").innerHTML = colData;
