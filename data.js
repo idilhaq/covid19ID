@@ -120,12 +120,13 @@ Highcharts.mapChart('containerMap', {
     
     colorAxis: {
       dataClasses: [
-        {name:'1-50',from:1,to:50,color:'#ffff00'},
-        {name:'50-100',from:50,to:100,color:'#ffb200'},
-        {name:'100-500',from:100,to:500,color:'#ff6600'},
-        {name:'500-1000',from:500,to:1000,color:'#ff0000'},
-        {name:'1000-2000',from:1000,to:2000,color:'#d90800'},
-        {name:'2000-5000',from:2000,to:5000,color:'#8c1700'}
+        {name:'< 50',from:1,to:50,color:'#ffff00'},
+        {name:'< 100',from:50,to:100,color:'#ffb200'},
+        {name:'< 500',from:100,to:500,color:'#ff6600'},
+        {name:'< 1000',from:500,to:1000,color:'#ff0000'},
+        {name:'< 2000',from:1000,to:2000,color:'#d90800'},
+        {name:'< 5000',from:2000,to:5000,color:'#8c1700'},
+        {name:'< 10000',from:5000,to:10000,color:'#661f00'}
       ]
     },
 
