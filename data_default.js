@@ -8,9 +8,9 @@ var date = 'Update per Kamis, 16 April 2020 15:57 WIB';
 var x_data;
 
 $.ajax({
-    type: "GET",  
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=584612903&single=true&output=csv",
-    dataType: "text",       
+    type: "GET",
+    dataType: "text",
+    url: "https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=1236706534&single=true&output=csv",       
     success: function(response)  
     {
     x_data = $.csv.toArrays(response);
