@@ -175,14 +175,14 @@ function arrayToTable(tableData) {
   return table;
 }
 
-$.ajax({
-  type: "GET",
-  dataType: "text",
-  url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=2493732&single=true&output=csv",
-  success: function (data) {
-      $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
-  }
-});
+// $.ajax({
+//   type: "GET",
+//   dataType: "text",
+//   url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=2493732&single=true&output=csv",
+//   success: function (data) {
+//       $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
+//   }
+// });
 
 //{"cases":740235,"deaths":35035,"recovered":156588,"updated":1585576778367,"active":548612}
 $.getJSON('https://corona.lmao.ninja/v2/all', function(dataz) {
