@@ -178,7 +178,7 @@ function arrayToTable(tableData) {
 $.ajax({
   type: "GET",
   dataType: "text",
-  url: "https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vQw8mTbcVOX_Yyb6tXP7m851FSIDIP3pfuLAcmbfnlCNXBvevLcUUN6ooW6Wc5Egb0wmdpLSLtceC7k/pub?gid=2493732&single=true&output=csv",
+  url: "",
   success: function (data) {
       $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
   }
