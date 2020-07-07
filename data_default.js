@@ -4,7 +4,7 @@ function numberWithCommas(x) {
 
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-Update per Selasa, 07 July 2020 18:55 WIB
+var date = 'Update per Selasa, 07 July 2020 18:55 WIB';
 var x_data = [66226,1268,3309,68,30785,866,0,496533,9407,562759,1.9,4.99];
 
 a[0].innerHTML = a[1].innerHTML = date;
