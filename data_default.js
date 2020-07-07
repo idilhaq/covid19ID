@@ -23,13 +23,12 @@ document.getElementById("ratio_meninggal").innerHTML = x_data[11];
 
 // $.ajax({
 //     type: "GET",
-//     dataType: "text",
 //     url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmb1WvsO22hTIDE9b0MmBpOpOhuE4SRzcKJQtPKXkRkOqTnhr-VDPDhveMn9-kBkDTc9lTRTVbZ3kf/pub?gid=0&single=true&output=csv",       
 //     success: function(response)  
 //     {
 //     x_data = $.csv.toArrays(response);
 //     generateHtmlTable(x_data);
-//     }   
+//     }
 // });
 
 // function generateHtmlTable(x_data) {
