@@ -178,7 +178,7 @@ function arrayToTable(tableData) {
 $.ajax({
   type: "GET",
   dataType: "text",
-  url: "Indonesia Corona Cases - PROVINCE DATA (DO NOT EDIT).csv",
+  url: "province_data.csv",
   success: function (data) {
       $('#tabel_kasus_provinsi').append(arrayToTable(Papa.parse(data).data));
   }
