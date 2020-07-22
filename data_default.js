@@ -4,17 +4,17 @@ function numberWithCommas(x) {
 
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = 'Update per Selasa, 21 July 2020 19:44 WIB'
-var x_data = [89869,1655,4320,81,48466,1489,0,647975,15692,737844,1.8,4.80];
+var date = 'Update per Rabu, 22 July 2020 19:03 WIB'
+var x_data = [91751,1882,4459,139,50261,1795,0,657875,9900,749626,2.0,4.85];
 
 a[0].innerHTML = a[1].innerHTML = date;
 document.getElementById("positif").innerHTML = numberWithCommas(x_data[0]);
-document.getElementById("positif_note").innerHTML = x_data[1];	
-document.getElementById("new_case").innerHTML = x_data[1];
-document.getElementById("meninggal").innerHTML = x_data[2];	
-document.getElementById("meninggal_note").innerHTML = x_data[3];	
-document.getElementById("sembuh").innerHTML = x_data[4];
-document.getElementById("sembuh_note").innerHTML = x_data[5];	
+document.getElementById("positif_note").innerHTML = numberWithCommas(x_data[1])	
+document.getElementById("new_case").innerHTML = numberWithCommas(x_data[1]);
+document.getElementById("meninggal").innerHTML = numberWithCommas(x_data[2]);	
+document.getElementById("meninggal_note").innerHTML = numberWithCommas(x_data[3]);	
+document.getElementById("sembuh").innerHTML = numberWithCommas(x_data[4]);
+document.getElementById("sembuh_note").innerHTML = numberWithCommas(x_data[5]);	
 document.getElementById("negatif").innerHTML = numberWithCommas(x_data[7]);
 document.getElementById("negatif_note").innerHTML = numberWithCommas(x_data[8]);
 document.getElementById("totaltes").innerHTML = numberWithCommas(x_data[9]);	
