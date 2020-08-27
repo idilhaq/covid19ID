@@ -1,5 +1,5 @@
 /*!
-FullCalendar Interaction Plugin v4.4.2
+FullCalendar Interaction Plugin v4.3.0
 Docs & License: https://fullcalendar.io/
 (c) 2019 Adam Shaw
 */
@@ -11,18 +11,18 @@ Docs & License: https://fullcalendar.io/
 }(this, function (exports, core) { 'use strict';
 
     /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation.
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
 
-    Permission to use, copy, modify, and/or distribute this software for any
-    purpose with or without fee is hereby granted.
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
 
-    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-    PERFORMANCE OF THIS SOFTWARE.
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
     ***************************************************************************** */
     /* global Reflect, Promise */
 
@@ -1130,12 +1130,11 @@ Docs & License: https://fullcalendar.io/
             // won't even fire if moving was ignored
             _this.handleDragEnd = function (ev) {
                 var component = _this.component;
-                var _a = component.context, calendar = _a.calendar, view = _a.view;
                 var pointer = _this.dragging.pointer;
                 if (!pointer.wasTouchScroll) {
-                    var _b = _this.hitDragging, initialHit = _b.initialHit, finalHit = _b.finalHit;
+                    var _a = _this.hitDragging, initialHit = _a.initialHit, finalHit = _a.finalHit;
                     if (initialHit && finalHit && isHitsEqual(initialHit, finalHit)) {
-                        calendar.triggerDateClick(initialHit.dateSpan, initialHit.dayEl, view, ev.origEvent);
+                        component.calendar.triggerDateClick(initialHit.dateSpan, initialHit.dayEl, component.view, ev.origEvent);
                     }
                 }
             };
@@ -1165,8 +1164,7 @@ Docs & License: https://fullcalendar.io/
             _this.dragSelection = null;
             _this.handlePointerDown = function (ev) {
                 var _a = _this, component = _a.component, dragging = _a.dragging;
-                var options = component.context.options;
-                var canSelect = options.selectable &&
+                var canSelect = component.opt('selectable') &&
                     component.isValidDateDownEl(ev.origEvent.target);
                 // don't bother to watch expensive moves if component won't do selection
                 dragging.setIgnoreMove(!canSelect);
@@ -1174,10 +1172,10 @@ Docs & License: https://fullcalendar.io/
                 dragging.delay = ev.isTouch ? getComponentTouchDelay(component) : null;
             };
             _this.handleDragStart = function (ev) {
-                _this.component.context.calendar.unselect(ev); // unselect previous selections
+                _this.component.calendar.unselect(ev); // unselect previous selections
             };
             _this.handleHitUpdate = function (hit, isFinal) {
-                var calendar = _this.component.context.calendar;
+                var calendar = _this.component.calendar;
                 var dragSelection = null;
                 var isInvalid = false;
                 if (hit) {
@@ -1206,16 +1204,15 @@ Docs & License: https://fullcalendar.io/
             _this.handlePointerUp = function (pev) {
                 if (_this.dragSelection) {
                     // selection is already rendered, so just need to report selection
-                    _this.component.context.calendar.triggerDateSelect(_this.dragSelection, pev);
+                    _this.component.calendar.triggerDateSelect(_this.dragSelection, pev);
                     _this.dragSelection = null;
                 }
             };
             var component = settings.component;
-            var options = component.context.options;
             var dragging = _this.dragging = new FeaturefulElementDragging(component.el);
             dragging.touchScrollAllowed = false;
-            dragging.minDistance = options.selectMinDistance || 0;
-            dragging.autoScroller.isEnabled = options.dragScroll;
+            dragging.minDistance = component.opt('selectMinDistance') || 0;
+            dragging.autoScroller.isEnabled = component.opt('dragScroll');
             var hitDragging = _this.hitDragging = new HitDragging(_this.dragging, core.interactionSettingsToStore(settings));
             hitDragging.emitter.on('pointerdown', _this.handlePointerDown);
             hitDragging.emitter.on('dragstart', _this.handleDragStart);
@@ -1229,10 +1226,9 @@ Docs & License: https://fullcalendar.io/
         return DateSelecting;
     }(core.Interaction));
     function getComponentTouchDelay(component) {
-        var options = component.context.options;
-        var delay = options.selectLongPressDelay;
+        var delay = component.opt('selectLongPressDelay');
         if (delay == null) {
-            delay = options.longPressDelay;
+            delay = component.opt('longPressDelay');
         }
         return delay;
     }
@@ -1278,20 +1274,19 @@ Docs & License: https://fullcalendar.io/
                 var origTarget = ev.origEvent.target;
                 var _a = _this, component = _a.component, dragging = _a.dragging;
                 var mirror = dragging.mirror;
-                var options = component.context.options;
-                var initialCalendar = component.context.calendar;
+                var initialCalendar = component.calendar;
                 var subjectSeg = _this.subjectSeg = core.getElSeg(ev.subjectEl);
                 var eventRange = _this.eventRange = subjectSeg.eventRange;
                 var eventInstanceId = eventRange.instance.instanceId;
                 _this.relevantEvents = core.getRelevantEvents(initialCalendar.state.eventStore, eventInstanceId);
-                dragging.minDistance = ev.isTouch ? 0 : options.eventDragMinDistance;
+                dragging.minDistance = ev.isTouch ? 0 : component.opt('eventDragMinDistance');
                 dragging.delay =
                     // only do a touch delay if touch and this event hasn't been selected yet
                     (ev.isTouch && eventInstanceId !== component.props.eventSelection) ?
                         getComponentTouchDelay$1(component) :
                         null;
                 mirror.parentNode = initialCalendar.el;
-                mirror.revertDuration = options.dragRevertDuration;
+                mirror.revertDuration = component.opt('dragRevertDuration');
                 var isValid = component.isValidSegDownEl(origTarget) &&
                     !core.elementClosest(origTarget, '.fc-resizer'); // NOT on a resizer
                 dragging.setIgnoreMove(!isValid);
@@ -1301,8 +1296,7 @@ Docs & License: https://fullcalendar.io/
                     ev.subjectEl.classList.contains('fc-draggable');
             };
             _this.handleDragStart = function (ev) {
-                var context = _this.component.context;
-                var initialCalendar = context.calendar;
+                var initialCalendar = _this.component.calendar;
                 var eventRange = _this.eventRange;
                 var eventInstanceId = eventRange.instance.instanceId;
                 if (ev.isTouch) {
@@ -1322,7 +1316,7 @@ Docs & License: https://fullcalendar.io/
                             el: _this.subjectSeg.el,
                             event: new core.EventApi(initialCalendar, eventRange.def, eventRange.instance),
                             jsEvent: ev.origEvent,
-                            view: context.view
+                            view: _this.component.view
                         }
                     ]);
                 }
@@ -1333,7 +1327,7 @@ Docs & License: https://fullcalendar.io/
                 }
                 var relevantEvents = _this.relevantEvents;
                 var initialHit = _this.hitDragging.initialHit;
-                var initialCalendar = _this.component.context.calendar;
+                var initialCalendar = _this.component.calendar;
                 // states based on new hit
                 var receivingCalendar = null;
                 var mutation = null;
@@ -1347,10 +1341,9 @@ Docs & License: https://fullcalendar.io/
                 };
                 if (hit) {
                     var receivingComponent = hit.component;
-                    receivingCalendar = receivingComponent.context.calendar;
-                    var receivingOptions = receivingComponent.context.options;
+                    receivingCalendar = receivingComponent.calendar;
                     if (initialCalendar === receivingCalendar ||
-                        receivingOptions.editable && receivingOptions.droppable) {
+                        receivingComponent.opt('editable') && receivingComponent.opt('droppable')) {
                         mutation = computeEventMutation(initialHit, hit, receivingCalendar.pluginSystem.hooks.eventDragMutationMassagers);
                         if (mutation) {
                             mutatedRelevantEvents = core.applyMutationToEventStore(relevantEvents, receivingCalendar.eventUiBases, mutation, receivingCalendar);
@@ -1396,9 +1389,8 @@ Docs & License: https://fullcalendar.io/
             };
             _this.handleDragEnd = function (ev) {
                 if (_this.isDragging) {
-                    var context = _this.component.context;
-                    var initialCalendar_1 = context.calendar;
-                    var initialView = context.view;
+                    var initialCalendar_1 = _this.component.calendar;
+                    var initialView = _this.component.view;
                     var _a = _this, receivingCalendar = _a.receivingCalendar, validMutation = _a.validMutation;
                     var eventDef = _this.eventRange.def;
                     var eventInstance = _this.eventRange.instance;
@@ -1479,11 +1471,10 @@ Docs & License: https://fullcalendar.io/
                 _this.cleanup();
             };
             var component = _this.component;
-            var options = component.context.options;
             var dragging = _this.dragging = new FeaturefulElementDragging(component.el);
             dragging.pointer.selector = EventDragging.SELECTOR;
             dragging.touchScrollAllowed = false;
-            dragging.autoScroller.isEnabled = options.dragScroll;
+            dragging.autoScroller.isEnabled = component.opt('dragScroll');
             var hitDragging = _this.hitDragging = new HitDragging(_this.dragging, core.interactionSettingsStore);
             hitDragging.useSubjectCenter = settings.useEventCenter;
             hitDragging.emitter.on('pointerdown', _this.handlePointerDown);
@@ -1498,7 +1489,7 @@ Docs & License: https://fullcalendar.io/
         };
         // render a drag state on the next receivingCalendar
         EventDragging.prototype.displayDrag = function (nextCalendar, state) {
-            var initialCalendar = this.component.context.calendar;
+            var initialCalendar = this.component.calendar;
             var prevCalendar = this.receivingCalendar;
             // does the previous calendar need to be cleared?
             if (prevCalendar && prevCalendar !== nextCalendar) {
@@ -1525,7 +1516,7 @@ Docs & License: https://fullcalendar.io/
             }
         };
         EventDragging.prototype.clearDrag = function () {
-            var initialCalendar = this.component.context.calendar;
+            var initialCalendar = this.component.calendar;
             var receivingCalendar = this.receivingCalendar;
             if (receivingCalendar) {
                 receivingCalendar.dispatch({ type: 'UNSET_EVENT_DRAG' });
@@ -1555,14 +1546,14 @@ Docs & License: https://fullcalendar.io/
         var standardProps = {};
         if (dateSpan0.allDay !== dateSpan1.allDay) {
             standardProps.allDay = dateSpan1.allDay;
-            standardProps.hasEnd = hit1.component.context.options.allDayMaintainDuration;
+            standardProps.hasEnd = hit1.component.opt('allDayMaintainDuration');
             if (dateSpan1.allDay) {
                 // means date1 is already start-of-day,
                 // but date0 needs to be converted
                 date0 = core.startOfDay(date0);
             }
         }
-        var delta = core.diffDates(date0, date1, hit0.component.context.dateEnv, hit0.component === hit1.component ?
+        var delta = core.diffDates(date0, date1, hit0.component.dateEnv, hit0.component === hit1.component ?
             hit0.component.largeUnit :
             null);
         if (delta.milliseconds) { // has hours/minutes/seconds
@@ -1579,10 +1570,9 @@ Docs & License: https://fullcalendar.io/
         return mutation;
     }
     function getComponentTouchDelay$1(component) {
-        var options = component.context.options;
-        var delay = options.eventLongPressDelay;
+        var delay = component.opt('eventLongPressDelay');
         if (delay == null) {
-            delay = options.longPressDelay;
+            delay = component.opt('longPressDelay');
         }
         return delay;
     }
@@ -1601,13 +1591,13 @@ Docs & License: https://fullcalendar.io/
                 var component = _this.component;
                 var seg = _this.querySeg(ev);
                 var eventRange = _this.eventRange = seg.eventRange;
-                _this.dragging.minDistance = component.context.options.eventDragMinDistance;
+                _this.dragging.minDistance = component.opt('eventDragMinDistance');
                 // if touch, need to be working with a selected event
                 _this.dragging.setIgnoreMove(!_this.component.isValidSegDownEl(ev.origEvent.target) ||
                     (ev.isTouch && _this.component.props.eventSelection !== eventRange.instance.instanceId));
             };
             _this.handleDragStart = function (ev) {
-                var _a = _this.component.context, calendar = _a.calendar, view = _a.view;
+                var calendar = _this.component.calendar;
                 var eventRange = _this.eventRange;
                 _this.relevantEvents = core.getRelevantEvents(calendar.state.eventStore, _this.eventRange.instance.instanceId);
                 _this.draggingSeg = _this.querySeg(ev);
@@ -1617,12 +1607,12 @@ Docs & License: https://fullcalendar.io/
                         el: _this.draggingSeg.el,
                         event: new core.EventApi(calendar, eventRange.def, eventRange.instance),
                         jsEvent: ev.origEvent,
-                        view: view
+                        view: _this.component.view
                     }
                 ]);
             };
             _this.handleHitUpdate = function (hit, isFinal, ev) {
-                var calendar = _this.component.context.calendar;
+                var calendar = _this.component.calendar;
                 var relevantEvents = _this.relevantEvents;
                 var initialHit = _this.hitDragging.initialHit;
                 var eventInstance = _this.eventRange.instance;
@@ -1672,7 +1662,8 @@ Docs & License: https://fullcalendar.io/
                 }
             };
             _this.handleDragEnd = function (ev) {
-                var _a = _this.component.context, calendar = _a.calendar, view = _a.view;
+                var calendar = _this.component.calendar;
+                var view = _this.component.view;
                 var eventDef = _this.eventRange.def;
                 var eventInstance = _this.eventRange.instance;
                 var eventApi = new core.EventApi(calendar, eventDef, eventInstance);
@@ -1723,7 +1714,7 @@ Docs & License: https://fullcalendar.io/
             var dragging = _this.dragging = new FeaturefulElementDragging(component.el);
             dragging.pointer.selector = '.fc-resizer';
             dragging.touchScrollAllowed = false;
-            dragging.autoScroller.isEnabled = component.context.options.dragScroll;
+            dragging.autoScroller.isEnabled = component.opt('dragScroll');
             var hitDragging = _this.hitDragging = new HitDragging(_this.dragging, core.interactionSettingsToStore(settings));
             hitDragging.emitter.on('pointerdown', _this.handlePointerDown);
             hitDragging.emitter.on('dragstart', _this.handleDragStart);
@@ -1740,7 +1731,7 @@ Docs & License: https://fullcalendar.io/
         return EventDragging;
     }(core.Interaction));
     function computeMutation(hit0, hit1, isFromStart, instanceRange, transforms) {
-        var dateEnv = hit0.component.context.dateEnv;
+        var dateEnv = hit0.component.dateEnv;
         var date0 = hit0.dateSpan.range.start;
         var date1 = hit1.dateSpan.range.start;
         var delta = core.diffDates(date0, date1, dateEnv, hit0.component.largeUnit);
@@ -1845,7 +1836,7 @@ Docs & License: https://fullcalendar.io/
                     origSeg: null
                 };
                 if (hit) {
-                    receivingCalendar = hit.component.context.calendar;
+                    receivingCalendar = hit.component.calendar;
                     if (_this.canDropElOnCalendar(ev.subjectEl, receivingCalendar)) {
                         droppableEvent = computeEventForDateSpan(hit.dateSpan, _this.dragMeta, receivingCalendar);
                         interaction.mutatedEvents = core.eventTupleToStore(droppableEvent);
@@ -1877,7 +1868,7 @@ Docs & License: https://fullcalendar.io/
                 _this.clearDrag();
                 if (receivingCalendar && droppableEvent) {
                     var finalHit = _this.hitDragging.finalHit;
-                    var finalView = finalHit.component.context.view;
+                    var finalView = finalHit.component.view;
                     var dragMeta = _this.dragMeta;
                     var arg = __assign({}, receivingCalendar.buildDatePointApi(finalHit.dateSpan), { draggedEl: pev.subjectEl, jsEvent: pev.origEvent, view: finalView });
                     receivingCalendar.publiclyTrigger('drop', [arg]);

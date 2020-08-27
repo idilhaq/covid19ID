@@ -1,25 +1,25 @@
 /*!
-FullCalendar Time Grid Plugin v4.4.2
+FullCalendar Time Grid Plugin v4.3.0
 Docs & License: https://fullcalendar.io/
 (c) 2019 Adam Shaw
 */
 
-import { createFormatter, removeElement, computeEventDraggable, computeEventStartResizable, computeEventEndResizable, cssToStr, isMultiDayRange, htmlEscape, compareByFieldSpecs, applyStyle, FgEventRenderer, buildSegCompareObj, FillRenderer, memoize, memoizeRendering, createDuration, wholeDivideDurations, findElements, PositionCache, startOfDay, asRoughMs, formatIsoTimeString, addDurations, htmlToElement, createElement, multiplyDuration, DateComponent, hasBgRendering, Splitter, diffDays, buildGotoAnchorHtml, getAllDayHtml, ScrollComponent, matchCellWidths, uncompensateScroll, compensateScroll, subtractInnerElHeight, View, intersectRanges, Slicer, DayHeader, DaySeries, DayTable, createPlugin } from '@fullcalendar/core';
+import { createFormatter, removeElement, cssToStr, isMultiDayRange, htmlEscape, compareByFieldSpecs, applyStyle, FgEventRenderer, buildSegCompareObj, FillRenderer, memoizeRendering, createDuration, wholeDivideDurations, findElements, PositionCache, startOfDay, asRoughMs, formatIsoTimeString, addDurations, htmlToElement, createElement, multiplyDuration, DateComponent, hasBgRendering, Splitter, diffDays, buildGotoAnchorHtml, getAllDayHtml, ScrollComponent, matchCellWidths, uncompensateScroll, compensateScroll, subtractInnerElHeight, View, memoize, intersectRanges, Slicer, DayHeader, DaySeries, DayTable, createPlugin } from '@fullcalendar/core';
 import { DayBgRow, DayGrid, SimpleDayGrid } from '@fullcalendar/daygrid';
 
 /*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
 
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
 
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
@@ -54,19 +54,15 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 var TimeGridEventRenderer = /** @class */ (function (_super) {
     __extends(TimeGridEventRenderer, _super);
     function TimeGridEventRenderer(timeGrid) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, timeGrid.context) || this;
         _this.timeGrid = timeGrid;
-        return _this;
-    }
-    TimeGridEventRenderer.prototype.renderSegs = function (context, segs, mirrorInfo) {
-        _super.prototype.renderSegs.call(this, context, segs, mirrorInfo);
-        // TODO: dont do every time. memoize
-        this.fullTimeFormat = createFormatter({
+        _this.fullTimeFormat = createFormatter({
             hour: 'numeric',
             minute: '2-digit',
-            separator: this.context.options.defaultRangeSeparator
+            separator: _this.context.options.defaultRangeSeparator
         });
-    };
+        return _this;
+    }
     // Given an array of foreground segments, render a DOM element for each, computes position,
     // and attaches to the column inner-container elements.
     TimeGridEventRenderer.prototype.attachSegs = function (segs, mirrorInfo) {
@@ -119,13 +115,14 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
     };
     // Renders the HTML for a single event segment's default rendering
     TimeGridEventRenderer.prototype.renderSegHtml = function (seg, mirrorInfo) {
+        var view = this.context.view;
         var eventRange = seg.eventRange;
         var eventDef = eventRange.def;
         var eventUi = eventRange.ui;
         var allDay = eventDef.allDay;
-        var isDraggable = computeEventDraggable(this.context, eventDef, eventUi);
-        var isResizableFromStart = seg.isStart && computeEventStartResizable(this.context, eventDef, eventUi);
-        var isResizableFromEnd = seg.isEnd && computeEventEndResizable(this.context, eventDef, eventUi);
+        var isDraggable = view.computeEventDraggable(eventDef, eventUi);
+        var isResizableFromStart = seg.isStart && view.computeEventStartResizable(eventDef, eventUi);
+        var isResizableFromEnd = seg.isEnd && view.computeEventEndResizable(eventDef, eventUi);
         var classes = this.getSegClasses(seg, isDraggable, isResizableFromStart || isResizableFromEnd, mirrorInfo);
         var skinCss = cssToStr(this.getSkinCss(eventUi));
         var timeText;
@@ -245,7 +242,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
             { field: 'forwardPressure', order: -1 },
             // put segments that are closer to initial edge first (and favor ones with no coords yet)
             { field: 'backwardCoord', order: 1 }
-        ].concat(this.context.eventOrderSpecs);
+        ].concat(this.context.view.eventOrderSpecs);
         objs.sort(function (obj0, obj1) {
             return compareByFieldSpecs(obj0, obj1, specs);
         });
@@ -276,7 +273,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
         var backwardCoord = seg.backwardCoord; // the left side if LTR. the right side if RTL. floating-point
         var forwardCoord = seg.forwardCoord; // the right side if LTR. the left side if RTL. floating-point
         var props = this.timeGrid.generateSegVerticalCss(seg); // get top/bottom first
-        var isRtl = this.context.isRtl;
+        var isRtl = this.timeGrid.isRtl;
         var left; // amount of space from left edge, a fraction of the total width
         var right; // amount of space from right edge, a fraction of the total width
         if (shouldOverlap) {
@@ -410,7 +407,7 @@ var TimeGridMirrorRenderer = /** @class */ (function (_super) {
 var TimeGridFillRenderer = /** @class */ (function (_super) {
     __extends(TimeGridFillRenderer, _super);
     function TimeGridFillRenderer(timeGrid) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, timeGrid.context) || this;
         _this.timeGrid = timeGrid;
         return _this;
     }
@@ -454,19 +451,15 @@ var AGENDA_STOCK_SUB_DURATIONS = [
 ];
 var TimeGrid = /** @class */ (function (_super) {
     __extends(TimeGrid, _super);
-    function TimeGrid(el, renderProps) {
-        var _this = _super.call(this, el) || this;
+    function TimeGrid(context, el, renderProps) {
+        var _this = _super.call(this, context, el) || this;
         _this.isSlatSizesDirty = false;
         _this.isColSizesDirty = false;
-        _this.processOptions = memoize(_this._processOptions);
-        _this.renderSkeleton = memoizeRendering(_this._renderSkeleton);
-        _this.renderSlats = memoizeRendering(_this._renderSlats, null, [_this.renderSkeleton]);
-        _this.renderColumns = memoizeRendering(_this._renderColumns, _this._unrenderColumns, [_this.renderSkeleton]);
-        _this.renderProps = renderProps;
-        var renderColumns = _this.renderColumns;
+        _this.renderSlats = memoizeRendering(_this._renderSlats);
         var eventRenderer = _this.eventRenderer = new TimeGridEventRenderer(_this);
         var fillRenderer = _this.fillRenderer = new TimeGridFillRenderer(_this);
         _this.mirrorRenderer = new TimeGridMirrorRenderer(_this);
+        var renderColumns = _this.renderColumns = memoizeRendering(_this._renderColumns, _this._unrenderColumns);
         _this.renderBusinessHours = memoizeRendering(fillRenderer.renderSegs.bind(fillRenderer, 'businessHours'), fillRenderer.unrender.bind(fillRenderer, 'businessHours'), [renderColumns]);
         _this.renderDateSelection = memoizeRendering(_this._renderDateSelection, _this._unrenderDateSelection, [renderColumns]);
         _this.renderFgEvents = memoizeRendering(eventRenderer.renderSegs.bind(eventRenderer), eventRenderer.unrender.bind(eventRenderer), [renderColumns]);
@@ -474,14 +467,23 @@ var TimeGrid = /** @class */ (function (_super) {
         _this.renderEventSelection = memoizeRendering(eventRenderer.selectByInstanceId.bind(eventRenderer), eventRenderer.unselectByInstanceId.bind(eventRenderer), [_this.renderFgEvents]);
         _this.renderEventDrag = memoizeRendering(_this._renderEventDrag, _this._unrenderEventDrag, [renderColumns]);
         _this.renderEventResize = memoizeRendering(_this._renderEventResize, _this._unrenderEventResize, [renderColumns]);
+        _this.processOptions();
+        el.innerHTML =
+            '<div class="fc-bg"></div>' +
+                '<div class="fc-slats"></div>' +
+                '<hr class="fc-divider ' + _this.theme.getClass('widgetHeader') + '" style="display:none" />';
+        _this.rootBgContainerEl = el.querySelector('.fc-bg');
+        _this.slatContainerEl = el.querySelector('.fc-slats');
+        _this.bottomRuleEl = el.querySelector('.fc-divider');
+        _this.renderProps = renderProps;
         return _this;
     }
     /* Options
     ------------------------------------------------------------------------------------------------------------------*/
     // Parses various options into properties of this object
-    // MUST have context already set
-    TimeGrid.prototype._processOptions = function (options) {
-        var slotDuration = options.slotDuration, snapDuration = options.snapDuration;
+    TimeGrid.prototype.processOptions = function () {
+        var slotDuration = this.opt('slotDuration');
+        var snapDuration = this.opt('snapDuration');
         var snapsPerSlot;
         var input;
         slotDuration = createDuration(slotDuration);
@@ -497,7 +499,7 @@ var TimeGrid = /** @class */ (function (_super) {
         this.snapsPerSlot = snapsPerSlot;
         // might be an array value (for TimelineView).
         // if so, getting the most granular entry (the last one probably).
-        input = options.slotLabelFormat;
+        input = this.opt('slotLabelFormat');
         if (Array.isArray(input)) {
             input = input[input.length - 1];
         }
@@ -507,7 +509,7 @@ var TimeGrid = /** @class */ (function (_super) {
             omitZeroMinute: true,
             meridiem: 'short'
         });
-        input = options.slotLabelInterval;
+        input = this.opt('slotLabelInterval');
         this.labelInterval = input ?
             createDuration(input) :
             this.computeLabelInterval(slotDuration);
@@ -529,17 +531,15 @@ var TimeGrid = /** @class */ (function (_super) {
     };
     /* Rendering
     ------------------------------------------------------------------------------------------------------------------*/
-    TimeGrid.prototype.render = function (props, context) {
-        this.processOptions(context.options);
+    TimeGrid.prototype.render = function (props) {
         var cells = props.cells;
         this.colCnt = cells.length;
-        this.renderSkeleton(context.theme);
         this.renderSlats(props.dateProfile);
         this.renderColumns(props.cells, props.dateProfile);
-        this.renderBusinessHours(context, props.businessHourSegs);
+        this.renderBusinessHours(props.businessHourSegs);
         this.renderDateSelection(props.dateSelectionSegs);
-        this.renderFgEvents(context, props.fgEventSegs);
-        this.renderBgEvents(context, props.bgEventSegs);
+        this.renderFgEvents(props.fgEventSegs);
+        this.renderBgEvents(props.bgEventSegs);
         this.renderEventSelection(props.eventSelection);
         this.renderEventDrag(props.eventDrag);
         this.renderEventResize(props.eventResize);
@@ -549,7 +549,6 @@ var TimeGrid = /** @class */ (function (_super) {
         // should unrender everything else too
         this.renderSlats.unrender();
         this.renderColumns.unrender();
-        this.renderSkeleton.unrender();
     };
     TimeGrid.prototype.updateSize = function (isResize) {
         var _a = this, fillRenderer = _a.fillRenderer, eventRenderer = _a.eventRenderer, mirrorRenderer = _a.mirrorRenderer;
@@ -568,18 +567,8 @@ var TimeGrid = /** @class */ (function (_super) {
         eventRenderer.assignSizes(isResize);
         mirrorRenderer.assignSizes(isResize);
     };
-    TimeGrid.prototype._renderSkeleton = function (theme) {
-        var el = this.el;
-        el.innerHTML =
-            '<div class="fc-bg"></div>' +
-                '<div class="fc-slats"></div>' +
-                '<hr class="fc-divider ' + theme.getClass('widgetHeader') + '" style="display:none" />';
-        this.rootBgContainerEl = el.querySelector('.fc-bg');
-        this.slatContainerEl = el.querySelector('.fc-slats');
-        this.bottomRuleEl = el.querySelector('.fc-divider');
-    };
     TimeGrid.prototype._renderSlats = function (dateProfile) {
-        var theme = this.context.theme;
+        var theme = this.theme;
         this.slatContainerEl.innerHTML =
             '<table class="' + theme.getClass('tableGrid') + '">' +
                 this.renderSlatRowHtml(dateProfile) +
@@ -591,7 +580,7 @@ var TimeGrid = /** @class */ (function (_super) {
     };
     // Generates the HTML for the horizontal "slats" that run width-wise. Has a time axis on a side. Depends on RTL.
     TimeGrid.prototype.renderSlatRowHtml = function (dateProfile) {
-        var _a = this.context, dateEnv = _a.dateEnv, theme = _a.theme, isRtl = _a.isRtl;
+        var _a = this, dateEnv = _a.dateEnv, theme = _a.theme, isRtl = _a.isRtl;
         var html = '';
         var dayStart = startOfDay(dateProfile.renderRange.start);
         var slotTime = dateProfile.minTime;
@@ -625,7 +614,7 @@ var TimeGrid = /** @class */ (function (_super) {
         return html;
     };
     TimeGrid.prototype._renderColumns = function (cells, dateProfile) {
-        var _a = this.context, calendar = _a.calendar, view = _a.view, isRtl = _a.isRtl, theme = _a.theme, dateEnv = _a.dateEnv;
+        var _a = this, theme = _a.theme, dateEnv = _a.dateEnv, view = _a.view;
         var bgRow = new DayBgRow(this.context);
         this.rootBgContainerEl.innerHTML =
             '<table class="' + theme.getClass('tableGrid') + '">' +
@@ -637,7 +626,7 @@ var TimeGrid = /** @class */ (function (_super) {
                 '</table>';
         this.colEls = findElements(this.el, '.fc-day, .fc-disabled-day');
         for (var col = 0; col < this.colCnt; col++) {
-            calendar.publiclyTrigger('dayRender', [
+            this.publiclyTrigger('dayRender', [
                 {
                     date: dateEnv.toDate(cells[col].date),
                     el: this.colEls[col],
@@ -645,7 +634,7 @@ var TimeGrid = /** @class */ (function (_super) {
                 }
             ]);
         }
-        if (isRtl) {
+        if (this.isRtl) {
             this.colEls.reverse();
         }
         this.colPositions = new PositionCache(this.el, this.colEls, true, // horizontal
@@ -660,7 +649,6 @@ var TimeGrid = /** @class */ (function (_super) {
     ------------------------------------------------------------------------------------------------------------------*/
     // Renders the DOM that the view's content will live in
     TimeGrid.prototype.renderContentSkeleton = function () {
-        var isRtl = this.context.isRtl;
         var parts = [];
         var skeletonEl;
         parts.push(this.renderProps.renderIntroHtml());
@@ -675,7 +663,7 @@ var TimeGrid = /** @class */ (function (_super) {
                 '</div>' +
                 '</td>');
         }
-        if (isRtl) {
+        if (this.isRtl) {
             parts.reverse();
         }
         skeletonEl = this.contentSkeletonEl = htmlToElement('<div class="fc-content-skeleton">' +
@@ -689,7 +677,7 @@ var TimeGrid = /** @class */ (function (_super) {
         this.bgContainerEls = findElements(skeletonEl, '.fc-bgevent-container');
         this.highlightContainerEls = findElements(skeletonEl, '.fc-highlight-container');
         this.businessContainerEls = findElements(skeletonEl, '.fc-business-container');
-        if (isRtl) {
+        if (this.isRtl) {
             this.colContainerEls.reverse();
             this.mirrorContainerEls.reverse();
             this.fgContainerEls.reverse();
@@ -799,8 +787,7 @@ var TimeGrid = /** @class */ (function (_super) {
     };
     // For each segment in an array, computes and assigns its top and bottom properties
     TimeGrid.prototype.computeSegVerticals = function (segs) {
-        var options = this.context.options;
-        var eventMinHeight = options.timeGridEventMinHeight;
+        var eventMinHeight = this.opt('timeGridEventMinHeight');
         var i;
         var seg;
         var dayDate;
@@ -843,8 +830,7 @@ var TimeGrid = /** @class */ (function (_super) {
     /* Hit System
     ------------------------------------------------------------------------------------------------------------------*/
     TimeGrid.prototype.positionToHit = function (positionLeft, positionTop) {
-        var dateEnv = this.context.dateEnv;
-        var _a = this, snapsPerSlot = _a.snapsPerSlot, slatPositions = _a.slatPositions, colPositions = _a.colPositions;
+        var _a = this, dateEnv = _a.dateEnv, snapsPerSlot = _a.snapsPerSlot, slatPositions = _a.slatPositions, colPositions = _a.colPositions;
         var colIndex = colPositions.leftToIndex(positionLeft);
         var slatIndex = slatPositions.topToIndex(positionTop);
         if (colIndex != null && slatIndex != null) {
@@ -879,22 +865,18 @@ var TimeGrid = /** @class */ (function (_super) {
         if (state) {
             this.eventRenderer.hideByHash(state.affectedInstances);
             if (state.isEvent) {
-                this.mirrorRenderer.renderSegs(this.context, state.segs, { isDragging: true, sourceSeg: state.sourceSeg });
+                this.mirrorRenderer.renderSegs(state.segs, { isDragging: true, sourceSeg: state.sourceSeg });
             }
             else {
-                this.fillRenderer.renderSegs('highlight', this.context, state.segs);
+                this.fillRenderer.renderSegs('highlight', state.segs);
             }
         }
     };
     TimeGrid.prototype._unrenderEventDrag = function (state) {
         if (state) {
             this.eventRenderer.showByHash(state.affectedInstances);
-            if (state.isEvent) {
-                this.mirrorRenderer.unrender(this.context, state.segs, { isDragging: true, sourceSeg: state.sourceSeg });
-            }
-            else {
-                this.fillRenderer.unrender('highlight', this.context);
-            }
+            this.mirrorRenderer.unrender(state.segs, { isDragging: true, sourceSeg: state.sourceSeg });
+            this.fillRenderer.unrender('highlight');
         }
     };
     /* Event Resize Visualization
@@ -902,13 +884,13 @@ var TimeGrid = /** @class */ (function (_super) {
     TimeGrid.prototype._renderEventResize = function (state) {
         if (state) {
             this.eventRenderer.hideByHash(state.affectedInstances);
-            this.mirrorRenderer.renderSegs(this.context, state.segs, { isResizing: true, sourceSeg: state.sourceSeg });
+            this.mirrorRenderer.renderSegs(state.segs, { isResizing: true, sourceSeg: state.sourceSeg });
         }
     };
     TimeGrid.prototype._unrenderEventResize = function (state) {
         if (state) {
             this.eventRenderer.showByHash(state.affectedInstances);
-            this.mirrorRenderer.unrender(this.context, state.segs, { isResizing: true, sourceSeg: state.sourceSeg });
+            this.mirrorRenderer.unrender(state.segs, { isResizing: true, sourceSeg: state.sourceSeg });
         }
     };
     /* Selection
@@ -916,23 +898,17 @@ var TimeGrid = /** @class */ (function (_super) {
     // Renders a visual indication of a selection. Overrides the default, which was to simply render a highlight.
     TimeGrid.prototype._renderDateSelection = function (segs) {
         if (segs) {
-            if (this.context.options.selectMirror) {
-                this.mirrorRenderer.renderSegs(this.context, segs, { isSelecting: true });
+            if (this.opt('selectMirror')) {
+                this.mirrorRenderer.renderSegs(segs, { isSelecting: true });
             }
             else {
-                this.fillRenderer.renderSegs('highlight', this.context, segs);
+                this.fillRenderer.renderSegs('highlight', segs);
             }
         }
     };
     TimeGrid.prototype._unrenderDateSelection = function (segs) {
-        if (segs) {
-            if (this.context.options.selectMirror) {
-                this.mirrorRenderer.unrender(this.context, segs, { isSelecting: true });
-            }
-            else {
-                this.fillRenderer.unrender('highlight', this.context);
-            }
-        }
+        this.mirrorRenderer.unrender(segs, { isSelecting: true });
+        this.fillRenderer.unrender('highlight');
     };
     return TimeGrid;
 }(DateComponent));
@@ -976,26 +952,25 @@ var WEEK_HEADER_FORMAT = createFormatter({ week: 'short' });
 ----------------------------------------------------------------------------------------------------------------------*/
 // Is a manager for the TimeGrid subcomponent and possibly the DayGrid subcomponent (if allDaySlot is on).
 // Responsible for managing width/height.
-var AbstractTimeGridView = /** @class */ (function (_super) {
-    __extends(AbstractTimeGridView, _super);
-    function AbstractTimeGridView() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+var TimeGridView = /** @class */ (function (_super) {
+    __extends(TimeGridView, _super);
+    function TimeGridView(context, viewSpec, dateProfileGenerator, parentEl) {
+        var _this = _super.call(this, context, viewSpec, dateProfileGenerator, parentEl) || this;
         _this.splitter = new AllDaySplitter();
-        _this.renderSkeleton = memoizeRendering(_this._renderSkeleton, _this._unrenderSkeleton);
         /* Header Render Methods
         ------------------------------------------------------------------------------------------------------------------*/
         // Generates the HTML that will go before the day-of week header cells
         _this.renderHeadIntroHtml = function () {
-            var _a = _this.context, theme = _a.theme, dateEnv = _a.dateEnv, options = _a.options;
+            var _a = _this, theme = _a.theme, dateEnv = _a.dateEnv;
             var range = _this.props.dateProfile.renderRange;
             var dayCnt = diffDays(range.start, range.end);
             var weekText;
-            if (options.weekNumbers) {
+            if (_this.opt('weekNumbers')) {
                 weekText = dateEnv.format(range.start, WEEK_HEADER_FORMAT);
                 return '' +
                     '<th class="fc-axis fc-week-number ' + theme.getClass('widgetHeader') + '" ' + _this.axisStyleAttr() + '>' +
                     buildGotoAnchorHtml(// aside from link, important for matchCellWidths
-                    options, dateEnv, { date: range.start, type: 'week', forceOff: dayCnt > 1 }, htmlEscape(weekText) // inner HTML
+                    _this, { date: range.start, type: 'week', forceOff: dayCnt > 1 }, htmlEscape(weekText) // inner HTML
                     ) +
                     '</th>';
             }
@@ -1007,7 +982,7 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         ------------------------------------------------------------------------------------------------------------------*/
         // Generates the HTML that goes before the bg of the TimeGrid slot area. Long vertical column.
         _this.renderTimeGridBgIntroHtml = function () {
-            var theme = _this.context.theme;
+            var theme = _this.theme;
             return '<td class="fc-axis ' + theme.getClass('widgetContent') + '" ' + _this.axisStyleAttr() + '></td>';
         };
         // Generates the HTML that goes before all other types of cells.
@@ -1019,11 +994,11 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         ------------------------------------------------------------------------------------------------------------------*/
         // Generates the HTML that goes before the all-day cells
         _this.renderDayGridBgIntroHtml = function () {
-            var _a = _this.context, theme = _a.theme, options = _a.options;
+            var theme = _this.theme;
             return '' +
                 '<td class="fc-axis ' + theme.getClass('widgetContent') + '" ' + _this.axisStyleAttr() + '>' +
                 '<span>' + // needed for matchCellWidths
-                getAllDayHtml(options) +
+                getAllDayHtml(_this) +
                 '</span>' +
                 '</td>';
         };
@@ -1032,47 +1007,37 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         _this.renderDayGridIntroHtml = function () {
             return '<td class="fc-axis" ' + _this.axisStyleAttr() + '></td>';
         };
-        return _this;
-    }
-    AbstractTimeGridView.prototype.render = function (props, context) {
-        _super.prototype.render.call(this, props, context);
-        this.renderSkeleton(context);
-    };
-    AbstractTimeGridView.prototype.destroy = function () {
-        _super.prototype.destroy.call(this);
-        this.renderSkeleton.unrender();
-    };
-    AbstractTimeGridView.prototype._renderSkeleton = function (context) {
-        this.el.classList.add('fc-timeGrid-view');
-        this.el.innerHTML = this.renderSkeletonHtml();
-        this.scroller = new ScrollComponent('hidden', // overflow x
+        _this.el.classList.add('fc-timeGrid-view');
+        _this.el.innerHTML = _this.renderSkeletonHtml();
+        _this.scroller = new ScrollComponent('hidden', // overflow x
         'auto' // overflow y
         );
-        var timeGridWrapEl = this.scroller.el;
-        this.el.querySelector('.fc-body > tr > td').appendChild(timeGridWrapEl);
+        var timeGridWrapEl = _this.scroller.el;
+        _this.el.querySelector('.fc-body > tr > td').appendChild(timeGridWrapEl);
         timeGridWrapEl.classList.add('fc-time-grid-container');
         var timeGridEl = createElement('div', { className: 'fc-time-grid' });
         timeGridWrapEl.appendChild(timeGridEl);
-        this.timeGrid = new TimeGrid(timeGridEl, {
-            renderBgIntroHtml: this.renderTimeGridBgIntroHtml,
-            renderIntroHtml: this.renderTimeGridIntroHtml
+        _this.timeGrid = new TimeGrid(_this.context, timeGridEl, {
+            renderBgIntroHtml: _this.renderTimeGridBgIntroHtml,
+            renderIntroHtml: _this.renderTimeGridIntroHtml
         });
-        if (context.options.allDaySlot) { // should we display the "all-day" area?
-            this.dayGrid = new DayGrid(// the all-day subcomponent of this view
-            this.el.querySelector('.fc-day-grid'), {
-                renderNumberIntroHtml: this.renderDayGridIntroHtml,
-                renderBgIntroHtml: this.renderDayGridBgIntroHtml,
-                renderIntroHtml: this.renderDayGridIntroHtml,
+        if (_this.opt('allDaySlot')) { // should we display the "all-day" area?
+            _this.dayGrid = new DayGrid(// the all-day subcomponent of this view
+            _this.context, _this.el.querySelector('.fc-day-grid'), {
+                renderNumberIntroHtml: _this.renderDayGridIntroHtml,
+                renderBgIntroHtml: _this.renderDayGridBgIntroHtml,
+                renderIntroHtml: _this.renderDayGridIntroHtml,
                 colWeekNumbersVisible: false,
                 cellWeekNumbersVisible: false
             });
             // have the day-grid extend it's coordinate area over the <hr> dividing the two grids
-            var dividerEl = this.el.querySelector('.fc-divider');
-            this.dayGrid.bottomCoordPadding = dividerEl.getBoundingClientRect().height;
+            var dividerEl = _this.el.querySelector('.fc-divider');
+            _this.dayGrid.bottomCoordPadding = dividerEl.getBoundingClientRect().height;
         }
-    };
-    AbstractTimeGridView.prototype._unrenderSkeleton = function () {
-        this.el.classList.remove('fc-timeGrid-view');
+        return _this;
+    }
+    TimeGridView.prototype.destroy = function () {
+        _super.prototype.destroy.call(this);
         this.timeGrid.destroy();
         if (this.dayGrid) {
             this.dayGrid.destroy();
@@ -1083,11 +1048,11 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
     ------------------------------------------------------------------------------------------------------------------*/
     // Builds the HTML skeleton for the view.
     // The day-grid and time-grid components will render inside containers defined by this HTML.
-    AbstractTimeGridView.prototype.renderSkeletonHtml = function () {
-        var _a = this.context, theme = _a.theme, options = _a.options;
+    TimeGridView.prototype.renderSkeletonHtml = function () {
+        var theme = this.theme;
         return '' +
             '<table class="' + theme.getClass('tableGrid') + '">' +
-            (options.columnHeader ?
+            (this.opt('columnHeader') ?
                 '<thead class="fc-head">' +
                     '<tr>' +
                     '<td class="fc-head-container ' + theme.getClass('widgetHeader') + '">&nbsp;</td>' +
@@ -1097,7 +1062,7 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
             '<tbody class="fc-body">' +
             '<tr>' +
             '<td class="' + theme.getClass('widgetContent') + '">' +
-            (options.allDaySlot ?
+            (this.opt('allDaySlot') ?
                 '<div class="fc-day-grid"></div>' +
                     '<hr class="fc-divider ' + theme.getClass('widgetHeader') + '" />' :
                 '') +
@@ -1108,18 +1073,18 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
     };
     /* Now Indicator
     ------------------------------------------------------------------------------------------------------------------*/
-    AbstractTimeGridView.prototype.getNowIndicatorUnit = function () {
+    TimeGridView.prototype.getNowIndicatorUnit = function () {
         return this.timeGrid.getNowIndicatorUnit();
     };
     // subclasses should implement
     // renderNowIndicator(date: DateMarker) {
     // }
-    AbstractTimeGridView.prototype.unrenderNowIndicator = function () {
+    TimeGridView.prototype.unrenderNowIndicator = function () {
         this.timeGrid.unrenderNowIndicator();
     };
     /* Dimensions
     ------------------------------------------------------------------------------------------------------------------*/
-    AbstractTimeGridView.prototype.updateSize = function (isResize, viewHeight, isAuto) {
+    TimeGridView.prototype.updateSize = function (isResize, viewHeight, isAuto) {
         _super.prototype.updateSize.call(this, isResize, viewHeight, isAuto); // will call updateBaseSize. important that executes first
         this.timeGrid.updateSize(isResize);
         if (this.dayGrid) {
@@ -1127,7 +1092,7 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         }
     };
     // Adjusts the vertical dimensions of the view to the specified values
-    AbstractTimeGridView.prototype.updateBaseSize = function (isResize, viewHeight, isAuto) {
+    TimeGridView.prototype.updateBaseSize = function (isResize, viewHeight, isAuto) {
         var _this = this;
         var eventLimit;
         var scrollerHeight;
@@ -1154,7 +1119,7 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         // limit number of events in the all-day area
         if (this.dayGrid) {
             this.dayGrid.removeSegPopover(); // kill the "more" popover if displayed
-            eventLimit = this.context.options.eventLimit;
+            eventLimit = this.opt('eventLimit');
             if (eventLimit && typeof eventLimit !== 'number') {
                 eventLimit = TIMEGRID_ALL_DAY_EVENT_LIMIT; // make sure "auto" goes to a real number
             }
@@ -1186,14 +1151,14 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         }
     };
     // given a desired total height of the view, returns what the height of the scroller should be
-    AbstractTimeGridView.prototype.computeScrollerHeight = function (viewHeight) {
+    TimeGridView.prototype.computeScrollerHeight = function (viewHeight) {
         return viewHeight -
             subtractInnerElHeight(this.el, this.scroller.el); // everything that's NOT the scroller
     };
     /* Scroll
     ------------------------------------------------------------------------------------------------------------------*/
     // Computes the initial pre-configured scroll state prior to allowing the user to change it
-    AbstractTimeGridView.prototype.computeDateScroll = function (duration) {
+    TimeGridView.prototype.computeDateScroll = function (duration) {
         var top = this.timeGrid.computeTimeTop(duration);
         // zoom can give weird floating-point values. rather scroll a little bit further
         top = Math.ceil(top);
@@ -1202,50 +1167,45 @@ var AbstractTimeGridView = /** @class */ (function (_super) {
         }
         return { top: top };
     };
-    AbstractTimeGridView.prototype.queryDateScroll = function () {
+    TimeGridView.prototype.queryDateScroll = function () {
         return { top: this.scroller.getScrollTop() };
     };
-    AbstractTimeGridView.prototype.applyDateScroll = function (scroll) {
+    TimeGridView.prototype.applyDateScroll = function (scroll) {
         if (scroll.top !== undefined) {
             this.scroller.setScrollTop(scroll.top);
         }
     };
     // Generates an HTML attribute string for setting the width of the axis, if it is known
-    AbstractTimeGridView.prototype.axisStyleAttr = function () {
+    TimeGridView.prototype.axisStyleAttr = function () {
         if (this.axisWidth != null) {
             return 'style="width:' + this.axisWidth + 'px"';
         }
         return '';
     };
-    return AbstractTimeGridView;
+    return TimeGridView;
 }(View));
-AbstractTimeGridView.prototype.usesMinMaxTime = true; // indicates that minTime/maxTime affects rendering
+TimeGridView.prototype.usesMinMaxTime = true; // indicates that minTime/maxTime affects rendering
 
 var SimpleTimeGrid = /** @class */ (function (_super) {
     __extends(SimpleTimeGrid, _super);
-    function SimpleTimeGrid(timeGrid) {
-        var _this = _super.call(this, timeGrid.el) || this;
+    function SimpleTimeGrid(context, timeGrid) {
+        var _this = _super.call(this, context, timeGrid.el) || this;
         _this.buildDayRanges = memoize(buildDayRanges);
         _this.slicer = new TimeGridSlicer();
         _this.timeGrid = timeGrid;
+        context.calendar.registerInteractiveComponent(_this, {
+            el: _this.timeGrid.el
+        });
         return _this;
     }
-    SimpleTimeGrid.prototype.firstContext = function (context) {
-        context.calendar.registerInteractiveComponent(this, {
-            el: this.timeGrid.el
-        });
-    };
     SimpleTimeGrid.prototype.destroy = function () {
         _super.prototype.destroy.call(this);
-        this.context.calendar.unregisterInteractiveComponent(this);
+        this.calendar.unregisterInteractiveComponent(this);
     };
-    SimpleTimeGrid.prototype.render = function (props, context) {
-        var dateEnv = this.context.dateEnv;
+    SimpleTimeGrid.prototype.render = function (props) {
         var dateProfile = props.dateProfile, dayTable = props.dayTable;
-        var dayRanges = this.dayRanges = this.buildDayRanges(dayTable, dateProfile, dateEnv);
-        var timeGrid = this.timeGrid;
-        timeGrid.receiveContext(context); // hack because context is used in sliceProps
-        timeGrid.receiveProps(__assign({}, this.slicer.sliceProps(props, dateProfile, null, context.calendar, timeGrid, dayRanges), { dateProfile: dateProfile, cells: dayTable.cells[0] }), context);
+        var dayRanges = this.dayRanges = this.buildDayRanges(dayTable, dateProfile, this.dateEnv);
+        this.timeGrid.receiveProps(__assign({}, this.slicer.sliceProps(props, dateProfile, null, this.timeGrid, dayRanges), { dateProfile: dateProfile, cells: dayTable.cells[0] }));
     };
     SimpleTimeGrid.prototype.renderNowIndicator = function (date) {
         this.timeGrid.renderNowIndicator(this.slicer.sliceNowDate(date, this.timeGrid, this.dayRanges), date);
@@ -1307,48 +1267,22 @@ var TimeGridSlicer = /** @class */ (function (_super) {
     return TimeGridSlicer;
 }(Slicer));
 
-var TimeGridView = /** @class */ (function (_super) {
+var TimeGridView$1 = /** @class */ (function (_super) {
     __extends(TimeGridView, _super);
-    function TimeGridView() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+    function TimeGridView(_context, viewSpec, dateProfileGenerator, parentEl) {
+        var _this = _super.call(this, _context, viewSpec, dateProfileGenerator, parentEl) || this;
         _this.buildDayTable = memoize(buildDayTable);
+        if (_this.opt('columnHeader')) {
+            _this.header = new DayHeader(_this.context, _this.el.querySelector('.fc-head-container'));
+        }
+        _this.simpleTimeGrid = new SimpleTimeGrid(_this.context, _this.timeGrid);
+        if (_this.dayGrid) {
+            _this.simpleDayGrid = new SimpleDayGrid(_this.context, _this.dayGrid);
+        }
         return _this;
     }
-    TimeGridView.prototype.render = function (props, context) {
-        _super.prototype.render.call(this, props, context); // for flags for updateSize. also _renderSkeleton/_unrenderSkeleton
-        var _a = this.props, dateProfile = _a.dateProfile, dateProfileGenerator = _a.dateProfileGenerator;
-        var nextDayThreshold = context.nextDayThreshold;
-        var dayTable = this.buildDayTable(dateProfile, dateProfileGenerator);
-        var splitProps = this.splitter.splitProps(props);
-        if (this.header) {
-            this.header.receiveProps({
-                dateProfile: dateProfile,
-                dates: dayTable.headerDates,
-                datesRepDistinctDays: true,
-                renderIntroHtml: this.renderHeadIntroHtml
-            }, context);
-        }
-        this.simpleTimeGrid.receiveProps(__assign({}, splitProps['timed'], { dateProfile: dateProfile,
-            dayTable: dayTable }), context);
-        if (this.simpleDayGrid) {
-            this.simpleDayGrid.receiveProps(__assign({}, splitProps['allDay'], { dateProfile: dateProfile,
-                dayTable: dayTable,
-                nextDayThreshold: nextDayThreshold, isRigid: false }), context);
-        }
-        this.startNowIndicator(dateProfile, dateProfileGenerator);
-    };
-    TimeGridView.prototype._renderSkeleton = function (context) {
-        _super.prototype._renderSkeleton.call(this, context);
-        if (context.options.columnHeader) {
-            this.header = new DayHeader(this.el.querySelector('.fc-head-container'));
-        }
-        this.simpleTimeGrid = new SimpleTimeGrid(this.timeGrid);
-        if (this.dayGrid) {
-            this.simpleDayGrid = new SimpleDayGrid(this.dayGrid);
-        }
-    };
-    TimeGridView.prototype._unrenderSkeleton = function () {
-        _super.prototype._unrenderSkeleton.call(this);
+    TimeGridView.prototype.destroy = function () {
+        _super.prototype.destroy.call(this);
         if (this.header) {
             this.header.destroy();
         }
@@ -1357,11 +1291,31 @@ var TimeGridView = /** @class */ (function (_super) {
             this.simpleDayGrid.destroy();
         }
     };
+    TimeGridView.prototype.render = function (props) {
+        _super.prototype.render.call(this, props); // for flags for updateSize
+        var dateProfile = this.props.dateProfile;
+        var dayTable = this.buildDayTable(dateProfile, this.dateProfileGenerator);
+        var splitProps = this.splitter.splitProps(props);
+        if (this.header) {
+            this.header.receiveProps({
+                dateProfile: dateProfile,
+                dates: dayTable.headerDates,
+                datesRepDistinctDays: true,
+                renderIntroHtml: this.renderHeadIntroHtml
+            });
+        }
+        this.simpleTimeGrid.receiveProps(__assign({}, splitProps['timed'], { dateProfile: dateProfile,
+            dayTable: dayTable }));
+        if (this.simpleDayGrid) {
+            this.simpleDayGrid.receiveProps(__assign({}, splitProps['allDay'], { dateProfile: dateProfile,
+                dayTable: dayTable, nextDayThreshold: this.nextDayThreshold, isRigid: false }));
+        }
+    };
     TimeGridView.prototype.renderNowIndicator = function (date) {
         this.simpleTimeGrid.renderNowIndicator(date);
     };
     return TimeGridView;
-}(AbstractTimeGridView));
+}(TimeGridView));
 function buildDayTable(dateProfile, dateProfileGenerator) {
     var daySeries = new DaySeries(dateProfile.renderRange, dateProfileGenerator);
     return new DayTable(daySeries, false);
@@ -1371,7 +1325,7 @@ var main = createPlugin({
     defaultView: 'timeGridWeek',
     views: {
         timeGrid: {
-            class: TimeGridView,
+            class: TimeGridView$1,
             allDaySlot: true,
             slotDuration: '00:30:00',
             slotEventOverlap: true // a bad name. confused with overlap/constraint system
@@ -1388,4 +1342,4 @@ var main = createPlugin({
 });
 
 export default main;
-export { AbstractTimeGridView, TimeGrid, TimeGridSlicer, TimeGridView, buildDayRanges, buildDayTable };
+export { TimeGridView as AbstractTimeGridView, TimeGrid, TimeGridSlicer, TimeGridView$1 as TimeGridView, buildDayRanges, buildDayTable };

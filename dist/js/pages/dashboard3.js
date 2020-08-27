@@ -76,25 +76,47 @@ $(function () {
   var $visitorsChart = $('#visitors-chart')
   var visitorsChart  = new Chart($visitorsChart, {
     data   : {
-      labels  : ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
-      datasets: [{
+      labels  : ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th'],
+      datasets: [{//akumulatif
         type                : 'line',
-        data                : [100, 120, 170, 167, 180, 177, 160],
+        data                : [0, 2, 2, 2, 2, 4, 4, 6, 19, 27, 34],
         backgroundColor     : 'transparent',
-        borderColor         : '#007bff',
-        pointBorderColor    : '#007bff',
-        pointBackgroundColor: '#007bff',
+        borderColor         : '#ffcc00',
+        pointBorderColor    : '#ffcc00',
+        pointBackgroundColor: '#ffcc00',
         fill                : false
         // pointHoverBackgroundColor: '#007bff',
         // pointHoverBorderColor    : '#007bff'
       },
-        {
+        { //kasus harian
           type                : 'line',
-          data                : [60, 80, 70, 67, 80, 77, 100],
+          data                : [0, 2, 0, 0, 0, 2, 0, 2, 13, 8, 7],
           backgroundColor     : 'tansparent',
-          borderColor         : '#ced4da',
-          pointBorderColor    : '#ced4da',
-          pointBackgroundColor: '#ced4da',
+          borderColor         : '#007bff',
+          pointBorderColor    : '#007bff',
+          pointBackgroundColor: '#007bff',
+          fill                : false
+          // pointHoverBackgroundColor: '#ced4da',
+          // pointHoverBorderColor    : '#ced4da'
+        },
+        {//meninggal
+          type                : 'line',
+          data                : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+          backgroundColor     : 'tansparent',
+          borderColor         : '#ff0000',
+          pointBorderColor    : '#ff0000',
+          pointBackgroundColor: '#ff0000',
+          fill                : false
+          // pointHoverBackgroundColor: '#ced4da',
+          // pointHoverBorderColor    : '#ced4da'
+        },
+        { //sembuh
+          type                : 'line',
+          data                : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+          backgroundColor     : 'tansparent',
+          borderColor         : '#02c248',
+          pointBorderColor    : '#02c248',
+          pointBackgroundColor: '#02c248',
           fill                : false
           // pointHoverBackgroundColor: '#ced4da',
           // pointHoverBorderColor    : '#ced4da'
@@ -124,7 +146,7 @@ $(function () {
           },
           ticks    : $.extend({
             beginAtZero : true,
-            suggestedMax: 200
+            suggestedMax: 20
           }, ticksStyle)
         }],
         xAxes: [{

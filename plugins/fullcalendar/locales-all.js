@@ -180,29 +180,6 @@
     };
 
     var _m8 = {
-        code: "az",
-        week: {
-            dow: 1,
-            doy: 4 // The week that contains Jan 4th is the first week of the year.
-        },
-        buttonText: {
-            prev: "Əvvəl",
-            next: "Sonra",
-            today: "Bu Gün",
-            month: "Ay",
-            week: "Həftə",
-            day: "Gün",
-            list: "Gündəm"
-        },
-        weekLabel: "Həftə",
-        allDayText: "Bütün Gün",
-        eventLimitText: function (n) {
-            return "+ daha çox " + n;
-        },
-        noEventsMessage: "Göstərmək üçün hadisə yoxdur"
-    };
-
-    var _m9 = {
         code: "bg",
         week: {
             dow: 1,
@@ -224,7 +201,7 @@
         noEventsMessage: "Няма събития за показване"
     };
 
-    var _m10 = {
+    var _m9 = {
         code: "bs",
         week: {
             dow: 1,
@@ -247,7 +224,7 @@
         noEventsMessage: "Nema događaja za prikazivanje"
     };
 
-    var _m11 = {
+    var _m10 = {
         code: "ca",
         week: {
             dow: 1,
@@ -268,7 +245,7 @@
         noEventsMessage: "No hi ha esdeveniments per mostrar"
     };
 
-    var _m12 = {
+    var _m11 = {
         code: "cs",
         week: {
             dow: 1,
@@ -291,7 +268,7 @@
         noEventsMessage: "Žádné akce k zobrazení"
     };
 
-    var _m13 = {
+    var _m12 = {
         code: "da",
         week: {
             dow: 1,
@@ -312,7 +289,7 @@
         noEventsMessage: "Ingen arrangementer at vise"
     };
 
-    var _m14 = {
+    var _m13 = {
         code: "de",
         week: {
             dow: 1,
@@ -336,7 +313,7 @@
         noEventsMessage: "Keine Ereignisse anzuzeigen"
     };
 
-    var _m15 = {
+    var _m14 = {
         code: "el",
         week: {
             dow: 1,
@@ -354,10 +331,10 @@
         weekLabel: "Εβδ",
         allDayText: "Ολοήμερο",
         eventLimitText: "περισσότερα",
-        noEventsMessage: "Δεν υπάρχουν γεγονότα προς εμφάνιση"
+        noEventsMessage: "Δεν υπάρχουν γεγονότα για να εμφανιστεί"
     };
 
-    var _m16 = {
+    var _m15 = {
         code: "en-au",
         week: {
             dow: 1,
@@ -365,7 +342,7 @@
         }
     };
 
-    var _m17 = {
+    var _m16 = {
         code: "en-gb",
         week: {
             dow: 1,
@@ -373,7 +350,7 @@
         }
     };
 
-    var _m18 = {
+    var _m17 = {
         code: "en-nz",
         week: {
             dow: 1,
@@ -381,7 +358,7 @@
         }
     };
 
-    var _m19 = {
+    var _m18 = {
         code: "es",
         week: {
             dow: 0,
@@ -402,7 +379,7 @@
         noEventsMessage: "No hay eventos para mostrar"
     };
 
-    var _m20 = {
+    var _m19 = {
         code: "es",
         week: {
             dow: 1,
@@ -423,7 +400,7 @@
         noEventsMessage: "No hay eventos para mostrar"
     };
 
-    var _m21 = {
+    var _m20 = {
         code: "et",
         week: {
             dow: 1,
@@ -446,7 +423,7 @@
         noEventsMessage: "Kuvamiseks puuduvad sündmused"
     };
 
-    var _m22 = {
+    var _m21 = {
         code: "eu",
         week: {
             dow: 1,
@@ -467,7 +444,7 @@
         noEventsMessage: "Ez dago ekitaldirik erakusteko"
     };
 
-    var _m23 = {
+    var _m22 = {
         code: "fa",
         week: {
             dow: 6,
@@ -491,7 +468,7 @@
         noEventsMessage: "هیچ رویدادی به نمایش"
     };
 
-    var _m24 = {
+    var _m23 = {
         code: "fi",
         week: {
             dow: 1,
@@ -512,7 +489,7 @@
         noEventsMessage: "Ei näytettäviä tapahtumia"
     };
 
-    var _m25 = {
+    var _m24 = {
         code: "fr",
         buttonText: {
             prev: "Précédent",
@@ -530,7 +507,7 @@
         noEventsMessage: "Aucun événement à afficher"
     };
 
-    var _m26 = {
+    var _m25 = {
         code: "fr-ch",
         week: {
             dow: 1,
@@ -552,7 +529,7 @@
         noEventsMessage: "Aucun événement à afficher"
     };
 
-    var _m27 = {
+    var _m26 = {
         code: "fr",
         week: {
             dow: 1,
@@ -566,7 +543,7 @@
             month: "Mois",
             week: "Semaine",
             day: "Jour",
-            list: "Planning"
+            list: "Mon planning"
         },
         weekLabel: "Sem.",
         allDayHtml: "Toute la<br/>journée",
@@ -574,7 +551,7 @@
         noEventsMessage: "Aucun événement à afficher"
     };
 
-    var _m28 = {
+    var _m27 = {
         code: "gl",
         week: {
             dow: 1,
@@ -595,7 +572,7 @@
         noEventsMessage: "Non hai eventos para amosar"
     };
 
-    var _m29 = {
+    var _m28 = {
         code: "he",
         dir: 'rtl',
         buttonText: {
@@ -613,7 +590,7 @@
         weekLabel: "שבוע"
     };
 
-    var _m30 = {
+    var _m29 = {
         code: "hi",
         week: {
             dow: 0,
@@ -636,7 +613,7 @@
         noEventsMessage: "कोई घटनाओं को प्रदर्शित करने के लिए"
     };
 
-    var _m31 = {
+    var _m30 = {
         code: "hr",
         week: {
             dow: 1,
@@ -659,7 +636,7 @@
         noEventsMessage: "Nema događaja za prikaz"
     };
 
-    var _m32 = {
+    var _m31 = {
         code: "hu",
         week: {
             dow: 1,
@@ -680,7 +657,7 @@
         noEventsMessage: "Nincs megjeleníthető esemény"
     };
 
-    var _m33 = {
+    var _m32 = {
         code: "id",
         week: {
             dow: 1,
@@ -701,7 +678,7 @@
         noEventsMessage: "Tidak ada acara untuk ditampilkan"
     };
 
-    var _m34 = {
+    var _m33 = {
         code: "is",
         week: {
             dow: 1,
@@ -722,7 +699,7 @@
         noEventsMessage: "Engir viðburðir til að sýna"
     };
 
-    var _m35 = {
+    var _m34 = {
         code: "it",
         week: {
             dow: 1,
@@ -745,7 +722,7 @@
         noEventsMessage: "Non ci sono eventi da visualizzare"
     };
 
-    var _m36 = {
+    var _m35 = {
         code: "ja",
         buttonText: {
             prev: "前",
@@ -764,7 +741,7 @@
         noEventsMessage: "表示する予定はありません"
     };
 
-    var _m37 = {
+    var _m36 = {
         code: "ka",
         week: {
             dow: 1,
@@ -787,7 +764,7 @@
         noEventsMessage: "ღონისძიებები არ არის"
     };
 
-    var _m38 = {
+    var _m37 = {
         code: "kk",
         week: {
             dow: 1,
@@ -810,7 +787,7 @@
         noEventsMessage: "Көрсету үшін оқиғалар жоқ"
     };
 
-    var _m39 = {
+    var _m38 = {
         code: "ko",
         buttonText: {
             prev: "이전달",
@@ -827,7 +804,7 @@
         noEventsMessage: "일정이 없습니다"
     };
 
-    var _m40 = {
+    var _m39 = {
         code: "lb",
         week: {
             dow: 1,
@@ -848,7 +825,7 @@
         noEventsMessage: "Nee Evenementer ze affichéieren"
     };
 
-    var _m41 = {
+    var _m40 = {
         code: "lt",
         week: {
             dow: 1,
@@ -869,7 +846,7 @@
         noEventsMessage: "Nėra įvykių rodyti"
     };
 
-    var _m42 = {
+    var _m41 = {
         code: "lv",
         week: {
             dow: 1,
@@ -892,7 +869,7 @@
         noEventsMessage: "Nav notikumu"
     };
 
-    var _m43 = {
+    var _m42 = {
         code: "mk",
         buttonText: {
             prev: "претходно",
@@ -911,7 +888,7 @@
         noEventsMessage: "Нема настани за прикажување"
     };
 
-    var _m44 = {
+    var _m43 = {
         code: "ms",
         week: {
             dow: 1,
@@ -934,7 +911,7 @@
         noEventsMessage: "Tiada peristiwa untuk dipaparkan"
     };
 
-    var _m45 = {
+    var _m44 = {
         code: "nb",
         week: {
             dow: 1,
@@ -955,7 +932,7 @@
         noEventsMessage: "Ingen hendelser å vise"
     };
 
-    var _m46 = {
+    var _m45 = {
         code: "nl",
         week: {
             dow: 1,
@@ -976,7 +953,7 @@
         noEventsMessage: "Geen evenementen om te laten zien"
     };
 
-    var _m47 = {
+    var _m46 = {
         code: "nn",
         week: {
             dow: 1,
@@ -997,7 +974,7 @@
         noEventsMessage: "Ingen hendelser å vise"
     };
 
-    var _m48 = {
+    var _m47 = {
         code: "pl",
         week: {
             dow: 1,
@@ -1018,7 +995,7 @@
         noEventsMessage: "Brak wydarzeń do wyświetlenia"
     };
 
-    var _m49 = {
+    var _m48 = {
         code: "pt-br",
         buttonText: {
             prev: "Anterior",
@@ -1027,7 +1004,7 @@
             month: "Mês",
             week: "Semana",
             day: "Dia",
-            list: "Lista"
+            list: "Compromissos"
         },
         weekLabel: "Sm",
         allDayText: "dia inteiro",
@@ -1037,7 +1014,7 @@
         noEventsMessage: "Não há eventos para mostrar"
     };
 
-    var _m50 = {
+    var _m49 = {
         code: "pt",
         week: {
             dow: 1,
@@ -1058,7 +1035,7 @@
         noEventsMessage: "Não há eventos para mostrar"
     };
 
-    var _m51 = {
+    var _m50 = {
         code: "ro",
         week: {
             dow: 1,
@@ -1081,7 +1058,7 @@
         noEventsMessage: "Nu există evenimente de afișat"
     };
 
-    var _m52 = {
+    var _m51 = {
         code: "ru",
         week: {
             dow: 1,
@@ -1104,7 +1081,7 @@
         noEventsMessage: "Нет событий для отображения"
     };
 
-    var _m53 = {
+    var _m52 = {
         code: "sk",
         week: {
             dow: 1,
@@ -1127,7 +1104,7 @@
         noEventsMessage: "Žiadne akcie na zobrazenie"
     };
 
-    var _m54 = {
+    var _m53 = {
         code: "sl",
         week: {
             dow: 1,
@@ -1148,7 +1125,7 @@
         noEventsMessage: "Ni dogodkov za prikaz"
     };
 
-    var _m55 = {
+    var _m54 = {
         code: "sq",
         week: {
             dow: 1,
@@ -1171,7 +1148,7 @@
         noEventsMessage: "Nuk ka evente për të shfaqur"
     };
 
-    var _m56 = {
+    var _m55 = {
         code: "sr-cyrl",
         week: {
             dow: 1,
@@ -1194,7 +1171,7 @@
         noEventsMessage: "Нема догађаја за приказ"
     };
 
-    var _m57 = {
+    var _m56 = {
         code: "sr",
         week: {
             dow: 1,
@@ -1217,7 +1194,7 @@
         noEventsMessage: "Nеma događaja za prikaz"
     };
 
-    var _m58 = {
+    var _m57 = {
         code: "sv",
         week: {
             dow: 1,
@@ -1238,31 +1215,23 @@
         noEventsMessage: "Inga händelser att visa"
     };
 
-    var _m59 = {
+    var _m58 = {
         code: "th",
-        week: {
-            dow: 1,
-            doy: 4 // The week that contains Jan 4th is the first week of the year.
-        },
         buttonText: {
-            prev: "ก่อนหน้า",
+            prev: "ย้อน",
             next: "ถัดไป",
-            prevYear: 'ปีก่อนหน้า',
-            nextYear: 'ปีถัดไป',
-            year: 'ปี',
             today: "วันนี้",
             month: "เดือน",
             week: "สัปดาห์",
             day: "วัน",
-            list: "กำหนดการ"
+            list: "แผนงาน"
         },
-        weekLabel: "สัปดาห์",
         allDayText: "ตลอดวัน",
         eventLimitText: "เพิ่มเติม",
         noEventsMessage: "ไม่มีกิจกรรมที่จะแสดง"
     };
 
-    var _m60 = {
+    var _m59 = {
         code: "tr",
         week: {
             dow: 1,
@@ -1283,18 +1252,7 @@
         noEventsMessage: "Gösterilecek etkinlik yok"
     };
 
-    var _m61 = {
-        code: "ug",
-        buttonText: {
-            month: "ئاي",
-            week: "ھەپتە",
-            day: "كۈن",
-            list: "كۈنتەرتىپ"
-        },
-        allDayText: "پۈتۈن كۈن"
-    };
-
-    var _m62 = {
+    var _m60 = {
         code: "uk",
         week: {
             dow: 1,
@@ -1317,22 +1275,7 @@
         noEventsMessage: "Немає подій для відображення"
     };
 
-    var _m63 = {
-        code: "uz",
-        buttonText: {
-            month: "Oy",
-            week: "Xafta",
-            day: "Kun",
-            list: "Kun tartibi"
-        },
-        allDayText: "Kun bo'yi",
-        eventLimitText: function (n) {
-            return "+ yana " + n;
-        },
-        noEventsMessage: "Ko'rsatish uchun voqealar yo'q"
-    };
-
-    var _m64 = {
+    var _m61 = {
         code: "vi",
         week: {
             dow: 1,
@@ -1355,7 +1298,7 @@
         noEventsMessage: "Không có sự kiện để hiển thị"
     };
 
-    var _m65 = {
+    var _m62 = {
         code: "zh-cn",
         week: {
             // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效
@@ -1379,7 +1322,7 @@
         noEventsMessage: "没有事件显示"
     };
 
-    var _m66 = {
+    var _m63 = {
         code: "zh-tw",
         buttonText: {
             prev: "上月",
@@ -1397,7 +1340,7 @@
     };
 
     var _rollupPluginMultiEntry_entryPoint = [
-    _m0, _m1, _m2, _m3, _m4, _m5, _m6, _m7, _m8, _m9, _m10, _m11, _m12, _m13, _m14, _m15, _m16, _m17, _m18, _m19, _m20, _m21, _m22, _m23, _m24, _m25, _m26, _m27, _m28, _m29, _m30, _m31, _m32, _m33, _m34, _m35, _m36, _m37, _m38, _m39, _m40, _m41, _m42, _m43, _m44, _m45, _m46, _m47, _m48, _m49, _m50, _m51, _m52, _m53, _m54, _m55, _m56, _m57, _m58, _m59, _m60, _m61, _m62, _m63, _m64, _m65, _m66
+    _m0, _m1, _m2, _m3, _m4, _m5, _m6, _m7, _m8, _m9, _m10, _m11, _m12, _m13, _m14, _m15, _m16, _m17, _m18, _m19, _m20, _m21, _m22, _m23, _m24, _m25, _m26, _m27, _m28, _m29, _m30, _m31, _m32, _m33, _m34, _m35, _m36, _m37, _m38, _m39, _m40, _m41, _m42, _m43, _m44, _m45, _m46, _m47, _m48, _m49, _m50, _m51, _m52, _m53, _m54, _m55, _m56, _m57, _m58, _m59, _m60, _m61, _m62, _m63
     ];
 
     return _rollupPluginMultiEntry_entryPoint;

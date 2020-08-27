@@ -18,7 +18,7 @@
             month: "Mois",
             week: "Semaine",
             day: "Jour",
-            list: "Planning"
+            list: "Mon planning"
         },
         weekLabel: "Sem.",
         allDayHtml: "Toute la<br/>journée",

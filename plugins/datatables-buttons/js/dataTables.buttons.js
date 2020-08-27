@@ -1,5 +1,5 @@
-/*! Buttons for DataTables 1.6.3
- * ©2016-2020 SpryMedia Ltd - datatables.net/license
+/*! Buttons for DataTables 1.6.1
+ * ©2016-2019 SpryMedia Ltd - datatables.net/license
  */
 
 (function( factory ){
@@ -40,37 +40,6 @@ var _instCounter = 0;
 var _buttonCounter = 0;
 
 var _dtButtons = DataTable.ext.buttons;
-
-// Allow for jQuery slim
-function _fadeIn(el, duration, fn) {
-	if ($.fn.animate) {
-		el
-			.stop()
-			.fadeIn( duration, fn );
-	}
-	else {
-		el.css('display', 'block');
-
-		if (fn) {
-			fn.call(el);
-		}
-	}
-}
-
-function _fadeOut(el, duration, fn) {
-	if ($.fn.animate) {
-		el
-			.stop()
-			.fadeOut( duration, fn );
-	}
-	else {
-		el.css('display', 'none');
-		
-		if (fn) {
-			fn.call(el);
-		}
-	}
-}
 
 /**
  * [Buttons description]
@@ -220,9 +189,7 @@ $.extend( Buttons.prototype, {
 	disable: function ( node ) {
 		var button = this._nodeToButton( node );
 
-		$(button.node)
-			.addClass( this.c.dom.button.disabled )
-			.attr('disabled', true);
+		$(button.node).addClass( this.c.dom.button.disabled );
 
 		return this;
 	},
@@ -275,9 +242,7 @@ $.extend( Buttons.prototype, {
 		}
 
 		var button = this._nodeToButton( node );
-		$(button.node)
-			.removeClass( this.c.dom.button.disabled )
-			.removeAttr('disabled');
+		$(button.node).removeClass( this.c.dom.button.disabled );
 
 		return this;
 	},
@@ -531,7 +496,7 @@ $.extend( Buttons.prototype, {
 				continue;
 			}
 
-			if ( attachPoint !== undefined && attachPoint !== null ) {
+			if ( attachPoint !== undefined ) {
 				attachTo.splice( attachPoint, 0, built );
 				attachPoint++;
 			}
@@ -611,7 +576,7 @@ $.extend( Buttons.prototype, {
 					action( e, dt, button, config );
 				}
 				if( clickBlurs ) {
-					button.trigger('blur');
+					button.blur();
 				}
 			} )
 			.on( 'keyup.dtb', function (e) {
@@ -980,13 +945,9 @@ $.extend( Buttons.prototype, {
 		var hostNode = hostButton.node();
 
 		var close = function () {
-			_fadeOut(
-				$('.dt-button-collection'),
-				options.fade,
-				function () {
-					$(this).detach();
-				}
-			);
+			$('.dt-button-collection').stop().fadeOut( options.fade, function () {
+				$(this).detach();
+			} );
 
 			$(dt.buttons( '[aria-haspopup="true"][aria-expanded="true"]' ).nodes())
 				.attr('aria-expanded', 'false');
@@ -1029,7 +990,9 @@ $.extend( Buttons.prototype, {
 			display.prepend('<div class="dt-button-collection-title">'+options.collectionTitle+'</div>');
 		}
 
-		_fadeIn( display.insertAfter( hostNode ) );
+		display
+			.insertAfter( hostNode )
+			.fadeIn( options.fade );
 
 		var tableContainer = $( hostButton.table().container() );
 		var position = display.css( 'position' );
@@ -1039,17 +1002,7 @@ $.extend( Buttons.prototype, {
 			display.css('width', tableContainer.width());
 		}
 
-		// Align the popover relative to the DataTables container
-		// Useful for wide popovers such as SearchPanes
-		if (
-			position === 'absolute' &&
-			(
-				display.hasClass( options.rightAlignClassName ) ||
-				display.hasClass( options.leftAlignClassName ) ||
-				options.align === 'dt-container'
-			)
-		) {
-
+		if ( position === 'absolute' ) {
 			var hostPosition = hostNode.position();
 
 			display.css( {
@@ -1059,6 +1012,7 @@ $.extend( Buttons.prototype, {
 
 			// calculate overflow when positioned beneath
 			var collectionHeight = display.outerHeight();
+			var collectionWidth = display.outerWidth();
 			var tableBottom = tableContainer.offset().top + tableContainer.height();
 			var listBottom = hostPosition.top + hostNode.outerHeight() + collectionHeight;
 			var bottomOverflow = listBottom - tableBottom;
@@ -1074,107 +1028,24 @@ $.extend( Buttons.prototype, {
 				display.css( 'top', moveTop);
 			}
 
-			// Get the size of the container (left and width - and thus also right)
-			var tableLeft = tableContainer.offset().left;
-			var tableWidth = tableContainer.width();
-			var tableRight = tableLeft + tableWidth;
-
-			// Get the size of the popover (left and width - and ...)
-			var popoverLeft = display.offset().left;
-			var popoverWidth = display.width();
-			var popoverRight = popoverLeft + popoverWidth;
-
-			// Get the size of the host buttons (left and width - and ...)
-			var buttonsLeft = hostNode.offset().left;
-			var buttonsWidth = hostNode.outerWidth()
-			var buttonsRight = buttonsLeft + buttonsWidth;
-			
-			// You've then got all the numbers you need to do some calculations and if statements,
-			//  so we can do some quick JS maths and apply it only once
-			// If it has the right align class OR the buttons are right aligned OR the button container is floated right,
-			//  then calculate left position for the popover to align the popover to the right hand
-			//  side of the button - check to see if the left of the popover is inside the table container.
-			// If not, move the popover so it is, but not more than it means that the popover is to the right of the table container
-			var popoverShuffle = 0;
-			if ( display.hasClass( options.rightAlignClassName )) {
-				popoverShuffle = buttonsRight - popoverRight;
-				if(tableLeft > (popoverLeft + popoverShuffle)){
-					var leftGap = tableLeft - (popoverLeft + popoverShuffle);
-					var rightGap = tableRight - (popoverRight + popoverShuffle);
-	
-					if(leftGap > rightGap){
-						popoverShuffle += rightGap; 
-					}
-					else {
-						popoverShuffle += leftGap;
-					}
-				}
-			}
-			// else attempt to left align the popover to the button. Similar to above, if the popover's right goes past the table container's right,
-			//  then move it back, but not so much that it goes past the left of the table container
-			else {
-				popoverShuffle = tableLeft - popoverLeft;
-
-				if(tableRight < (popoverRight + popoverShuffle)){
-					var leftGap = tableLeft - (popoverLeft + popoverShuffle);
-					var rightGap = tableRight - (popoverRight + popoverShuffle);
-
-					if(leftGap > rightGap ){
-						popoverShuffle += rightGap;
-					}
-					else {
-						popoverShuffle += leftGap;
-					}
-
-				}
+			// Right alignment is enabled on a class, e.g. bootstrap:
+			// $.fn.dataTable.Buttons.defaults.dom.collection.className += " dropdown-menu-right"; 
+			if ( display.hasClass( options.rightAlignClassName ) || options.align === 'button-right' ) {
+				display.css( 'left', hostPosition.left + hostNode.outerWidth() - collectionWidth );
 			}
 
-			display.css('left', display.position().left + popoverShuffle);
-			
-		}
-		else if (position === 'absolute') {
-			// Align relative to the host button
-			var hostPosition = hostNode.position();
-
-			display.css( {
-				top: hostPosition.top + hostNode.outerHeight(),
-				left: hostPosition.left
-			} );
-
-			// calculate overflow when positioned beneath
-			var collectionHeight = display.outerHeight();
-			var top = hostNode.offset().top
-			var popoverShuffle = 0;
-
-			// Get the size of the host buttons (left and width - and ...)
-			var buttonsLeft = hostNode.offset().left;
-			var buttonsWidth = hostNode.outerWidth()
-			var buttonsRight = buttonsLeft + buttonsWidth;
-
-			// Get the size of the popover (left and width - and ...)
-			var popoverLeft = display.offset().left;
-			var popoverWidth = content.width();
-			var popoverRight = popoverLeft + popoverWidth;
-
-			var moveTop = hostPosition.top - collectionHeight - 5;
-			var tableBottom = tableContainer.offset().top + tableContainer.height();
-			var listBottom = hostPosition.top + hostNode.outerHeight() + collectionHeight;
-			var bottomOverflow = listBottom - tableBottom;
-
-			// calculate overflow when positioned above
-			var listTop = hostPosition.top - collectionHeight;
-			var tableTop = tableContainer.offset().top;
-			var topOverflow = tableTop - listTop;
-
-			if ( (bottomOverflow > topOverflow || options.dropup) && -moveTop < tableTop ) {
-				display.css( 'top', moveTop);
+			// Right alignment in table container
+			var listRight = hostPosition.left + collectionWidth;
+			var tableRight = tableContainer.offset().left + tableContainer.width();
+			if ( listRight > tableRight ) {
+				display.css( 'left', hostPosition.left - ( listRight - tableRight ) );
 			}
 
-			popoverShuffle = options.align === 'button-right'
-				? buttonsRight - popoverRight
-				: buttonsLeft - popoverLeft;
-
-			display.css('left', display.position().left + popoverShuffle);
+			// Right alignment to window
+			var listOffsetRight = hostNode.offset().left + collectionWidth;
+			if ( listOffsetRight > $(window).width() ) {
+				display.css( 'left', hostPosition.left - (listOffsetRight-$(window).width()) );
+			}
 		}
 		else {
 			// Fix position - centre on screen
@@ -1200,9 +1071,8 @@ $.extend( Buttons.prototype, {
 			.on( 'click.dtb-collection', function (e) {
 				// andSelf is deprecated in jQ1.8, but we want 1.7 compat
 				var back = $.fn.addBack ? 'addBack' : 'andSelf';
-				var parent = $(e.target).parent()[0];
 
-				if (( ! $(e.target).parents()[back]().filter( content ).length  && !$(parent).hasClass('dt-buttons')) || $(e.target).hasClass('dt-button-background')) {
+				if ( ! $(e.target).parents()[back]().filter( content ).length ) {
 					close();
 				}
 			} )
@@ -1222,8 +1092,6 @@ $.extend( Buttons.prototype, {
 				} );
 			}, 0);
 		}
-
-		$(display).trigger('buttons-popover.dt');
 	}
 } );
 
@@ -1249,24 +1117,21 @@ Buttons.background = function ( show, className, fade, insertPoint ) {
 	}
 
 	if ( show ) {
-		_fadeIn(
-			$('<div/>')
-				.addClass( className )
-				.css( 'display', 'none' )
-				.insertAfter( insertPoint ),
-			fade
-		);
+		$('<div/>')
+			.addClass( className )
+			.css( 'display', 'none' )
+			.insertAfter( insertPoint )
+			.stop()
+			.fadeIn( fade );
 	}
 	else {
-		_fadeOut(
-			$('div.'+className),
-			fade,
-			function () {
+		$('div.'+className)
+			.stop()
+			.fadeOut( fade, function () {
 				$(this)
 					.removeClass( className )
 					.remove();
-			}
-		);
+			} );
 	}
 };
 
@@ -1505,7 +1370,7 @@ Buttons.defaults = {
  * @type {string}
  * @static
  */
-Buttons.version = '1.6.3';
+Buttons.version = '1.6.1';
 
 
 $.extend( _dtButtons, {
@@ -1818,13 +1683,9 @@ DataTable.Api.register( 'buttons.info()', function ( title, message, time ) {
 
 	if ( title === false ) {
 		this.off('destroy.btn-info');
-		_fadeOut(
-			$('#datatables_buttons_info'),
-			400,
-			function () {
-				$(this).remove();
-			}
-		);
+		$('#datatables_buttons_info').fadeOut( function () {
+			$(this).remove();
+		} );
 		clearTimeout( _infoTimer );
 		_infoTimer = null;
 
@@ -1841,13 +1702,12 @@ DataTable.Api.register( 'buttons.info()', function ( title, message, time ) {
 
 	title = title ? '<h2>'+title+'</h2>' : '';
 
-	_fadeIn(
-		$('<div id="datatables_buttons_info" class="dt-button-info"/>')
-			.html( title )
-			.append( $('<div/>')[ typeof message === 'string' ? 'html' : 'append' ]( message ) )
-			.css( 'display', 'none' )
-			.appendTo( 'body' )
-	);
+	$('<div id="datatables_buttons_info" class="dt-button-info"/>')
+		.html( title )
+		.append( $('<div/>')[ typeof message === 'string' ? 'html' : 'append' ]( message ) )
+		.css( 'display', 'none' )
+		.appendTo( 'body' )
+		.fadeIn();
 
 	if ( time !== undefined && time !== 0 ) {
 		_infoTimer = setTimeout( function () {
@@ -2132,11 +1992,9 @@ $(document).on( 'init.dt plugin-init.dt', function (e, settings) {
 	}
 } );
 
-function _init ( settings, options ) {
+function _init ( settings ) {
 	var api = new DataTable.Api( settings );
-	var opts = options
-		? options
-		: api.init().buttons || DataTable.defaults.buttons;
+	var opts = api.init().buttons || DataTable.defaults.buttons;
 
 	return new Buttons( api, opts ).container();
 }

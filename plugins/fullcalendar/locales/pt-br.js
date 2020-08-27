@@ -13,7 +13,7 @@
             month: "Mês",
             week: "Semana",
             day: "Dia",
-            list: "Lista"
+            list: "Compromissos"
         },
         weekLabel: "Sm",
         allDayText: "dia inteiro",
