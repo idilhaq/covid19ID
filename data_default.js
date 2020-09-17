@@ -4,8 +4,8 @@ function numberWithCommas(x) {
 
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = 'Update per Senin, 14 September 2020 17:55 WIB'
-var x_data = [221523,3141,8841,118,158405,3395,,1348022,17052,1569545,1.4,3.99];
+var date = 'Update per Kamis, 17 September 2020 18:15 WIB'
+var x_data = [232628,3635,9222,122,166686,2585,,1419696,25920,1652324,1.5,3.96,29555];
 
 a[0].innerHTML = a[1].innerHTML = date;
 document.getElementById("positif").innerHTML = numberWithCommas(x_data[0]);
@@ -18,6 +18,7 @@ document.getElementById("sembuh_note").innerHTML = numberWithCommas(x_data[5]);
 document.getElementById("negatif").innerHTML = numberWithCommas(x_data[7]);
 document.getElementById("negatif_note").innerHTML = numberWithCommas(x_data[8]);
 document.getElementById("totaltes").innerHTML = numberWithCommas(x_data[9]);	
+document.getElementById("new_test").innerHTML = numberWithCommas(x_data[12]);	
 document.getElementById("percentage_increase").innerHTML = numberWithCommas(x_data[10]);
 document.getElementById("ratio_meninggal").innerHTML = x_data[11];
 
