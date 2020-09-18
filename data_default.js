@@ -4,8 +4,8 @@ function numberWithCommas(x) {
 
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = 'Update per Kamis, 17 September 2020 18:15 WIB'
-var x_data = [232628,3635,9222,122,166686,2585,,1419696,25920,1652324,1.5,3.96,29555];
+var date = 'Update per Jumat, 18 September 2020 16:23 WIB'
+var x_data = [236519,3891,9336,114,170774,4088,,1440129,20433,1676648,1.6,3.94,24324];
 
 a[0].innerHTML = a[1].innerHTML = date;
 document.getElementById("positif").innerHTML = numberWithCommas(x_data[0]);
