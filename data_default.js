@@ -4,10 +4,14 @@ function numberWithCommas(x) {
 
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
-var date = 'Update per Sabtu, 19 September 2020 16:26 WIB'
+var b = document.getElementsByClassName("spec_msg");
+var spec_msg = 'Yuk di Rumah Aja!';
+
+var date = 'Update per Sabtu, 19 September 2020 16:26 WIB';
 var x_data = [240687,4168,9448,112,174350,3576,,1457515,17386,1698202,1.7,3.92,21554];
 
 a[0].innerHTML = a[1].innerHTML = date;
+b[0].innerHTML = spec_msg;
 document.getElementById("positif").innerHTML = numberWithCommas(x_data[0]);
 document.getElementById("positif_note").innerHTML = numberWithCommas(x_data[1])	
 document.getElementById("new_case").innerHTML = numberWithCommas(x_data[1]);
