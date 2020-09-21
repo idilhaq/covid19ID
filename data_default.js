@@ -5,7 +5,7 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = 'Pengen Punya Brewok? Cek @minoxidil_surabaya';
+var spec_msg = 'High Quality Handmade Skirt! @feeya.feeya';
 
 var date = 'Update per Senin, 21 September 2020 16:40 WIB'
 var x_data = [248852,4176,9677,124,180797,3470,,1494148,20649,1743000,1.7,3.88,24825];
