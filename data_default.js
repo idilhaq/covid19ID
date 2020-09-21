@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = 'Pengen Punya Brewok? Cek @minoxidil_surabaya';
 
-var date = 'Update per Minggu, 20 September 2020 17:40 WIB'
-var x_data = [244676,3989,9553,105,177327,2977,,1473499,15984,1718175,1.6,3.90,19973];
+var date = 'Update per Senin, 21 September 2020 16:40 WIB'
+var x_data = [248852,4176,9677,124,180797,3470,,1494148,20649,1743000,1.7,3.88,24825];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
