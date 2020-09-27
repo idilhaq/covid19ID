@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = '#staystrongindonesia';
 
-var date = 'Update per Sabtu, 26 September 2020 18:39 WIB'
-var x_data = [271339,4494,10308,90,199403,3207,,1615087,21164,1886426,1.6,3.79,25658];
+var date = 'Update per Minggu, 27 September 2020 16:51 WIB'
+var x_data = [275213,3874,10386,78,203014,3611,,1632013,16926,1907226,1.4,3.77,20800];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
