@@ -5,7 +5,7 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = '#staystrongindonesia';
+var spec_msg = '#12WeekToGoFor2021';
 
 var date = 'Update per Rabu, 30 September 2020 16:14 WIB'
 var x_data = [287008,4284,10740,139,214947,4510,,1706686,26656,1993694,1.5,3.74,30940];
