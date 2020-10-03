@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = '#12WeekToGoFor2021';
 
-var date = 'Update per Jumat, 02 October 2020 18:11 WIB'
-var x_data = [295499,4317,10972,116,221340,2853,,1755322,22514,2050821,1.4,3.71,26831];
+var date = 'Update per Sabtu, 03 October 2020 19:49 WIB'
+var x_data = [299506,4007,11055,83,225052,3712,,1775437,20115,2074943,1.3,3.69,24122];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
