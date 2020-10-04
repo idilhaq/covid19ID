@@ -5,7 +5,7 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = '#300CasesMilestone';
+var spec_msg = '#300KCasesMilestone';
 
 var date = 'Update per Minggu, 04 October 2020 16:41 WIB'
 var x_data = [303498,3992,11151,96,228453,3401,,1793086,17649,2096584,1.3,3.67,21641];
