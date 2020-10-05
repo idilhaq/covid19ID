@@ -5,10 +5,10 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = '#300KCasesMilestone';
+var spec_msg = '#StayStrongEveryone';
 
-var date = 'Update per Minggu, 04 October 2020 16:41 WIB'
-var x_data = [303498,3992,11151,96,228453,3401,,1793086,17649,2096584,1.3,3.67,21641];
+var date = 'Update per Senin, 05 October 2020 19:18 WIB'
+var x_data = [307120,3622,11253,102,232593,4140,,1812235,19149,2119355,1.1,3.66,22771];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
