@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = '#5KDailyCasesIncoming';
 
-var date = 'Update per Kamis, 08 October 2020 16:02 WIB'
-var x_data = [320564,4850,11580,108,244060,3769,,1890012,28051,2210576,1.5,3.61,32901];
+var date = 'Update per Jumat, 09 October 2020 19:25 WIB'
+var x_data = [324658,4094,11677,97,247667,3607,,1925036,35024,2249694,1.2,3.59,39118];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
