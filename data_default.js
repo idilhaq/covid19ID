@@ -5,10 +5,10 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = '#5KDailyCasesIncoming';
+var spec_msg = '12-25 Oktober PSBB Transisi DKI';
 
-var date = 'Update per Sabtu, 10 October 2020 20:58 WIB'
-var x_data = [328952,4294,11765,88,251481,3814,,1954417,29381,2283369,1.3,3.57,33675];
+var date = 'Update per Minggu, 11 October 2020 17:42 WIB'
+var x_data = [333449,4497,11844,79,255027,3546,,1972083,17666,2305532,1.3,3.55,22163];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
