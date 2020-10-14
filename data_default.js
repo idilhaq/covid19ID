@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = '#40KDailyTesting';
 
-var date = 'Update per Selasa, 13 October 2020 17:13 WIB'
-var x_data = [340622,3906,12027,92,263296,4777,,2037940,36106,2378562,1.1,3.53,40012];
+var date = 'Update per Rabu, 14 October 2020 20:34 WIB'
+var x_data = [344749,4127,12156,129,267851,4555,,2070857,32917,2415606,1.2,3.52,37044];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
