@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = 'Jaga kesehatan, lagi musim hujan';
 
-var date = 'Update per Jumat, 16 October 2020 17:22 WIB'
-var x_data = [353461,4301,12347,79,277544,3883,,2126461,25896,2479922,1.2,3.49,30197];
+var date = 'Update per Sabtu, 17 October 2020 22:21 WIB'
+var x_data = [357762,4301,12431,84,281592,4048,,2148136,21675,2505898,1.2,3.47,25976];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
