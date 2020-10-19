@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = '#AlwaysMaskOn';
 
-var date = 'Update per Minggu, 18 October 2020 20:29 WIB'
-var x_data = [361867,4105,12511,80,285324,3732,,2166452,18316,2528319,1.1,3.45,22421];
+var date = 'Update per Senin, 19 October 2020 18:35 WIB'
+var x_data = [365240,3373,12617,106,289243,3919,,2188281,21829,2553521,0.9,3.45,25202];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
