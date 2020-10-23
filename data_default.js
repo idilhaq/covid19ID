@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = 'Promo Korean Garlic Bread 88k get 4!';
 
-var date = 'Update per Kamis, 22 October 2020 17:34 WIB'
-var x_data = [377541,4432,12959,102,301006,3497,,2269553,28980,2647094,1.1,3.43,33412];
+var date = 'Update per Jumat, 23 October 2020 16:21 WIB'
+var x_data = [381910,4369,13077,118,305100,4094,,2297864,28311,2679774,1.1,3.42,32680];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
