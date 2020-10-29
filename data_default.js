@@ -7,7 +7,7 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = 'Happy long long weekend! :D';
 
-var date = 'Update per Kamis, 29 October 2020 17:57 WITA'
+var date = 'Update per Kamis, 29 October 2020 18:57 WITA'
 var x_data = [404048,3565,13701,89,329778,3985,,2426658,21828,2830706,0.8,3.39,25393];
 
 a[0].innerHTML = a[1].innerHTML = date;
