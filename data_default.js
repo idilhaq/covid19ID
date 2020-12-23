@@ -7,7 +7,7 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = 'Upayakan selalu 3M';
 
-var date = 'Update per Rabu, 23 December 2020 22:52 WITA'
+var date = 'Update per Rabu, 23 December 2020 23:03 WIB'
 var x_data = [685639,7514,20408,151,558703,5981,,3940147,26040,4625786,1.1,2.97,33554];
 
 a[0].innerHTML = a[1].innerHTML = date;
