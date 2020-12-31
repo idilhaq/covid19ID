@@ -5,7 +5,7 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = 'Upayakan selalu 3M';
+var spec_msg = 'Happy New Year 2021';
 
 var date = 'Update per Kamis, 31 December 2020 17:07 WIB'
 var x_data = [743198,8074,22138,194,611097,7356,,4169547,29191,4912745,1.0,2.97,37265];
