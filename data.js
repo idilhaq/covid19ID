@@ -120,15 +120,15 @@ Highcharts.mapChart('containerMap', {
     
     colorAxis: {
       dataClasses: [
-        {name:'<1000',from:100,to:1000,color:'#ffff00'},
-        {name:'<5000',from:1000,to:5000,color:'#ffb200'},
-        {name:'<8000',from:5000,to:8000,color:'#ff6600'},
-        {name:'<10000',from:8000,to:10000,color:'#ff0000'},
-        {name:'<15000',from:10000,to:15000,color:'#d90800'},
-        {name:'<20000',from:15000,to:20000,color:'#8c1700'},
-        {name:'<50000',from:20000,to:50000,color:'#661f00'},
-        {name:'<100000',from:50000,to:100000,color:'#402600'},
-        {name:'<500000',from:100000,to:500000,color:'#003300'}
+        {name:'<5000',from:1000,to:5000,color:'#ffff00'},
+        {name:'<10000',from:5000,to:10000,color:'#ffb200'},
+        {name:'<20000',from:10000,to:20000,color:'#ff6600'},
+        {name:'<30000',from:20000,to:30000,color:'#ff0000'},
+        {name:'<50000',from:30000,to:50000,color:'#d90800'},
+        {name:'<100000',from:50000,to:100000,color:'#8c1700'},
+        {name:'<200000',from:100000,to:200000,color:'#661f00'},
+        {name:'<300000',from:200000,to:300000,color:'#402600'},
+        {name:'<500000',from:300000,to:500000,color:'#003300'}
       ]
     },
 
