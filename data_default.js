@@ -7,8 +7,8 @@ var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
 var spec_msg = 'Covid19 Indonesia 1st Anniversary';
 
-var date = 'Update per Selasa, 02 March 2021 21:48 WIB'
-var x_data = [1347026,5712,36518,193,1160863,8948,,5896156,24278,7243182,0.4,2.71,29990];
+var date = 'Update per Jumat, 23 April 2021 11:20 WIB'
+var x_data = [1632248,5436,44346,174,1487369,5920,,7877419,36123,9509667,0.3,2.72,41559];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
