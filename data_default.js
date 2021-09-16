@@ -5,10 +5,10 @@ function numberWithCommas(x) {
 //Tanggal Update
 var a = document.getElementsByClassName("tgl_update");
 var b = document.getElementsByClassName("spec_msg");
-var spec_msg = 'GWS Everyone!';
+var spec_msg = 'Bismillah 2022 Normal';
 
-var date = 'Update per Selasa, 13 July 2021 22:34 WIB'
-var x_data = [2615529,47899,68219,864,2139601,20123,,12314336,111455,14929865,1.8,2.61,159354];
+var date = 'Update per Kamis, 16 September 2021 20:38 WIB'
+var x_data = [4181309,3145,139919,237,3968152,14633,0,19411940,51621,23593249,0.0,3.35,54766];
 
 a[0].innerHTML = a[1].innerHTML = date;
 b[0].innerHTML = spec_msg;
